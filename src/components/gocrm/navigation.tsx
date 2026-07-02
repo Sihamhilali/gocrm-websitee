@@ -34,7 +34,7 @@ function GoCRMLogo() {
     <img
       src="/logo-gocrm.png"
       alt="GoCRM"
-      className="h-12 w-auto"
+      className="h-16 w-auto"
     />
   );
 }
