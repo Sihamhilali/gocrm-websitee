@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "GoCRM" }],
   icons: {
-    icon: "/favicon.svg",
+    icon: "/logo-gocrm.png",
   },
   openGraph: {
     title: "GoCRM — Manage • Grow • Succeed",

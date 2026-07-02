@@ -31,58 +31,11 @@ const navLinks = [
 
 function GoCRMLogo() {
   return (
-    <svg
-      width="120"
-      height="28"
-      viewBox="0 0 120 28"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="GoCRM"
-      role="img"
-    >
-      <text
-        x="0"
-        y="22"
-        fontFamily="inherit"
-        fontSize="24"
-        fontWeight="700"
-        fill="#011134"
-        letterSpacing="-0.5"
-      >
-        G
-      </text>
-      <text
-        x="15"
-        y="22"
-        fontFamily="inherit"
-        fontSize="24"
-        fontWeight="700"
-        fill="#011134"
-        letterSpacing="-0.5"
-      >
-        o
-      </text>
-      <circle cx="23" cy="14" r="6" fill="none" stroke="#FD5320" strokeWidth="1.8" />
-      <path
-        d="M20.5 15.5L23 11.5L25.5 15.5"
-        stroke="#FD5320"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        fill="none"
-      />
-      <text
-        x="32"
-        y="22"
-        fontFamily="inherit"
-        fontSize="24"
-        fontWeight="700"
-        fill="#011134"
-        letterSpacing="-0.5"
-      >
-        CRM
-      </text>
-    </svg>
+    <img
+      src="/logo-gocrm.png"
+      alt="GoCRM"
+      className="h-7 w-auto"
+    />
   );
 }
 

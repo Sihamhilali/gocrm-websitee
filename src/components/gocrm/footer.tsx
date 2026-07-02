@@ -20,19 +20,11 @@ export default function Footer({ onNavigate }: FooterProps) {
             {/* Column 1 — Brand (span 2) */}
             <div className="md:col-span-2 mb-10 md:mb-0">
               {/* Logo */}
-              <svg
-                width="120"
-                height="28"
-                viewBox="0 0 120 28"
-                fill="none"
-                aria-label="GoCRM"
-              >
-                <text x="0" y="22" fontSize="24" fontWeight="700" fill="white" fontFamily="inherit" letterSpacing="-0.5">G</text>
-                <text x="15" y="22" fontSize="24" fontWeight="700" fill="white" fontFamily="inherit" letterSpacing="-0.5">o</text>
-                <circle cx="23" cy="14" r="6" fill="none" stroke="#FD5320" strokeWidth="1.8" />
-                <path d="M20.5 15.5L23 11.5L25.5 15.5" stroke="#FD5320" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-                <text x="32" y="22" fontSize="24" fontWeight="700" fill="white" fontFamily="inherit" letterSpacing="-0.5">CRM</text>
-              </svg>
+              <img
+                src="/logo-gocrm.png"
+                alt="GoCRM"
+                className="h-7 w-auto brightness-0 invert"
+              />
 
               <p className="text-gray-400 text-sm mt-3">
                 Manage &bull; Grow &bull; Succeed
