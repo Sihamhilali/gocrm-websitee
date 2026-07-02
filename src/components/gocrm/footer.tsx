@@ -23,7 +23,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <img
                 src="/logo-gocrm.png"
                 alt="GoCRM"
-                className="h-7 w-auto brightness-0 invert"
+                className="h-9 w-auto brightness-0 invert"
               />
 
               <p className="text-gray-400 text-sm mt-3">
