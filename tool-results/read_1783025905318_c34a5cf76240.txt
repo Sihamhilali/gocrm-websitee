@@ -1,0 +1,1114 @@
+     1→'use client';
+     2→
+     3→import { useState } from 'react';
+     4→import { motion } from 'framer-motion';
+     5→import {
+     6→  Users,
+     7→  Layers,
+     8→  Package,
+     9→  TrendingUp,
+    10→  Zap,
+    11→  BarChart3,
+    12→  GitBranch,
+    13→  FileText,
+    14→  FolderKanban,
+    15→  Share2,
+    16→  Headphones,
+    17→  Monitor,
+    18→  Calendar,
+    19→  Globe,
+    20→  Image,
+    21→  Star,
+    22→  ArrowUpRight,
+    23→  UserPlus,
+    24→  Database,
+    25→  Rocket,
+    26→  Search,
+    27→  Bell,
+    28→  Menu,
+    29→  ChevronRight,
+    30→  Check,
+    31→} from 'lucide-react';
+    32→import { Button } from '@/components/ui/button';
+    33→import {
+    34→  Accordion,
+    35→  AccordionContent,
+    36→  AccordionItem,
+    37→  AccordionTrigger,
+    38→} from '@/components/ui/accordion';
+    39→import {
+    40→  fadeInUp,
+    41→  staggerContainer,
+    42→  scaleIn,
+    43→  useInView,
+    44→  useCountUp,
+    45→} from '@/components/gocrm/animations';
+    46→
+    47→/* -------------------------------------------------------------------------- */
+    48→/*  1. TrustedBy                                                              */
+    49→/* -------------------------------------------------------------------------- */
+    50→
+    51→const companies = ['TechFlow', 'Meridian', 'NovaStar', 'Quantum', 'Apex Digital', 'ClearPath'];
+    52→
+    53→export function TrustedBy() {
+    54→  return (
+    55→    <section className="py-16 bg-white">
+    56→      <motion.p
+    57→        initial={{ opacity: 0 }}
+    58→        whileInView={{ opacity: 1 }}
+    59→        viewport={{ once: true }}
+    60→        transition={{ duration: 0.6 }}
+    61→        className="text-gray-400 text-sm font-medium uppercase tracking-wider text-center mb-10"
+    62→      >
+    63→        Trusted by innovative companies worldwide
+    64→      </motion.p>
+    65→
+    66→      {/* Desktop: static flex */}
+    67→      <div className="hidden md:flex items-center justify-center gap-12 flex-wrap opacity-60">
+    68→        {companies.map((name) => (
+    69→          <motion.span
+    70→            key={name}
+    71→            initial={{ opacity: 0, y: 10 }}
+    72→            whileInView={{ opacity: 1, y: 0 }}
+    73→            viewport={{ once: true }}
+    74→            transition={{ duration: 0.4 }}
+    75→            className="text-gray-300 text-xl font-bold select-none tracking-wide"
+    76→          >
+    77→            {name}
+    78→          </motion.span>
+    79→        ))}
+    80→      </div>
+    81→
+    82→      {/* Mobile: marquee */}
+    83→      <div className="md:hidden overflow-hidden">
+    84→        <div className="animate-marquee flex items-center gap-12 w-max">
+    85→          {[...companies, ...companies].map((name, i) => (
+    86→            <span
+    87→              key={`${name}-${i}`}
+    88→              className="text-gray-300 text-lg font-bold select-none tracking-wide whitespace-nowrap"
+    89→            >
+    90→              {name}
+    91→            </span>
+    92→          ))}
+    93→        </div>
+    94→      </div>
+    95→    </section>
+    96→  );
+    97→}
+    98→
+    99→/* -------------------------------------------------------------------------- */
+   100→/*  2. WhyGoCRM                                                               */
+   101→/* -------------------------------------------------------------------------- */
+   102→
+   103→const whyFeatures = [
+   104→  { icon: Users, title: 'CRM', desc: 'Build stronger relationships with smart contact management and deal tracking' },
+   105→  { icon: Layers, title: 'ERP', desc: 'Streamline operations from procurement to delivery with integrated workflows' },
+   106→  { icon: Package, title: 'Inventory', desc: 'Real-time stock tracking, alerts, and automated reorder management' },
+   107→  { icon: TrendingUp, title: 'Sales', desc: 'Visualize your pipeline, close deals faster with AI-powered insights' },
+   108→  { icon: Zap, title: 'Automation', desc: 'Eliminate repetitive tasks with powerful workflow automation rules' },
+   109→  { icon: BarChart3, title: 'Analytics', desc: 'Make data-driven decisions with beautiful, real-time dashboards' },
+   110→];
+   111→
+   112→export function WhyGoCRM() {
+   113→  return (
+   114→    <section className="py-24 bg-white">
+   115→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   116→        <motion.div
+   117→          initial="hidden"
+   118→          whileInView="visible"
+   119→          viewport={{ once: true, margin: '-80px' }}
+   120→          variants={staggerContainer}
+   121→          className="text-center mb-16"
+   122→        >
+   123→          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-navy">
+   124→            Why GoCRM?
+   125→          </motion.h2>
+   126→          <motion.p variants={fadeInUp} className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
+   127→            Everything your business needs in one platform
+   128→          </motion.p>
+   129→        </motion.div>
+   130→
+   131→        <motion.div
+   132→          initial="hidden"
+   133→          whileInView="visible"
+   134→          viewport={{ once: true, margin: '-60px' }}
+   135→          variants={staggerContainer}
+   136→          className="grid md:grid-cols-3 gap-6"
+   137→        >
+   138→          {whyFeatures.map((f) => (
+   139→            <motion.div
+   140→              key={f.title}
+   141→              variants={fadeInUp}
+   142→              className="group rounded-2xl border border-gray-100 bg-white p-6 hover:shadow-lg hover:shadow-navy/5 hover:border-gray-200 transition-all duration-300 hover:-translate-y-1"
+   143→            >
+   144→              <div className="w-12 h-12 rounded-xl bg-gray-50 flex items-center justify-center text-navy group-hover:text-orange transition-colors duration-300 mb-4">
+   145→                <f.icon className="w-6 h-6" />
+   146→              </div>
+   147→              <h3 className="text-lg font-semibold text-navy mb-2">{f.title}</h3>
+   148→              <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+   149→            </motion.div>
+   150→          ))}
+   151→        </motion.div>
+   152→      </div>
+   153→    </section>
+   154→  );
+   155→}
+   156→
+   157→/* -------------------------------------------------------------------------- */
+   158→/*  3. DashboardPreview                                                       */
+   159→/* -------------------------------------------------------------------------- */
+   160→
+   161→function DashboardMockup() {
+   162→  return (
+   163→    <div className="w-full">
+   164→      {/* Top bar */}
+   165→      <div className="flex items-center justify-between px-4 py-2 border-b border-gray-100 bg-gray-50/50">
+   166→        <div className="flex items-center gap-3">
+   167→          <div className="w-6 h-6 rounded bg-navy/10 flex items-center justify-center">
+   168→            <Menu className="w-3.5 h-3.5 text-navy/50" />
+   169→          </div>
+   170→          <span className="text-xs font-semibold text-navy">GoCRM</span>
+   171→        </div>
+   172→        <div className="hidden sm:flex items-center gap-2 bg-gray-100 rounded-lg px-3 py-1.5">
+   173→          <Search className="w-3 h-3 text-gray-400" />
+   174→          <span className="text-[10px] text-gray-400">Search...</span>
+   175→        </div>
+   176→        <div className="flex items-center gap-2">
+   177→          <Bell className="w-4 h-4 text-gray-400" />
+   178→          <div className="w-6 h-6 rounded-full bg-orange text-white text-[9px] font-bold flex items-center justify-center">
+   179→            JD
+   180→          </div>
+   181→        </div>
+   182→      </div>
+   183→
+   184→      <div className="flex flex-1 min-h-0">
+   185→        {/* Sidebar */}
+   186→        <div className="hidden md:flex flex-col gap-4 w-12 border-r border-gray-100 py-4 px-2 items-center bg-gray-50/30">
+   187→          {[
+   188→            <div key="h" className="w-5 h-5 rounded bg-orange/10 flex items-center justify-center"><div className="w-2.5 h-2.5 rounded-sm bg-orange" /></div>,
+   189→            <div key="p" className="w-5 h-5 rounded bg-gray-100" />,
+   190→            <div key="c" className="w-5 h-5 rounded bg-gray-100" />,
+   191→            <div key="s" className="w-5 h-5 rounded bg-gray-100" />,
+   192→            <div key="i" className="w-5 h-5 rounded bg-gray-100" />,
+   193→          ].map((el, i) => (
+   194→            <div
+   195→              key={i}
+   196→              className={`${i === 0 ? 'ring-2 ring-orange/30 rounded-lg' : 'opacity-40'}`}
+   197→            >
+   198→              {el}
+   199→            </div>
+   200→          ))}
+   201→        </div>
+   202→
+   203→        {/* Main content */}
+   204→        <div className="flex-1 p-4 space-y-4">
+   205→          {/* Metric cards */}
+   206→          <div className="grid grid-cols-3 gap-3">
+   207→            {[
+   208→              { label: 'Revenue', value: '$48.2K', change: '+12.5%', color: 'text-emerald-600' },
+   209→              { label: 'Customers', value: '2,847', change: '+8.1%', color: 'text-emerald-600' },
+   210→              { label: 'Deals', value: '384', change: '+23.7%', color: 'text-emerald-600' },
+   211→            ].map((m) => (
+   212→              <div key={m.label} className="bg-gray-50 rounded-xl p-3">
+   213→                <p className="text-[10px] text-gray-400 font-medium">{m.label}</p>
+   214→                <p className="text-sm font-bold text-navy mt-0.5">{m.value}</p>
+   215→                <p className={`text-[9px] ${m.color} font-medium mt-0.5`}>{m.change}</p>
+   216→              </div>
+   217→            ))}
+   218→          </div>
+   219→
+   220→          {/* Chart area */}
+   221→          <div className="bg-gray-50 rounded-xl p-3">
+   222→            <div className="flex items-center justify-between mb-2">
+   223→              <p className="text-[10px] font-semibold text-navy">Revenue Overview</p>
+   224→              <span className="text-[9px] text-gray-400">Last 7 days</span>
+   225→            </div>
+   226→            <svg viewBox="0 0 300 80" className="w-full h-20">
+   227→              <defs>
+   228→                <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+   229→                  <stop offset="0%" stopColor="#FD5320" stopOpacity="0.2" />
+   230→                  <stop offset="100%" stopColor="#FD5320" stopOpacity="0" />
+   231→                </linearGradient>
+   232→              </defs>
+   233→              <path
+   234→                d="M0,60 Q30,55 60,45 T120,35 T180,25 T240,20 T300,10"
+   235→                fill="none"
+   236→                stroke="#FD5320"
+   237→                strokeWidth="2"
+   238→              />
+   239→              <path
+   240→                d="M0,60 Q30,55 60,45 T120,35 T180,25 T240,20 T300,10 V80 H0 Z"
+   241→                fill="url(#chartGrad)"
+   242→              />
+   243→            </svg>
+   244→          </div>
+   245→
+   246→          {/* Recent table */}
+   247→          <div className="bg-gray-50 rounded-xl p-3">
+   248→            <p className="text-[10px] font-semibold text-navy mb-2">Recent Deals</p>
+   249→            <div className="space-y-2">
+   250→              {[
+   251→                { name: 'Acme Corp', amount: '$12,400', status: 'Won', bg: 'bg-emerald-100 text-emerald-700' },
+   252→                { name: 'GlobalTech', amount: '$8,750', status: 'Active', bg: 'bg-orange-light text-orange' },
+   253→                { name: 'StartUp Inc', amount: '$5,200', status: 'Won', bg: 'bg-emerald-100 text-emerald-700' },
+   254→              ].map((d) => (
+   255→                <div key={d.name} className="flex items-center justify-between">
+   256→                  <div className="flex items-center gap-2">
+   257→                    <div className="w-5 h-5 rounded-full bg-gray-200 flex items-center justify-center">
+   258→                      <span className="text-[7px] font-bold text-gray-500">
+   259→                        {d.name.split(' ').map((w) => w[0]).join('')}
+   260→                      </span>
+   261→                    </div>
+   262→                    <span className="text-[10px] text-navy font-medium">{d.name}</span>
+   263→                  </div>
+   264→                  <div className="flex items-center gap-2">
+   265→                    <span className="text-[10px] text-navy font-semibold">{d.amount}</span>
+   266→                    <span className={`text-[8px] px-1.5 py-0.5 rounded-full font-medium ${d.bg}`}>
+   267→                      {d.status}
+   268→                    </span>
+   269→                  </div>
+   270→                </div>
+   271→              ))}
+   272→            </div>
+   273→          </div>
+   274→        </div>
+   275→      </div>
+   276→    </div>
+   277→  );
+   278→}
+   279→
+   280→export function DashboardPreview() {
+   281→  return (
+   282→    <section className="py-24 bg-gray-50">
+   283→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   284→        <motion.div
+   285→          initial="hidden"
+   286→          whileInView="visible"
+   287→          viewport={{ once: true, margin: '-80px' }}
+   288→          variants={staggerContainer}
+   289→          className="text-center mb-16"
+   290→        >
+   291→          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-navy">
+   292→            See everything at a glance
+   293→          </motion.h2>
+   294→          <motion.p variants={fadeInUp} className="text-gray-500 text-lg mt-4">
+   295→            Your business dashboard, beautifully designed
+   296→          </motion.p>
+   297→        </motion.div>
+   298→
+   299→        <motion.div
+   300→          initial="hidden"
+   301→          whileInView="visible"
+   302→          viewport={{ once: true, margin: '-60px' }}
+   303→          variants={scaleIn}
+   304→          className="relative max-w-5xl mx-auto"
+   305→        >
+   306→          {/* Floating stat widgets */}
+   307→          <div className="hidden lg:block">
+   308→            <motion.div
+   309→              initial={{ opacity: 0, x: -30 }}
+   310→              whileInView={{ opacity: 1, x: 0 }}
+   311→              viewport={{ once: true }}
+   312→              transition={{ delay: 0.4, duration: 0.6 }}
+   313→              className="absolute -left-8 top-16 bg-white rounded-xl shadow-lg shadow-navy/5 border border-gray-100 px-4 py-3 animate-float z-10"
+   314→            >
+   315→              <div className="flex items-center gap-2">
+   316→                <div className="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center">
+   317→                  <ArrowUpRight className="w-4 h-4 text-emerald-600" />
+   318→                </div>
+   319→                <div>
+   320→                  <p className="text-xs font-bold text-navy">+42% Revenue</p>
+   321→                  <p className="text-[10px] text-gray-400">vs last quarter</p>
+   322→                </div>
+   323→              </div>
+   324→            </motion.div>
+   325→
+   326→            <motion.div
+   327→              initial={{ opacity: 0, x: 30 }}
+   328→              whileInView={{ opacity: 1, x: 0 }}
+   329→              viewport={{ once: true }}
+   330→              transition={{ delay: 0.6, duration: 0.6 }}
+   331→              className="absolute -right-8 top-32 bg-white rounded-xl shadow-lg shadow-navy/5 border border-gray-100 px-4 py-3 animate-float-delayed z-10"
+   332→            >
+   333→              <div className="flex items-center gap-2">
+   334→                <div className="w-8 h-8 rounded-lg bg-orange-light flex items-center justify-center">
+   335→                  <Users className="w-4 h-4 text-orange" />
+   336→                </div>
+   337→                <div>
+   338→                  <p className="text-xs font-bold text-navy">2,847 Customers</p>
+   339→                  <p className="text-[10px] text-gray-400">active users</p>
+   340→                </div>
+   341→              </div>
+   342→            </motion.div>
+   343→
+   344→            <motion.div
+   345→              initial={{ opacity: 0, y: 20 }}
+   346→              whileInView={{ opacity: 1, y: 0 }}
+   347→              viewport={{ once: true }}
+   348→              transition={{ delay: 0.8, duration: 0.6 }}
+   349→              className="absolute -right-4 bottom-20 bg-white rounded-xl shadow-lg shadow-navy/5 border border-gray-100 px-4 py-3 animate-float-slow z-10"
+   350→            >
+   351→              <div className="flex items-center gap-2">
+   352→                <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center">
+   353→                  <Zap className="w-4 h-4 text-blue-600" />
+   354→                </div>
+   355→                <div>
+   356→                  <p className="text-xs font-bold text-navy">98.5% Uptime</p>
+   357→                  <p className="text-[10px] text-gray-400">last 30 days</p>
+   358→                </div>
+   359→              </div>
+   360→            </motion.div>
+   361→          </div>
+   362→
+   363→          {/* Laptop mockup */}
+   364→          <div className="rounded-3xl bg-navy p-2 shadow-2xl shadow-navy/20">
+   365→            <div className="rounded-2xl bg-white overflow-hidden">
+   366→              <DashboardMockup />
+   367→            </div>
+   368→          </div>
+   369→        </motion.div>
+   370→      </div>
+   371→    </section>
+   372→  );
+   373→}
+   374→
+   375→/* -------------------------------------------------------------------------- */
+   376→/*  4. FeaturesSection                                                        */
+   377→/* -------------------------------------------------------------------------- */
+   378→
+   379→const mainFeatures = [
+   380→  { icon: Users, title: 'Customer Management', desc: '360\u00b0 view of every customer interaction' },
+   381→  { icon: GitBranch, title: 'Sales Pipeline', desc: 'Visual pipeline with drag-and-drop stages' },
+   382→  { icon: FileText, title: 'Invoices', desc: 'Create, send, and track professional invoices' },
+   383→  { icon: Package, title: 'Inventory', desc: 'Smart stock management with auto-reorder' },
+   384→  { icon: FolderKanban, title: 'Projects', desc: 'Plan, execute, and deliver projects on time' },
+   385→  { icon: Share2, title: 'Affiliate Management', desc: 'Track and manage your partner programs' },
+   386→  { icon: BarChart3, title: 'Reports', desc: 'Comprehensive reports with custom filters' },
+   387→  { icon: Headphones, title: 'Support', desc: 'Multi-channel ticket management system' },
+   388→  { icon: Monitor, title: 'POS', desc: 'Complete point-of-sale for retail stores' },
+   389→  { icon: Calendar, title: 'Calendar', desc: 'Schedule meetings and track deadlines' },
+   390→  { icon: Globe, title: 'Omnichannel Sales', desc: 'Sell across web, mobile, social, and in-store' },
+   391→  { icon: Image, title: 'Media Library', desc: 'Centralized asset management for your team' },
+   392→];
+   393→
+   394→export function FeaturesSection() {
+   395→  return (
+   396→    <section className="py-24 bg-white">
+   397→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   398→        <motion.div
+   399→          initial="hidden"
+   400→          whileInView="visible"
+   401→          viewport={{ once: true, margin: '-80px' }}
+   402→          variants={staggerContainer}
+   403→          className="text-center mb-16"
+   404→        >
+   405→          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-navy">
+   406→            Powerful features for every need
+   407→          </motion.h2>
+   408→          <motion.p variants={fadeInUp} className="text-gray-500 text-lg mt-4 max-w-2xl mx-auto">
+   409→            From lead to revenue, GoCRM covers your entire business
+   410→          </motion.p>
+   411→        </motion.div>
+   412→
+   413→        <motion.div
+   414→          initial="hidden"
+   415→          whileInView="visible"
+   416→          viewport={{ once: true, margin: '-40px' }}
+   417→          variants={staggerContainer}
+   418→          className="grid md:grid-cols-4 gap-5"
+   419→        >
+   420→          {mainFeatures.map((f) => (
+   421→            <motion.div
+   422→              key={f.title}
+   423→              variants={fadeInUp}
+   424→              className="group rounded-xl border border-gray-100 p-5 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-default"
+   425→            >
+   426→              <div className="w-10 h-10 rounded-lg bg-gray-50 flex items-center justify-center text-navy group-hover:text-orange transition-colors duration-300 mb-3">
+   427→                <f.icon className="w-5 h-5" />
+   428→              </div>
+   429→              <h3 className="text-sm font-semibold text-navy mb-1">{f.title}</h3>
+   430→              <p className="text-xs text-gray-500 leading-relaxed">{f.desc}</p>
+   431→            </motion.div>
+   432→          ))}
+   433→        </motion.div>
+   434→      </div>
+   435→    </section>
+   436→  );
+   437→}
+   438→
+   439→/* -------------------------------------------------------------------------- */
+   440→/*  5. GrowthSection                                                          */
+   441→/* -------------------------------------------------------------------------- */
+   442→
+   443→const growthStats = [
+   444→  { value: 47, suffix: '%', label: 'Average Revenue Increase' },
+   445→  { value: 3.2, suffix: 'x', label: 'Faster Deal Closings', decimal: true },
+   446→  { value: 65, suffix: '%', label: 'Time Saved on Admin' },
+   447→  { value: 98, suffix: '%', label: 'Customer Satisfaction' },
+   448→];
+   449→
+   450→function GrowthStatCard({
+   451→  value,
+   452→  suffix,
+   453→  label,
+   454→  decimal,
+   455→  isInView,
+   456→}: {
+   457→  value: number;
+   458→  suffix: string;
+   459→  label: string;
+   460→  decimal?: boolean;
+   461→  isInView: boolean;
+   462→}) {
+   463→  const displayed = useCountUp(decimal ? Math.round(value * 10) : value, 2000, isInView);
+   464→  const displayValue = decimal ? (displayed / 10).toFixed(1) : displayed;
+   465→
+   466→  return (
+   467→    <div className="text-center">
+   468→      <p className="text-5xl md:text-6xl font-bold text-white">
+   469→        {displayValue}
+   470→        <span className="text-orange">{suffix}</span>
+   471→      </p>
+   472→      <p className="text-gray-400 text-sm mt-2">{label}</p>
+   473→    </div>
+   474→  );
+   475→}
+   476→
+   477→function GrowthChart() {
+   478→  return (
+   479→    <svg
+   480→      viewBox="0 0 800 200"
+   481→      className="w-full max-w-3xl mx-auto mt-16"
+   482→      preserveAspectRatio="xMidYMid meet"
+   483→    >
+   484→      <defs>
+   485→        <linearGradient id="growthAreaGrad" x1="0" y1="0" x2="0" y2="1">
+   486→          <stop offset="0%" stopColor="#FD5320" stopOpacity="0.3" />
+   487→          <stop offset="100%" stopColor="#FD5320" stopOpacity="0" />
+   488→        </linearGradient>
+   489→      </defs>
+   490→      {/* Grid lines */}
+   491→      {[40, 80, 120, 160].map((y) => (
+   492→        <line
+   493→          key={y}
+   494→          x1="0"
+   495→          y1={y}
+   496→          x2="800"
+   497→          y2={y}
+   498→          stroke="rgba(255,255,255,0.06)"
+   499→          strokeWidth="1"
+   500→        />
+   501→      ))}
+   502→      {/* Area fill */}
+   503→      <path
+   504→        d="M0,180 C50,170 100,160 150,140 C200,120 250,130 300,100 C350,70 400,80 450,60 C500,40 550,50 600,30 C650,15 700,20 750,10 L800,5 L800,200 L0,200 Z"
+   505→        fill="url(#growthAreaGrad)"
+   506→      />
+   507→      {/* Line */}
+   508→      <path
+   509→        d="M0,180 C50,170 100,160 150,140 C200,120 250,130 300,100 C350,70 400,80 450,60 C500,40 550,50 600,30 C650,15 700,20 750,10 L800,5"
+   510→        fill="none"
+   511→        stroke="#FD5320"
+   512→        strokeWidth="3"
+   513→        strokeLinecap="round"
+   514→      />
+   515→      {/* Dots */}
+   516→      {[
+   517→        [0, 180],
+   518→        [150, 140],
+   519→        [300, 100],
+   520→        [450, 60],
+   521→        [600, 30],
+   522→        [800, 5],
+   523→      ].map(([cx, cy], i) => (
+   524→        <circle
+   525→          key={i}
+   526→          cx={cx}
+   527→          cy={cy}
+   528→          r="4"
+   529→          fill="#FD5320"
+   530→          stroke="#011134"
+   531→          strokeWidth="2"
+   532→        />
+   533→      ))}
+   534→      {/* Labels */}
+   535→      <text x="0" y="195" fill="rgba(255,255,255,0.3)" fontSize="11" fontFamily="sans-serif">
+   536→        Jan
+   537→      </text>
+   538→      <text x="145" y="195" fill="rgba(255,255,255,0.3)" fontSize="11" fontFamily="sans-serif">
+   539→        Mar
+   540→      </text>
+   541→      <text x="295" y="195" fill="rgba(255,255,255,0.3)" fontSize="11" fontFamily="sans-serif">
+   542→        May
+   543→      </text>
+   544→      <text x="440" y="195" fill="rgba(255,255,255,0.3)" fontSize="11" fontFamily="sans-serif">
+   545→        Jul
+   546→      </text>
+   547→      <text x="590" y="195" fill="rgba(255,255,255,0.3)" fontSize="11" fontFamily="sans-serif">
+   548→        Sep
+   549→      </text>
+   550→      <text x="770" y="195" fill="rgba(255,255,255,0.3)" fontSize="11" fontFamily="sans-serif">
+   551→        Dec
+   552→      </text>
+   553→    </svg>
+   554→  );
+   555→}
+   556→
+   557→export function GrowthSection() {
+   558→  const { ref, isInView } = useInView(0.2);
+   559→
+   560→  return (
+   561→    <section className="py-24 bg-navy text-white">
+   562→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+   563→        <motion.div
+   564→          initial="hidden"
+   565→          whileInView="visible"
+   566→          viewport={{ once: true, margin: '-80px' }}
+   567→          variants={staggerContainer}
+   568→          className="text-center mb-16"
+   569→        >
+   570→          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold">
+   571→            Businesses grow faster with GoCRM
+   572→          </motion.h2>
+   573→          <motion.p variants={fadeInUp} className="text-gray-300 text-lg mt-4">
+   574→            Real results from real companies
+   575→          </motion.p>
+   576→        </motion.div>
+   577→
+   578→        <motion.div
+   579→          initial="hidden"
+   580→          whileInView="visible"
+   581→          viewport={{ once: true }}
+   582→          variants={staggerContainer}
+   583→          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12"
+   584→        >
+   585→          {growthStats.map((s) => (
+   586→            <motion.div key={s.label} variants={fadeInUp}>
+   587→              <GrowthStatCard
+   588→                value={s.value}
+   589→                suffix={s.suffix}
+   590→                label={s.label}
+   591→                decimal={s.decimal}
+   592→                isInView={isInView}
+   593→              />
+   594→            </motion.div>
+   595→          ))}
+   596→        </motion.div>
+   597→
+   598→        <motion.div
+   599→          initial={{ opacity: 0, y: 30 }}
+   600→          whileInView={{ opacity: 1, y: 0 }}
+   601→          viewport={{ once: true }}
+   602→          transition={{ duration: 0.8, delay: 0.3 }}
+   603→        >
+   604→          <GrowthChart />
+   605→        </motion.div>
+   606→      </div>
+   607→    </section>
+   608→  );
+   609→}
+   610→
+   611→/* -------------------------------------------------------------------------- */
+   612→/*  6. HowItWorks                                                             */
+   613→/* -------------------------------------------------------------------------- */
+   614→
+   615→const steps = [
+   616→  {
+   617→    number: '01',
+   618→    title: 'Create Your Account',
+   619→    desc: 'Sign up in seconds with your email. No credit card required.',
+   620→    icon: UserPlus,
+   621→  },
+   622→  {
+   623→    number: '02',
+   624→    title: 'Import Your Data',
+   625→    desc: 'Seamlessly migrate from spreadsheets or other CRMs with our import wizard.',
+   626→    icon: Database,
+   627→  },
+   628→  {
+   629→    number: '03',
+   630→    title: 'Grow Your Business',
+   631→    desc: 'Start managing customers, closing deals, and scaling operations.',
+   632→    icon: Rocket,
+   633→  },
+   634→];
+   635→
+   636→export function HowItWorks() {
+   637→  return (
+   638→    <section className="py-24 bg-white">
+   639→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   640→        <motion.div
+   641→          initial="hidden"
+   642→          whileInView="visible"
+   643→          viewport={{ once: true, margin: '-80px' }}
+   644→          variants={staggerContainer}
+   645→          className="text-center mb-16"
+   646→        >
+   647→          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-navy">
+   648→            Get started in minutes
+   649→          </motion.h2>
+   650→        </motion.div>
+   651→
+   652→        <motion.div
+   653→          initial="hidden"
+   654→          whileInView="visible"
+   655→          viewport={{ once: true, margin: '-60px' }}
+   656→          variants={staggerContainer}
+   657→          className="flex flex-col md:flex-row items-stretch gap-8 md:gap-0"
+   658→        >
+   659→          {steps.map((step, i) => (
+   660→            <motion.div
+   661→              key={step.number}
+   662→              variants={fadeInUp}
+   663→              className="flex-1 relative group"
+   664→            >
+   665→              {/* Connector arrow (between steps, desktop only) */}
+   666→              {i < steps.length - 1 && (
+   667→                <div className="hidden md:flex absolute top-12 -right-4 z-10 text-gray-200">
+   668→                  <ChevronRight className="w-8 h-8" />
+   669→                </div>
+   670→              )}
+   671→
+   672→              <div className="relative bg-gray-50 rounded-2xl p-6 md:p-8 h-full border border-gray-100 group-hover:border-gray-200 group-hover:shadow-md transition-all duration-300">
+   673→                {/* Large background step number */}
+   674→                <span className="absolute top-2 right-4 text-6xl md:text-7xl font-bold text-orange/10 select-none leading-none">
+   675→                  {step.number}
+   676→                </span>
+   677→
+   678→                <div className="relative z-10">
+   679→                  <div className="w-12 h-12 rounded-xl bg-orange/10 flex items-center justify-center text-orange mb-5">
+   680→                    <step.icon className="w-6 h-6" />
+   681→                  </div>
+   682→                  <h3 className="text-lg font-semibold text-navy mb-2">{step.title}</h3>
+   683→                  <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
+   684→                </div>
+   685→              </div>
+   686→            </motion.div>
+   687→          ))}
+   688→        </motion.div>
+   689→      </div>
+   690→    </section>
+   691→  );
+   692→}
+   693→
+   694→/* -------------------------------------------------------------------------- */
+   695→/*  7. Testimonials                                                           */
+   696→/* -------------------------------------------------------------------------- */
+   697→
+   698→const testimonials = [
+   699→  {
+   700→    quote:
+   701→      'GoCRM transformed how we manage our sales pipeline. We closed 40% more deals in the first quarter alone.',
+   702→    name: 'Sarah Chen',
+   703→    title: 'CEO',
+   704→    company: 'TechFlow',
+   705→    initials: 'SC',
+   706→    color: 'bg-rose-100 text-rose-700',
+   707→  },
+   708→  {
+   709→    quote:
+   710→      'The all-in-one approach saved us from juggling 5 different tools. Everything we need is right here.',
+   711→    name: 'Marcus Johnson',
+   712→    title: 'COO',
+   713→    company: 'Meridian Group',
+   714→    initials: 'MJ',
+   715→    color: 'bg-sky-100 text-sky-700',
+   716→  },
+   717→  {
+   718→    quote:
+   719→      'The reporting dashboards are incredibly powerful. We finally have real visibility into our business performance.',
+   720→    name: 'Elena Rodriguez',
+   721→    title: 'VP Sales',
+   722→    company: 'NovaStar',
+   723→    initials: 'ER',
+   724→    color: 'bg-amber-100 text-amber-700',
+   725→  },
+   726→  {
+   727→    quote:
+   728→      'Implementation was seamless. Our team was up and running in less than a day. The support team is outstanding.',
+   729→    name: 'David Park',
+   730→    title: 'Founder',
+   731→    company: 'Quantum Labs',
+   732→    initials: 'DP',
+   733→    color: 'bg-emerald-100 text-emerald-700',
+   734→  },
+   735→];
+   736→
+   737→function StarRating() {
+   738→  return (
+   739→    <div className="flex gap-0.5">
+   740→      {Array.from({ length: 5 }).map((_, i) => (
+   741→        <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+   742→      ))}
+   743→    </div>
+   744→  );
+   745→}
+   746→
+   747→export function Testimonials() {
+   748→  return (
+   749→    <section className="py-24 bg-gray-50">
+   750→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   751→        <motion.div
+   752→          initial="hidden"
+   753→          whileInView="visible"
+   754→          viewport={{ once: true, margin: '-80px' }}
+   755→          variants={staggerContainer}
+   756→          className="text-center mb-16"
+   757→        >
+   758→          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-navy">
+   759→            Loved by businesses worldwide
+   760→          </motion.h2>
+   761→        </motion.div>
+   762→
+   763→        <motion.div
+   764→          initial="hidden"
+   765→          whileInView="visible"
+   766→          viewport={{ once: true, margin: '-40px' }}
+   767→          variants={staggerContainer}
+   768→          className="grid md:grid-cols-2 gap-6"
+   769→        >
+   770→          {testimonials.map((t) => (
+   771→            <motion.div
+   772→              key={t.name}
+   773→              variants={fadeInUp}
+   774→              className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 hover:shadow-md transition-shadow duration-300"
+   775→            >
+   776→              <StarRating />
+   777→              <p className="text-gray-600 mt-4 mb-6 leading-relaxed text-sm md:text-base">
+   778→                &ldquo;{t.quote}&rdquo;
+   779→              </p>
+   780→              <div className="flex items-center gap-3">
+   781→                <div
+   782→                  className={`w-10 h-10 rounded-full ${t.color} flex items-center justify-center text-xs font-bold`}
+   783→                >
+   784→                  {t.initials}
+   785→                </div>
+   786→                <div>
+   787→                  <p className="text-sm font-semibold text-navy">{t.name}</p>
+   788→                  <p className="text-xs text-gray-500">
+   789→                    {t.title}, {t.company}
+   790→                  </p>
+   791→                </div>
+   792→              </div>
+   793→            </motion.div>
+   794→          ))}
+   795→        </motion.div>
+   796→      </div>
+   797→    </section>
+   798→  );
+   799→}
+   800→
+   801→/* -------------------------------------------------------------------------- */
+   802→/*  8. PricingPreview                                                         */
+   803→/* -------------------------------------------------------------------------- */
+   804→
+   805→const plans = [
+   806→  {
+   807→    name: 'Starter',
+   808→    priceMonthly: 0,
+   809→    priceAnnual: 0,
+   810→    desc: 'Perfect for freelancers',
+   811→    features: ['100 contacts', '1 user', 'Basic reports', 'Email support'],
+   812→    highlighted: false,
+   813→    cta: 'Get Started',
+   814→    ctaVariant: 'default' as const,
+   815→  },
+   816→  {
+   817→    name: 'Professional',
+   818→    priceMonthly: 49,
+   819→    priceAnnual: 39,
+   820→    desc: 'Best for growing teams',
+   821→    features: [
+   822→      '10,000 contacts',
+   823→      '10 users',
+   824→      'Advanced reports',
+   825→      'Priority support',
+   826→      'Automation',
+   827→      'API access',
+   828→    ],
+   829→    highlighted: true,
+   830→    badge: 'Most Popular',
+   831→    cta: 'Get Started',
+   832→    ctaVariant: 'default' as const,
+   833→  },
+   834→  {
+   835→    name: 'Enterprise',
+   836→    priceMonthly: 99,
+   837→    priceAnnual: 79,
+   838→    desc: 'For large organizations',
+   839→    features: [
+   840→      'Unlimited contacts',
+   841→      'Unlimited users',
+   842→      'Custom reports',
+   843→      'Dedicated support',
+   844→      'Custom integrations',
+   845→      'SSO',
+   846→    ],
+   847→    highlighted: false,
+   848→    cta: 'Get Started',
+   849→    ctaVariant: 'outline' as const,
+   850→  },
+   851→];
+   852→
+   853→export function PricingPreview() {
+   854→  const [annual, setAnnual] = useState(false);
+   855→
+   856→  return (
+   857→    <section className="py-24 bg-white">
+   858→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   859→        <motion.div
+   860→          initial="hidden"
+   861→          whileInView="visible"
+   862→          viewport={{ once: true, margin: '-80px' }}
+   863→          variants={staggerContainer}
+   864→          className="text-center mb-12"
+   865→        >
+   866→          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-navy">
+   867→            Simple, transparent pricing
+   868→          </motion.h2>
+   869→          <motion.p variants={fadeInUp} className="text-gray-500 text-lg mt-4">
+   870→            Start free. Scale as you grow.
+   871→          </motion.p>
+   872→
+   873→          {/* Toggle */}
+   874→          <motion.div variants={fadeInUp} className="flex items-center justify-center gap-3 mt-8">
+   875→            <span className={`text-sm ${!annual ? 'text-navy font-medium' : 'text-gray-400'}`}>
+   876→              Monthly
+   877→            </span>
+   878→            <button
+   879→              onClick={() => setAnnual(!annual)}
+   880→              className={`relative w-12 h-6 rounded-full transition-colors duration-300 ${
+   881→                annual ? 'bg-orange' : 'bg-gray-200'
+   882→              }`}
+   883→              aria-label="Toggle billing period"
+   884→            >
+   885→              <span
+   886→                className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white shadow transition-transform duration-300 ${
+   887→                  annual ? 'translate-x-6' : 'translate-x-0'
+   888→                }`}
+   889→              />
+   890→            </button>
+   891→            <span className={`text-sm ${annual ? 'text-navy font-medium' : 'text-gray-400'}`}>
+   892→              Annual
+   893→              <span className="ml-1.5 text-xs text-orange font-medium">Save 20%</span>
+   894→            </span>
+   895→          </motion.div>
+   896→        </motion.div>
+   897→
+   898→        <motion.div
+   899→          initial="hidden"
+   900→          whileInView="visible"
+   901→          viewport={{ once: true, margin: '-40px' }}
+   902→          variants={staggerContainer}
+   903→          className="grid md:grid-cols-3 gap-6 items-center"
+   904→        >
+   905→          {plans.map((plan) => (
+   906→            <motion.div
+   907→              key={plan.name}
+   908→              variants={fadeInUp}
+   909→              className={`relative rounded-2xl border p-6 md:p-8 transition-all duration-300 ${
+   910→                plan.highlighted
+   911→                  ? 'border-2 border-orange scale-105 shadow-xl md:-my-4'
+   912→                  : 'border-gray-100 hover:shadow-md'
+   913→              }`}
+   914→            >
+   915→              {plan.badge && (
+   916→                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-orange text-white text-xs font-semibold px-4 py-1 rounded-full">
+   917→                  {plan.badge}
+   918→                </span>
+   919→              )}
+   920→
+   921→              <div className="text-center">
+   922→                <h3 className="text-lg font-semibold text-navy">{plan.name}</h3>
+   923→                <p className="text-sm text-gray-500 mt-1">{plan.desc}</p>
+   924→
+   925→                <div className="mt-6 mb-6">
+   926→                  <span className="text-4xl md:text-5xl font-bold text-navy">
+   927→                    ${annual ? plan.priceAnnual : plan.priceMonthly}
+   928→                  </span>
+   929→                  <span className="text-gray-400 text-sm">/mo</span>
+   930→                </div>
+   931→
+   932→                <Button
+   933→                  className={`w-full rounded-lg py-2.5 ${
+   934→                    plan.highlighted
+   935→                      ? 'bg-orange hover:bg-orange-hover text-white'
+   936→                      : plan.name === 'Enterprise'
+   937→                        ? 'bg-navy hover:bg-navy-light text-white'
+   938→                        : 'bg-orange hover:bg-orange-hover text-white'
+   939→                  }`}
+   940→                  variant={plan.ctaVariant}
+   941→                >
+   942→                  {plan.cta}
+   943→                </Button>
+   944→              </div>
+   945→
+   946→              <ul className="mt-8 space-y-3">
+   947→                {plan.features.map((f) => (
+   948→                  <li key={f} className="flex items-center gap-2.5 text-sm text-gray-600">
+   949→                    <Check className="w-4 h-4 text-orange shrink-0" />
+   950→                    {f}
+   951→                  </li>
+   952→                ))}
+   953→              </ul>
+   954→            </motion.div>
+   955→          ))}
+   956→        </motion.div>
+   957→      </div>
+   958→    </section>
+   959→  );
+   960→}
+   961→
+   962→/* -------------------------------------------------------------------------- */
+   963→/*  9. FAQSection                                                             */
+   964→/* -------------------------------------------------------------------------- */
+   965→
+   966→const faqs = [
+   967→  {
+   968→    q: 'What is GoCRM?',
+   969→    a: 'GoCRM is an all-in-one CRM + ERP platform that helps businesses manage customers, sales, inventory, invoices, projects, and analytics from a single, powerful interface.',
+   970→  },
+   971→  {
+   972→    q: 'Is there a free trial?',
+   973→    a: 'Yes! GoCRM offers a free 14-day trial with full access to all Professional features. No credit card required.',
+   974→  },
+   975→  {
+   976→    q: 'Can I import my existing data?',
+   977→    a: 'Absolutely. GoCRM supports importing data from spreadsheets (CSV, Excel) and other CRMs. Our import wizard makes migration seamless.',
+   978→  },
+   979→  {
+   980→    q: 'Is my data secure?',
+   981→    a: 'Security is our top priority. We use 256-bit SSL encryption, regular security audits, and enterprise-grade infrastructure to protect your data.',
+   982→  },
+   983→  {
+   984→    q: 'Can I customize GoCRM for my business?',
+   985→    a: 'Yes, GoCRM is highly customizable. From custom fields and pipelines to branded invoices and reports, you can tailor the platform to your exact needs.',
+   986→  },
+   987→  {
+   988→    q: 'Do you offer support?',
+   989→    a: 'We offer email support for all plans, priority support for Professional, and dedicated support with a named account manager for Enterprise customers.',
+   990→  },
+   991→];
+   992→
+   993→export function FAQSection() {
+   994→  return (
+   995→    <section className="py-24 bg-gray-50">
+   996→      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+   997→        <motion.div
+   998→          initial="hidden"
+   999→          whileInView="visible"
+  1000→          viewport={{ once: true, margin: '-80px' }}
+  1001→          variants={staggerContainer}
+  1002→          className="text-center mb-16"
+  1003→        >
+  1004→          <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-bold text-navy">
+  1005→            Frequently asked questions
+  1006→          </motion.h2>
+  1007→        </motion.div>
+  1008→
+  1009→        <motion.div
+  1010→          initial="hidden"
+  1011→          whileInView="visible"
+  1012→          viewport={{ once: true, margin: '-40px' }}
+  1013→          variants={fadeInUp}
+  1014→        >
+  1015→          <Accordion type="single" collapsible className="w-full">
+  1016→            {faqs.map((faq, i) => (
+  1017→              <AccordionItem
+  1018→                key={i}
+  1019→                value={`faq-${i}`}
+  1020→                className="bg-white rounded-xl px-6 mb-3 border border-gray-100"
+  1021→              >
+  1022→                <AccordionTrigger className="text-navy font-medium text-sm md:text-base hover:no-underline py-4">
+  1023→                  {faq.q}
+  1024→                </AccordionTrigger>
+  1025→                <AccordionContent className="text-gray-500 text-sm leading-relaxed">
+  1026→                  {faq.a}
+  1027→                </AccordionContent>
+  1028→              </AccordionItem>
+  1029→            ))}
+  1030→          </Accordion>
+  1031→        </motion.div>
+  1032→      </div>
+  1033→    </section>
+  1034→  );
+  1035→}
+  1036→
+  1037→/* -------------------------------------------------------------------------- */
+  1038→/*  10. CTASection                                                            */
+  1039→/* -------------------------------------------------------------------------- */
+  1040→
+  1041→export function CTASection() {
+  1042→  return (
+  1043→    <section className="py-24 bg-navy text-white relative overflow-hidden">
+  1044→      {/* Decorative gradient orbs */}
+  1045→      <div className="absolute top-0 left-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+  1046→      <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange/5 rounded-full blur-3xl translate-x-1/2 translate-y-1/2" />
+  1047→
+  1048→      {/* Subtle grid pattern */}
+  1049→      <div
+  1050→        className="absolute inset-0 opacity-[0.03]"
+  1051→        style={{
+  1052→          backgroundImage:
+  1053→            'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+  1054→          backgroundSize: '60px 60px',
+  1055→        }}
+  1056→      />
+  1057→
+  1058→      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  1059→        <motion.div
+  1060→          initial="hidden"
+  1061→          whileInView="visible"
+  1062→          viewport={{ once: true, margin: '-80px' }}
+  1063→          variants={staggerContainer}
+  1064→          className="text-center"
+  1065→        >
+  1066→          <motion.h2
+  1067→            variants={fadeInUp}
+  1068→            className="text-4xl md:text-5xl font-bold leading-tight"
+  1069→          >
+  1070→            Ready to transform your business?
+  1071→          </motion.h2>
+  1072→          <motion.p variants={fadeInUp} className="text-gray-300 text-lg mt-6 max-w-2xl mx-auto">
+  1073→            Join 5,000+ companies already using GoCRM to manage, grow, and succeed.
+  1074→          </motion.p>
+  1075→          <motion.div
+  1076→            variants={fadeInUp}
+  1077→            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
+  1078→          >
+  1079→            <Button
+  1080→              size="lg"
+  1081→              className="bg-orange hover:bg-orange-hover text-white rounded-lg px-8 py-3 text-base font-medium shadow-lg shadow-orange/20 hover:shadow-orange/30 transition-shadow"
+  1082→            >
+  1083→              Start Free Trial
+  1084→            </Button>
+  1085→            <Button
+  1086→              size="lg"
+  1087→              variant="outline"
+  1088→              className="border-white/30 text-white hover:bg-white/10 rounded-lg px-8 py-3 text-base font-medium transition-colors"
+  1089→            >
+  1090→              Book a Demo
+  1091→            </Button>
+  1092→          </motion.div>
+  1093→        </motion.div>
+  1094→      </div>
+  1095→    </section>
+  1096→  );
+  1097→}
+  1098→
+  1099→/* -------------------------------------------------------------------------- */
+  1100→/*  Exports                                                                   */
+  1101→/* -------------------------------------------------------------------------- */
+  1102→
+  1103→export {
+  1104→  TrustedBy,
+  1105→  WhyGoCRM,
+  1106→  DashboardPreview,
+  1107→  FeaturesSection,
+  1108→  GrowthSection,
+  1109→  HowItWorks,
+  1110→  Testimonials,
+  1111→  PricingPreview,
+  1112→  FAQSection,
+  1113→  CTASection,
+  1114→};

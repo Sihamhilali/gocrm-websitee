@@ -1,0 +1,942 @@
+     1→     1→<!DOCTYPE html>
+     2→     2→<html lang="en">
+     3→     3→<head>
+     4→     4→  <meta charset="UTF-8">
+     5→     5→  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6→     6→  <title>GoCRM — Manage • Grow • Succeed | All-in-One CRM & ERP Platform</title>
+     7→     7→  <meta name="description" content="GoCRM is the all-in-one CRM + ERP SaaS platform for SMEs, freelancers, and growing businesses. Manage customers, sales, invoices, inventory, projects, and analytics from one powerful platform.">
+     8→     8→  <meta property="og:title" content="GoCRM — Manage • Grow • Succeed">
+     9→     9→  <meta property="og:description" content="All-in-one CRM + ERP platform. Manage customers, sales, invoices, inventory, projects, and analytics from one place.">
+    10→    10→  <meta property="og:type" content="website">
+    11→    11→  <meta name="twitter:card" content="summary_large_image">
+    12→    12→  <meta name="twitter:title" content="GoCRM — Manage • Grow • Succeed">
+    13→    13→  <link rel="canonical" href="https://gocrm.com">
+    14→    14→  <link rel="icon" href="assets/images/logo.png" type="image/png">
+    15→    15→  <link rel="stylesheet" href="css/style.css">
+    16→    16→  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GoCRM","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"All-in-one CRM + ERP SaaS platform for SMEs, freelancers, and growing businesses."}</script>
+    17→    17→</head>
+    18→    18→<body>
+    19→    19→<div class="page-wrapper">
+    20→    20→
+    21→    21→  <!-- ===================== NAVIGATION ===================== -->
+    22→    22→  <header class="nav" id="navbar">
+    23→    23→    <div class="container">
+    24→    24→      <div class="nav__inner">
+    25→    25→        <a href="index.html" class="nav__logo">
+    26→    26→          <img src="assets/images/logo.png" alt="GoCRM" height="64">
+    27→    27→        </a>
+    28→    28→        <div class="nav__links">
+    29→    29→          <a href="index.html" class="nav__link nav__link--active">Home</a>
+    30→    30→          <a href="features.html" class="nav__link">Features</a>
+    31→    31→          <a href="solutions.html" class="nav__link">Solutions</a>
+    32→    32→          <a href="pricing.html" class="nav__link">Pricing</a>
+    33→    33→          <a href="about.html" class="nav__link">About</a>
+    34→    34→          <a href="contact.html" class="nav__link">Contact</a>
+    35→    35→          <a href="blog.html" class="nav__link">Blog</a>
+    36→    36→          <a href="faq.html" class="nav__link">FAQ</a>
+    37→    37→        </div>
+    38→    38→        <div class="nav__cta">
+    39→    39→          <a href="#" class="nav__login">Log In</a>
+    40→    40→          <a href="pricing.html" class="btn btn--primary btn--sm">Start Free Trial</a>
+    41→    41→        </div>
+    42→    42→        <button class="nav__hamburger" id="menu-toggle" aria-label="Open navigation menu">
+    43→    43→          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    44→    44→        </button>
+    45→    45→      </div>
+    46→    46→    </div>
+    47→    47→  </header>
+    48→    48→
+    49→    49→  <!-- Mobile Menu -->
+    50→    50→  <div class="mobile-menu" id="mobile-menu">
+    51→    51→    <div class="mobile-menu__overlay" id="menu-overlay"></div>
+    52→    52→    <div class="mobile-menu__panel">
+    53→    53→      <div class="mobile-menu__header">
+    54→    54→        <img src="assets/images/logo.png" alt="GoCRM" height="64">
+    55→    55→        <button class="mobile-menu__close" id="menu-close" aria-label="Close">
+    56→    56→          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    57→    57→        </button>
+    58→    58→      </div>
+    59→    59→      <div class="mobile-menu__body">
+    60→    60→        <a href="index.html" class="mobile-menu__link mobile-menu__link--active">Home</a>
+    61→    61→        <a href="features.html" class="mobile-menu__link">Features</a>
+    62→    62→        <a href="solutions.html" class="mobile-menu__link">Solutions</a>
+    63→    63→        <a href="pricing.html" class="mobile-menu__link">Pricing</a>
+    64→    64→        <a href="about.html" class="mobile-menu__link">About</a>
+    65→    65→        <a href="contact.html" class="mobile-menu__link">Contact</a>
+    66→    66→        <a href="blog.html" class="mobile-menu__link">Blog</a>
+    67→    67→        <a href="faq.html" class="mobile-menu__link">FAQ</a>
+    68→    68→        <div class="mobile-menu__footer">
+    69→    69→          <a href="#" class="btn btn--secondary btn--sm" style="width:100%">Log In</a>
+    70→    70→          <a href="pricing.html" class="btn btn--primary btn--sm" style="width:100%;margin-top:12px">Start Free Trial</a>
+    71→    71→        </div>
+    72→    72→      </div>
+    73→    73→    </div>
+    74→    74→  </div>
+    75→    75→
+    76→    76→  <main>
+    77→    77→
+    78→    78→    <!-- ===================== 1. HERO SECTION ===================== -->
+    79→    79→    <section class="hero section">
+    80→    80→      <div class="container">
+    81→    81→        <div class="hero__grid reveal">
+    82→    82→          <div class="hero__content">
+    83→    83→            <div class="hero__badge">
+    84→    84→              <span class="hero__badge-dot"></span>
+    85→    85→              Trusted by 5,000+ businesses
+    86→    86→            </div>
+    87→    87→            <h1 class="hero__title">One Platform to <span class="hero__title-highlight">Manage,</span> Grow &amp; Succeed</h1>
+    88→    88→            <p class="hero__subtitle">GoCRM helps businesses manage customers, sales, inventory, invoices, projects, and reporting — all from one powerful platform.</p>
+    89→    89→            <div class="hero__buttons">
+    90→    90→              <a href="pricing.html" class="btn btn--primary">Start Free Trial</a>
+    91→    91→              <a href="#" class="btn btn--secondary">Book a Demo</a>
+    92→    92→            </div>
+    93→    93→            <p class="hero__note">No credit card required &bull; Free 14-day trial</p>
+    94→    94→          </div>
+    95→    95→
+    96→    96→          <!-- Dashboard Mockup -->
+    97→    97→          <div class="animate-float">
+    98→    98→            <div class="dashboard">
+    99→    99→              <!-- Topbar -->
+   100→   100→              <div class="dashboard__topbar">
+   101→   101→                <div class="dashboard__topbar-left">
+   102→   102→                  <span class="dashboard__topbar-icon">G</span>
+   103→   103→                  <span class="dashboard__topbar-title">GoCRM Dashboard</span>
+   104→   104→                </div>
+   105→   105→                <div class="dashboard__topbar-right">
+   106→   106→                  <div class="dashboard__topbar-search">
+   107→   107→                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+   108→   108→                    <span>Search...</span>
+   109→   109→                  </div>
+   110→   110→                  <div class="dashboard__topbar-bell">
+   111→   111→                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+   112→   112→                    <span class="dashboard__bell-dot"></span>
+   113→   113→                  </div>
+   114→   114→                  <div class="dashboard__topbar-avatar">JD</div>
+   115→   115→                </div>
+   116→   116→              </div>
+   117→   117→
+   118→   118→              <!-- KPI Cards -->
+   119→   119→              <div class="dashboard__kpis">
+   120→   120→                <div class="dashboard__kpi">
+   121→   121→                  <div class="dashboard__kpi-icon dashboard__kpi-icon--orange">
+   122→   122→                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+   123→   123→                  </div>
+   124→   124→                  <div class="dashboard__kpi-content">
+   125→   125→                    <span class="dashboard__kpi-label">Total Revenue</span>
+   126→   126→                    <span class="dashboard__kpi-value">$124,563</span>
+   127→   127→                    <span class="dashboard__kpi-change dashboard__kpi-change--up">
+   128→   128→                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+   129→   129→                      12.5%
+   130→   130→                    </span>
+   131→   131→                  </div>
+   132→   132→                </div>
+   133→   133→                <div class="dashboard__kpi">
+   134→   134→                  <div class="dashboard__kpi-icon dashboard__kpi-icon--blue">
+   135→   135→                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+   136→   136→                  </div>
+   137→   137→                  <div class="dashboard__kpi-content">
+   138→   138→                    <span class="dashboard__kpi-label">Active Customers</span>
+   139→   139→                    <span class="dashboard__kpi-value">2,847</span>
+   140→   140→                    <span class="dashboard__kpi-change dashboard__kpi-change--up">
+   141→   141→                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+   142→   142→                      8.3%
+   143→   143→                    </span>
+   144→   144→                  </div>
+   145→   145→                </div>
+   146→   146→                <div class="dashboard__kpi">
+   147→   147→                  <div class="dashboard__kpi-icon dashboard__kpi-icon--green">
+   148→   148→                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.883-3.883"/><path d="m17.5 6.5a1 1 0 1 0 3 3"/><path d="M9 12.5 7.5 11a1 1 0 0 0-3 3l2.5 2.5"/><path d="m14.5 8.5 1-1a1 1 0 1 0-3-3l-1 1"/></svg>
+   149→   149→                  </div>
+   150→   150→                  <div class="dashboard__kpi-content">
+   151→   151→                    <span class="dashboard__kpi-label">Open Deals</span>
+   152→   152→                    <span class="dashboard__kpi-value">156</span>
+   153→   153→                    <span class="dashboard__kpi-change dashboard__kpi-change--up">
+   154→   154→                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+   155→   155→                      15.2%
+   156→   156→                    </span>
+   157→   157→                  </div>
+   158→   158→                </div>
+   159→   159→                <div class="dashboard__kpi">
+   160→   160→                  <div class="dashboard__kpi-icon dashboard__kpi-icon--purple">
+   161→   161→                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+   162→   162→                  </div>
+   163→   163→                  <div class="dashboard__kpi-content">
+   164→   164→                    <span class="dashboard__kpi-label">Tasks Done</span>
+   165→   165→                    <span class="dashboard__kpi-value">89%</span>
+   166→   166→                    <div class="dashboard__kpi-bar">
+   167→   167→                      <div class="dashboard__kpi-bar-fill" style="width: 89%"></div>
+   168→   168→                    </div>
+   169→   169→                  </div>
+   170→   170→                </div>
+   171→   171→              </div>
+   172→   172→
+   173→   173→              <!-- Chart + Side Panel -->
+   174→   174→              <div class="dashboard__main">
+   175→   175→                <div class="dashboard__chart">
+   176→   176→                  <div class="dashboard__chart-header">
+   177→   177→                    <span class="dashboard__chart-title">Revenue Overview</span>
+   178→   178→                    <span class="dashboard__chart-period">Last 12 months</span>
+   179→   179→                  </div>
+   180→   180→                  <svg class="dashboard__chart-svg" viewBox="0 0 300 120" preserveAspectRatio="none">
+   181→   181→                    <defs>
+   182→   182→                      <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+   183→   183→                        <stop offset="0%" stop-color="#FD5320" stop-opacity="0.3"/>
+   184→   184→                        <stop offset="100%" stop-color="#FD5320" stop-opacity="0"/>
+   185→   185→                      </linearGradient>
+   186→   186→                    </defs>
+   187→   187→                    <path d="M0,100 Q20,90 40,80 T80,55 T120,65 T160,35 T200,45 T240,20 T280,25 L300,28 L300,120 L0,120 Z" fill="url(#chartGrad)"/>
+   188→   188→                    <path d="M0,100 Q20,90 40,80 T80,55 T120,65 T160,35 T200,45 T240,20 T280,25 L300,28" fill="none" stroke="#FD5320" stroke-width="2.5"/>
+   189→   189→                  </svg>
+   190→   190→                </div>
+   191→   191→                <div class="dashboard__side">
+   192→   192→                  <div class="dashboard__side-title">Recent Activity</div>
+   193→   193→                  <div class="dashboard__activity">
+   194→   194→                    <div class="dashboard__activity-item">
+   195→   195→                      <span class="dashboard__activity-avatar" style="background:#FD5320">SC</span>
+   196→   196→                      <div class="dashboard__activity-info">
+   197→   197→                        <span class="dashboard__activity-name">Sarah Chen</span>
+   198→   198→                        <span class="dashboard__activity-text">Closed a $12k deal</span>
+   199→   199→                      </div>
+   200→   200→                    </div>
+   201→   201→                    <div class="dashboard__activity-item">
+   202→   202→                      <span class="dashboard__activity-avatar" style="background:#011134">AR</span>
+   203→   203→                      <div class="dashboard__activity-info">
+   204→   204→                        <span class="dashboard__activity-name">Alex Rivera</span>
+   205→   205→                        <span class="dashboard__activity-text">New lead added</span>
+   206→   206→                      </div>
+   207→   207→                    </div>
+   208→   208→                    <div class="dashboard__activity-item">
+   209→   209→                      <span class="dashboard__activity-avatar" style="background:#10b981">MP</span>
+   210→   210→                      <div class="dashboard__activity-info">
+   211→   211→                        <span class="dashboard__activity-name">Maya Patel</span>
+   212→   212→                        <span class="dashboard__activity-text">Invoice #1847 paid</span>
+   213→   213→                      </div>
+   214→   214→                    </div>
+   215→   215→                  </div>
+   216→   216→                  <!-- Mini Pie Chart -->
+   217→   217→                  <svg class="dashboard__pie" viewBox="0 0 80 80" width="80" height="80">
+   218→   218→                    <circle cx="40" cy="40" r="30" fill="none" stroke="#e5e7eb" stroke-width="8"/>
+   219→   219→                    <circle cx="40" cy="40" r="30" fill="none" stroke="#FD5320" stroke-width="8" stroke-dasharray="75 113.1" stroke-dashoffset="0" transform="rotate(-90 40 40)"/>
+   220→   220→                    <circle cx="40" cy="40" r="30" fill="none" stroke="#3b82f6" stroke-width="8" stroke-dasharray="45.2 142.9" stroke-dashoffset="-75" transform="rotate(-90 40 40)"/>
+   221→   221→                  </svg>
+   222→   222→                  <!-- New Invoice CTA -->
+   223→   223→                  <div class="dashboard__cta-card">
+   224→   224→                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+   225→   225→                    <span>New Invoice</span>
+   226→   226→                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+   227→   227→                  </div>
+   228→   228→                </div>
+   229→   229→              </div>
+   230→   230→            </div>
+   231→   231→          </div>
+   232→   232→        </div>
+   233→   233→      </div>
+   234→   234→    </section>
+   235→   235→
+   236→   236→    <!-- ===================== 2. TRUSTED BY ===================== -->
+   237→   237→    <section class="section trusted reveal">
+   238→   238→      <div class="container">
+   239→   239→        <p class="trusted__label">Trusted by innovative companies worldwide</p>
+   240→   240→        <div class="logos">
+   241→   241→          <span class="logos__item">TechFlow</span>
+   242→   242→          <span class="logos__item">Meridian</span>
+   243→   243→          <span class="logos__item">NovaStar</span>
+   244→   244→          <span class="logos__item">Quantum</span>
+   245→   245→          <span class="logos__item">Apex Digital</span>
+   246→   246→          <span class="logos__item">ClearPath</span>
+   247→   247→        </div>
+   248→   248→      </div>
+   249→   249→    </section>
+   250→   250→
+   251→   251→    <!-- ===================== 3. WHY GOCRM ===================== -->
+   252→   252→    <section class="section" id="why">
+   253→   253→      <div class="container">
+   254→   254→        <div class="section__header reveal">
+   255→   255→          <h2 class="section__title">Why GoCRM?</h2>
+   256→   256→          <p class="section__subtitle">Everything your business needs in one platform</p>
+   257→   257→        </div>
+   258→   258→        <div class="card-grid reveal">
+   259→   259→          <div class="card">
+   260→   260→            <div class="card__icon">
+   261→   261→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+   262→   262→            </div>
+   263→   263→            <h3 class="card__title">CRM</h3>
+   264→   264→            <p class="card__text">Build stronger relationships with smart contact management and deal tracking</p>
+   265→   265→          </div>
+   266→   266→          <div class="card">
+   267→   267→            <div class="card__icon">
+   268→   268→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+   269→   269→            </div>
+   270→   270→            <h3 class="card__title">ERP</h3>
+   271→   271→            <p class="card__text">Streamline operations from procurement to delivery with integrated workflows</p>
+   272→   272→          </div>
+   273→   273→          <div class="card">
+   274→   274→            <div class="card__icon">
+   275→   275→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+   276→   276→            </div>
+   277→   277→            <h3 class="card__title">Inventory</h3>
+   278→   278→            <p class="card__text">Real-time stock tracking, alerts, and automated reorder management</p>
+   279→   279→          </div>
+   280→   280→          <div class="card">
+   281→   281→            <div class="card__icon">
+   282→   282→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+   283→   283→            </div>
+   284→   284→            <h3 class="card__title">Sales</h3>
+   285→   285→            <p class="card__text">Visualize your pipeline, close deals faster with AI-powered insights</p>
+   286→   286→          </div>
+   287→   287→          <div class="card">
+   288→   288→            <div class="card__icon">
+   289→   289→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+   290→   290→            </div>
+   291→   291→            <h3 class="card__title">Automation</h3>
+   292→   292→            <p class="card__text">Eliminate repetitive tasks with powerful workflow automation rules</p>
+   293→   293→          </div>
+   294→   294→          <div class="card">
+   295→   295→            <div class="card__icon">
+   296→   296→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+   297→   297→            </div>
+   298→   298→            <h3 class="card__title">Analytics</h3>
+   299→   299→            <p class="card__text">Make data-driven decisions with beautiful, real-time dashboards</p>
+   300→   300→          </div>
+   301→   301→        </div>
+   302→   302→      </div>
+   303→   303→    </section>
+   304→   304→
+   305→   305→    <!-- ===================== 4. DASHBOARD PREVIEW ===================== -->
+   306→   306→    <section class="section section--gray" id="preview">
+   307→   307→      <div class="container">
+   308→   308→        <div class="section__header reveal">
+   309→   309→          <h2 class="section__title">See everything at a glance</h2>
+   310→   310→          <p class="section__subtitle">Your business dashboard, beautifully designed</p>
+   311→   311→        </div>
+   312→   312→        <div class="laptop-wrapper reveal">
+   313→   313→          <!-- Floating stat widgets -->
+   314→   314→          <div class="laptop-float laptop-float--top-left animate-float">
+   315→   315→            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><polyline points="18 15 12 9 6 15"/></svg>
+   316→   316→            <span class="laptop-float__value">+42% Revenue</span>
+   317→   317→          </div>
+   318→   318→          <div class="laptop-float laptop-float--top-right animate-float-delayed">
+   319→   319→            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+   320→   320→            <span class="laptop-float__value">2,847 Customers</span>
+   321→   321→          </div>
+   322→   322→          <div class="laptop-float laptop-float--bottom-left animate-float-slow">
+   323→   323→            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+   324→   324→            <span class="laptop-float__value">98.5% Uptime</span>
+   325→   325→          </div>
+   326→   326→
+   327→   327→          <!-- Laptop Mockup -->
+   328→   328→          <div class="laptop">
+   329→   329→            <div class="laptop__topbar">
+   330→   330→              <span class="laptop__dot laptop__dot--red"></span>
+   331→   331→              <span class="laptop__dot laptop__dot--yellow"></span>
+   332→   332→              <span class="laptop__dot laptop__dot--green"></span>
+   333→   333→            </div>
+   334→   334→            <div class="laptop__body">
+   335→   335→              <div class="laptop__sidebar">
+   336→   336→                <span class="laptop__sidebar-icon"></span>
+   337→   337→                <span class="laptop__sidebar-icon"></span>
+   338→   338→                <span class="laptop__sidebar-icon laptop__sidebar-icon--active"></span>
+   339→   339→                <span class="laptop__sidebar-icon"></span>
+   340→   340→                <span class="laptop__sidebar-icon"></span>
+   341→   341→              </div>
+   342→   342→              <div class="laptop__main">
+   343→   343→                <!-- Mini metric cards -->
+   344→   344→                <div class="laptop__metrics">
+   345→   345→                  <div class="laptop__metric">
+   346→   346→                    <span class="laptop__metric-label">Revenue</span>
+   347→   347→                    <span class="laptop__metric-value">$84.2K</span>
+   348→   348→                  </div>
+   349→   349→                  <div class="laptop__metric">
+   350→   350→                    <span class="laptop__metric-label">Customers</span>
+   351→   351→                    <span class="laptop__metric-value">1,429</span>
+   352→   352→                  </div>
+   353→   353→                  <div class="laptop__metric">
+   354→   354→                    <span class="laptop__metric-label">Growth</span>
+   355→   355→                    <span class="laptop__metric-value">+23%</span>
+   356→   356→                  </div>
+   357→   357→                </div>
+   358→   358→                <!-- Mini chart -->
+   359→   359→                <div class="laptop__chart">
+   360→   360→                  <svg viewBox="0 0 200 60" preserveAspectRatio="none" width="100%" height="100%">
+   361→   361→                    <defs>
+   362→   362→                      <linearGradient id="laptopChartGrad" x1="0" y1="0" x2="0" y2="1">
+   363→   363→                        <stop offset="0%" stop-color="#FD5320" stop-opacity="0.2"/>
+   364→   364→                        <stop offset="100%" stop-color="#FD5320" stop-opacity="0"/>
+   365→   365→                      </linearGradient>
+   366→   366→                    </defs>
+   367→   367→                    <path d="M0,45 Q20,40 40,35 T80,25 T120,30 T160,15 L200,10 L200,60 L0,60 Z" fill="url(#laptopChartGrad)"/>
+   368→   368→                    <path d="M0,45 Q20,40 40,35 T80,25 T120,30 T160,15 L200,10" fill="none" stroke="#FD5320" stroke-width="2"/>
+   369→   369→                  </svg>
+   370→   370→                </div>
+   371→   371→                <!-- Mini table -->
+   372→   372→                <div class="laptop__table">
+   373→   373→                  <div class="laptop__table-row laptop__table-row--header">
+   374→   374→                    <span>Client</span>
+   375→   375→                    <span>Amount</span>
+   376→   376→                    <span>Status</span>
+   377→   377→                  </div>
+   378→   378→                  <div class="laptop__table-row">
+   379→   379→                    <span>Acme Corp</span>
+   380→   380→                    <span>$12,400</span>
+   381→   381→                    <span class="laptop__status laptop__status--green">Paid</span>
+   382→   382→                  </div>
+   383→   383→                  <div class="laptop__table-row">
+   384→   384→                    <span>TechStart</span>
+   385→   385→                    <span>$8,750</span>
+   386→   386→                    <span class="laptop__status laptop__status--orange">Pending</span>
+   387→   387→                  </div>
+   388→   388→                  <div class="laptop__table-row">
+   389→   389→                    <span>Global Inc</span>
+   390→   390→                    <span>$22,100</span>
+   391→   391→                    <span class="laptop__status laptop__status--green">Paid</span>
+   392→   392→                  </div>
+   393→   393→                </div>
+   394→   394→              </div>
+   395→   395→            </div>
+   396→   396→            <div class="laptop__base"></div>
+   397→   397→          </div>
+   398→   398→        </div>
+   399→   399→      </div>
+   400→   400→    </section>
+   401→   401→
+   402→   402→    <!-- ===================== 5. FEATURES SECTION ===================== -->
+   403→   403→    <section class="section" id="features">
+   404→   404→      <div class="container">
+   405→   405→        <div class="section__header reveal">
+   406→   406→          <h2 class="section__title">Powerful features for every need</h2>
+   407→   407→          <p class="section__subtitle">From lead to revenue, GoCRM covers your entire business</p>
+   408→   408→        </div>
+   409→   409→        <div class="features-grid reveal">
+   410→   410→          <div class="feature-card">
+   411→   411→            <div class="feature-card__icon">
+   412→   412→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+   413→   413→            </div>
+   414→   414→            <h3 class="feature-card__title">Customer Management</h3>
+   415→   415→            <p class="feature-card__text">360° view of every customer interaction</p>
+   416→   416→          </div>
+   417→   417→          <div class="feature-card">
+   418→   418→            <div class="feature-card__icon">
+   419→   419→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+   420→   420→            </div>
+   421→   421→            <h3 class="feature-card__title">Sales Pipeline</h3>
+   422→   422→            <p class="feature-card__text">Visual pipeline with drag-and-drop stages</p>
+   423→   423→          </div>
+   424→   424→          <div class="feature-card">
+   425→   425→            <div class="feature-card__icon">
+   426→   426→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+   427→   427→            </div>
+   428→   428→            <h3 class="feature-card__title">Invoices</h3>
+   429→   429→            <p class="feature-card__text">Create, send, and track professional invoices</p>
+   430→   430→          </div>
+   431→   431→          <div class="feature-card">
+   432→   432→            <div class="feature-card__icon">
+   433→   433→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+   434→   434→            </div>
+   435→   435→            <h3 class="feature-card__title">Inventory</h3>
+   436→   436→            <p class="feature-card__text">Smart stock management with auto-reorder</p>
+   437→   437→          </div>
+   438→   438→          <div class="feature-card">
+   439→   439→            <div class="feature-card__icon">
+   440→   440→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z"/><path d="M8 10v4"/><path d="M12 10v2"/><path d="M16 10v6"/></svg>
+   441→   441→            </div>
+   442→   442→            <h3 class="feature-card__title">Projects</h3>
+   443→   443→            <p class="feature-card__text">Plan, execute, and deliver projects on time</p>
+   444→   444→          </div>
+   445→   445→          <div class="feature-card">
+   446→   446→            <div class="feature-card__icon">
+   447→   447→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+   448→   448→            </div>
+   449→   449→            <h3 class="feature-card__title">Affiliate Management</h3>
+   450→   450→            <p class="feature-card__text">Track and manage your partner programs</p>
+   451→   451→          </div>
+   452→   452→          <div class="feature-card">
+   453→   453→            <div class="feature-card__icon">
+   454→   454→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+   455→   455→            </div>
+   456→   456→            <h3 class="feature-card__title">Reports</h3>
+   457→   457→            <p class="feature-card__text">Comprehensive reports with custom filters</p>
+   458→   458→          </div>
+   459→   459→          <div class="feature-card">
+   460→   460→            <div class="feature-card__icon">
+   461→   461→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+   462→   462→            </div>
+   463→   463→            <h3 class="feature-card__title">Support</h3>
+   464→   464→            <p class="feature-card__text">Multi-channel ticket management system</p>
+   465→   465→          </div>
+   466→   466→          <div class="feature-card">
+   467→   467→            <div class="feature-card__icon">
+   468→   468→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+   469→   469→            </div>
+   470→   470→            <h3 class="feature-card__title">POS</h3>
+   471→   471→            <p class="feature-card__text">Complete point-of-sale for retail stores</p>
+   472→   472→          </div>
+   473→   473→          <div class="feature-card">
+   474→   474→            <div class="feature-card__icon">
+   475→   475→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+   476→   476→            </div>
+   477→   477→            <h3 class="feature-card__title">Calendar</h3>
+   478→   478→            <p class="feature-card__text">Schedule meetings and track deadlines</p>
+   479→   479→          </div>
+   480→   480→          <div class="feature-card">
+   481→   481→            <div class="feature-card__icon">
+   482→   482→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+   483→   483→            </div>
+   484→   484→            <h3 class="feature-card__title">Omnichannel Sales</h3>
+   485→   485→            <p class="feature-card__text">Sell across web, mobile, social, and in-store</p>
+   486→   486→          </div>
+   487→   487→          <div class="feature-card">
+   488→   488→            <div class="feature-card__icon">
+   489→   489→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+   490→   490→            </div>
+   491→   491→            <h3 class="feature-card__title">Media Library</h3>
+   492→   492→            <p class="feature-card__text">Centralized asset management for your team</p>
+   493→   493→          </div>
+   494→   494→        </div>
+   495→   495→      </div>
+   496→   496→    </section>
+   497→   497→
+   498→   498→    <!-- ===================== 6. GROWTH SECTION ===================== -->
+   499→   499→    <section class="section section--navy" id="growth">
+   500→   500→      <div class="container">
+   501→   501→        <div class="section__header reveal">
+   502→   502→          <h2 class="section__title section__title--white">Businesses grow faster with GoCRM</h2>
+   503→   503→          <p class="section__subtitle section__subtitle--muted">Real results from real companies</p>
+   504→   504→        </div>
+   505→   505→        <div class="stats-row reveal">
+   506→   506→          <div class="stat-card">
+   507→   507→            <span class="stat-card__number" data-target="47" data-suffix="%">0%</span>
+   508→   508→            <span class="stat-card__label">Average Revenue Increase</span>
+   509→   509→          </div>
+   510→   510→          <div class="stat-card">
+   511→   511→            <span class="stat-card__number" data-target="3.2" data-suffix="x">0x</span>
+   512→   512→            <span class="stat-card__label">Faster Deal Closings</span>
+   513→   513→          </div>
+   514→   514→          <div class="stat-card">
+   515→   515→            <span class="stat-card__number" data-target="65" data-suffix="%">0%</span>
+   516→   516→            <span class="stat-card__label">Time Saved on Admin</span>
+   517→   517→          </div>
+   518→   518→          <div class="stat-card">
+   519→   519→            <span class="stat-card__number" data-target="98" data-suffix="%">0%</span>
+   520→   520→            <span class="stat-card__label">Customer Satisfaction</span>
+   521→   521→          </div>
+   522→   522→        </div>
+   523→   523→        <div class="growth-chart reveal">
+   524→   524→          <svg viewBox="0 0 600 200" width="600" preserveAspectRatio="xMidYMid meet">
+   525→   525→            <defs>
+   526→   526→              <linearGradient id="growthGrad" x1="0" y1="0" x2="0" y2="1">
+   527→   527→                <stop offset="0%" stop-color="#FD5320" stop-opacity="0.2"/>
+   528→   528→                <stop offset="100%" stop-color="#FD5320" stop-opacity="0"/>
+   529→   529→              </linearGradient>
+   530→   530→            </defs>
+   531→   531→            <!-- Grid lines -->
+   532→   532→            <line x1="0" y1="50" x2="600" y2="50" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+   533→   533→            <line x1="0" y1="100" x2="600" y2="100" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+   534→   534→            <line x1="0" y1="150" x2="600" y2="150" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+   535→   535→            <!-- Area fill -->
+   536→   536→            <path d="M0,180 C50,170 100,160 150,145 C200,130 250,110 300,95 C350,80 400,60 450,45 C500,35 550,25 600,15 L600,200 L0,200 Z" fill="url(#growthGrad)"/>
+   537→   537→            <!-- Line -->
+   538→   538→            <path d="M0,180 C50,170 100,160 150,145 C200,130 250,110 300,95 C350,80 400,60 450,45 C500,35 550,25 600,15" fill="none" stroke="#FD5320" stroke-width="3"/>
+   539→   539→            <!-- Dot at end -->
+   540→   540→            <circle cx="600" cy="15" r="5" fill="#FD5320"/>
+   541→   541→            <circle cx="600" cy="15" r="8" fill="#FD5320" opacity="0.3"/>
+   542→   542→          </svg>
+   543→   543→        </div>
+   544→   544→      </div>
+   545→   545→    </section>
+   546→   546→
+   547→   547→    <!-- ===================== 7. HOW IT WORKS ===================== -->
+   548→   548→    <section class="section" id="how-it-works">
+   549→   549→      <div class="container">
+   550→   550→        <div class="section__header reveal">
+   551→   551→          <h2 class="section__title">Get started in minutes</h2>
+   552→   552→        </div>
+   553→   553→        <div class="steps reveal">
+   554→   554→          <div class="step">
+   555→   555→            <span class="step__number">01</span>
+   556→   556→            <div class="step__icon">
+   557→   557→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+   558→   558→            </div>
+   559→   559→            <h3 class="step__title">Create Your Account</h3>
+   560→   560→            <p class="step__text">Sign up in seconds with your email. No credit card required.</p>
+   561→   561→          </div>
+   562→   562→          <div class="step__connector">
+   563→   563→            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+   564→   564→          </div>
+   565→   565→          <div class="step">
+   566→   566→            <span class="step__number">02</span>
+   567→   567→            <div class="step__icon">
+   568→   568→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+   569→   569→            </div>
+   570→   570→            <h3 class="step__title">Import Your Data</h3>
+   571→   571→            <p class="step__text">Seamlessly migrate from spreadsheets or other CRMs with our import wizard.</p>
+   572→   572→          </div>
+   573→   573→          <div class="step__connector">
+   574→   574→            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+   575→   575→          </div>
+   576→   576→          <div class="step">
+   577→   577→            <span class="step__number">03</span>
+   578→   578→            <div class="step__icon">
+   579→   579→              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+   580→   580→            </div>
+   581→   581→            <h3 class="step__title">Grow Your Business</h3>
+   582→   582→            <p class="step__text">Start managing customers, closing deals, and scaling operations.</p>
+   583→   583→          </div>
+   584→   584→        </div>
+   585→   585→      </div>
+   586→   586→    </section>
+   587→   587→
+   588→   588→    <!-- ===================== 8. TESTIMONIALS ===================== -->
+   589→   589→    <section class="section section--gray" id="testimonials">
+   590→   590→      <div class="container">
+   591→   591→        <div class="section__header reveal">
+   592→   592→          <h2 class="section__title">Loved by businesses worldwide</h2>
+   593→   593→        </div>
+   594→   594→        <div class="testimonials-grid reveal">
+   595→   595→          <div class="testimonial-card">
+   596→   596→            <div class="testimonial-card__stars">
+   597→   597→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   598→   598→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   599→   599→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   600→   600→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   601→   601→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   602→   602→            </div>
+   603→   603→            <p class="testimonial-card__quote">"GoCRM transformed how we manage our sales pipeline. We closed 40% more deals in the first quarter alone."</p>
+   604→   604→            <div class="testimonial-card__author">
+   605→   605→              <span class="testimonial-card__avatar" style="background:#FD5320">SC</span>
+   606→   606→              <div>
+   607→   607→                <span class="testimonial-card__name">Sarah Chen</span>
+   608→   608→                <span class="testimonial-card__role">CEO, TechFlow</span>
+   609→   609→              </div>
+   610→   610→            </div>
+   611→   611→          </div>
+   612→   612→          <div class="testimonial-card">
+   613→   613→            <div class="testimonial-card__stars">
+   614→   614→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   615→   615→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   616→   616→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   617→   617→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   618→   618→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   619→   619→            </div>
+   620→   620→            <p class="testimonial-card__quote">"The all-in-one approach saved us from juggling 5 different tools. Everything we need is right here."</p>
+   621→   621→            <div class="testimonial-card__author">
+   622→   622→              <span class="testimonial-card__avatar" style="background:#011134">MJ</span>
+   623→   623→              <div>
+   624→   624→                <span class="testimonial-card__name">Marcus Johnson</span>
+   625→   625→                <span class="testimonial-card__role">COO, Meridian Group</span>
+   626→   626→              </div>
+   627→   627→            </div>
+   628→   628→          </div>
+   629→   629→          <div class="testimonial-card">
+   630→   630→            <div class="testimonial-card__stars">
+   631→   631→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   632→   632→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   633→   633→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   634→   634→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   635→   635→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   636→   636→            </div>
+   637→   637→            <p class="testimonial-card__quote">"The reporting dashboards are incredibly powerful. We finally have real visibility into our business performance."</p>
+   638→   638→            <div class="testimonial-card__author">
+   639→   639→              <span class="testimonial-card__avatar" style="background:#7c3aed">ER</span>
+   640→   640→              <div>
+   641→   641→                <span class="testimonial-card__name">Elena Rodriguez</span>
+   642→   642→                <span class="testimonial-card__role">VP Sales, NovaStar</span>
+   643→   643→              </div>
+   644→   644→            </div>
+   645→   645→          </div>
+   646→   646→          <div class="testimonial-card">
+   647→   647→            <div class="testimonial-card__stars">
+   648→   648→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   649→   649→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   650→   650→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   651→   651→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   652→   652→              <svg viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="1" width="18" height="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+   653→   653→            </div>
+   654→   654→            <p class="testimonial-card__quote">"Implementation was seamless. Our team was up and running in less than a day. The support team is outstanding."</p>
+   655→   655→            <div class="testimonial-card__author">
+   656→   656→              <span class="testimonial-card__avatar" style="background:#10b981">DP</span>
+   657→   657→              <div>
+   658→   658→                <span class="testimonial-card__name">David Park</span>
+   659→   659→                <span class="testimonial-card__role">Founder, Quantum Labs</span>
+   660→   660→              </div>
+   661→   661→            </div>
+   662→   662→          </div>
+   663→   663→        </div>
+   664→   664→      </div>
+   665→   665→    </section>
+   666→   666→
+   667→   667→    <!-- ===================== 9. PRICING PREVIEW ===================== -->
+   668→   668→    <section class="section" id="pricing">
+   669→   669→      <div class="container">
+   670→   670→        <div class="section__header reveal">
+   671→   671→          <h2 class="section__title">Simple, transparent pricing</h2>
+   672→   672→          <p class="section__subtitle">Start free. Scale as you grow.</p>
+   673→   673→        </div>
+   674→   674→        <div class="pricing-toggle reveal">
+   675→   675→          <span class="pricing-toggle__label" id="toggle-monthly-label">Monthly</span>
+   676→   676→          <label class="pricing-toggle__switch">
+   677→   677→            <input type="checkbox" id="pricing-toggle">
+   678→   678→            <span class="pricing-toggle__slider"></span>
+   679→   679→          </label>
+   680→   680→          <span class="pricing-toggle__label" id="toggle-annual-label">Annual <span class="pricing-toggle__save">Save 20%</span></span>
+   681→   681→        </div>
+   682→   682→        <div class="pricing-grid reveal">
+   683→   683→          <!-- Starter -->
+   684→   684→          <div class="pricing-card">
+   685→   685→            <h3 class="pricing-card__name">Starter</h3>
+   686→   686→            <div class="pricing-card__price">
+   687→   687→              <span class="pricing-card__amount" data-monthly="0" data-annual="0">$0</span>
+   688→   688→              <span class="pricing-card__period">/mo</span>
+   689→   689→            </div>
+   690→   690→            <p class="pricing-card__desc">Perfect for freelancers</p>
+   691→   691→            <ul class="pricing-card__features">
+   692→   692→              <li>
+   693→   693→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   694→   694→                100 contacts
+   695→   695→              </li>
+   696→   696→              <li>
+   697→   697→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   698→   698→                1 user
+   699→   699→              </li>
+   700→   700→              <li>
+   701→   701→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   702→   702→                Basic reports
+   703→   703→              </li>
+   704→   704→              <li>
+   705→   705→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   706→   706→                Email support
+   707→   707→              </li>
+   708→   708→            </ul>
+   709→   709→            <a href="pricing.html" class="btn btn--secondary pricing-card__btn">Get Started</a>
+   710→   710→          </div>
+   711→   711→          <!-- Professional -->
+   712→   712→          <div class="pricing-card pricing-card--featured">
+   713→   713→            <span class="pricing-card__badge">Most Popular</span>
+   714→   714→            <h3 class="pricing-card__name">Professional</h3>
+   715→   715→            <div class="pricing-card__price">
+   716→   716→              <span class="pricing-card__amount" data-monthly="49" data-annual="39">$49</span>
+   717→   717→              <span class="pricing-card__period">/mo</span>
+   718→   718→            </div>
+   719→   719→            <p class="pricing-card__desc">Best for growing teams</p>
+   720→   720→            <ul class="pricing-card__features">
+   721→   721→              <li>
+   722→   722→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   723→   723→                10,000 contacts
+   724→   724→              </li>
+   725→   725→              <li>
+   726→   726→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   727→   727→                10 users
+   728→   728→              </li>
+   729→   729→              <li>
+   730→   730→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   731→   731→                Advanced reports
+   732→   732→              </li>
+   733→   733→              <li>
+   734→   734→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   735→   735→                Priority support
+   736→   736→              </li>
+   737→   737→              <li>
+   738→   738→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   739→   739→                Automation
+   740→   740→              </li>
+   741→   741→              <li>
+   742→   742→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   743→   743→                API access
+   744→   744→              </li>
+   745→   745→            </ul>
+   746→   746→            <a href="pricing.html" class="btn btn--primary pricing-card__btn">Start Free Trial</a>
+   747→   747→          </div>
+   748→   748→          <!-- Enterprise -->
+   749→   749→          <div class="pricing-card pricing-card--enterprise">
+   750→   750→            <h3 class="pricing-card__name">Enterprise</h3>
+   751→   751→            <div class="pricing-card__price">
+   752→   752→              <span class="pricing-card__amount" data-monthly="99" data-annual="79">$99</span>
+   753→   753→              <span class="pricing-card__period">/mo</span>
+   754→   754→            </div>
+   755→   755→            <p class="pricing-card__desc">For large organizations</p>
+   756→   756→            <ul class="pricing-card__features">
+   757→   757→              <li>
+   758→   758→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   759→   759→                Unlimited contacts
+   760→   760→              </li>
+   761→   761→              <li>
+   762→   762→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   763→   763→                Unlimited users
+   764→   764→              </li>
+   765→   765→              <li>
+   766→   766→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   767→   767→                Custom reports
+   768→   768→              </li>
+   769→   769→              <li>
+   770→   770→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   771→   771→                Dedicated support
+   772→   772→              </li>
+   773→   773→              <li>
+   774→   774→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   775→   775→                Custom integrations
+   776→   776→              </li>
+   777→   777→              <li>
+   778→   778→                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FD5320" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+   779→   779→                SSO
+   780→   780→              </li>
+   781→   781→            </ul>
+   782→   782→            <a href="pricing.html" class="btn btn--secondary pricing-card__btn pricing-card__btn--navy">Contact Sales</a>
+   783→   783→          </div>
+   784→   784→        </div>
+   785→   785→      </div>
+   786→   786→    </section>
+   787→   787→
+   788→   788→    <!-- ===================== 10. FAQ SECTION ===================== -->
+   789→   789→    <section class="section section--gray" id="faq">
+   790→   790→      <div class="container">
+   791→   791→        <div class="section__header reveal">
+   792→   792→          <h2 class="section__title">Frequently asked questions</h2>
+   793→   793→        </div>
+   794→   794→        <div class="faq-list reveal">
+   795→   795→          <div class="faq-item" data-faq>
+   796→   796→            <button class="faq-item__question">
+   797→   797→              <span>What is GoCRM?</span>
+   798→   798→              <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+   799→   799→            </button>
+   800→   800→            <div class="faq-item__answer">
+   801→   801→              <p>GoCRM is an all-in-one CRM + ERP platform that helps businesses manage customers, sales, inventory, invoices, projects, and analytics from a single, powerful interface.</p>
+   802→   802→            </div>
+   803→   803→          </div>
+   804→   804→          <div class="faq-item" data-faq>
+   805→   805→            <button class="faq-item__question">
+   806→   806→              <span>Is there a free trial?</span>
+   807→   807→              <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+   808→   808→            </button>
+   809→   809→            <div class="faq-item__answer">
+   810→   810→              <p>Yes! GoCRM offers a free 14-day trial with full access to all Professional features. No credit card required.</p>
+   811→   811→            </div>
+   812→   812→          </div>
+   813→   813→          <div class="faq-item" data-faq>
+   814→   814→            <button class="faq-item__question">
+   815→   815→              <span>Can I import my existing data?</span>
+   816→   816→              <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+   817→   817→            </button>
+   818→   818→            <div class="faq-item__answer">
+   819→   819→              <p>Absolutely. GoCRM supports importing data from spreadsheets (CSV, Excel) and other CRMs. Our import wizard makes migration seamless.</p>
+   820→   820→            </div>
+   821→   821→          </div>
+   822→   822→          <div class="faq-item" data-faq>
+   823→   823→            <button class="faq-item__question">
+   824→   824→              <span>Is my data secure?</span>
+   825→   825→              <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+   826→   826→            </button>
+   827→   827→            <div class="faq-item__answer">
+   828→   828→              <p>Security is our top priority. We use 256-bit SSL encryption, regular security audits, and enterprise-grade infrastructure to protect your data.</p>
+   829→   829→            </div>
+   830→   830→          </div>
+   831→   831→          <div class="faq-item" data-faq>
+   832→   832→            <button class="faq-item__question">
+   833→   833→              <span>Can I customize GoCRM for my business?</span>
+   834→   834→              <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+   835→   835→            </button>
+   836→   836→            <div class="faq-item__answer">
+   837→   837→              <p>Yes, GoCRM is highly customizable. From custom fields and pipelines to branded invoices and reports, you can tailor the platform to your exact needs.</p>
+   838→   838→            </div>
+   839→   839→          </div>
+   840→   840→          <div class="faq-item" data-faq>
+   841→   841→            <button class="faq-item__question">
+   842→   842→              <span>Do you offer support?</span>
+   843→   843→              <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+   844→   844→            </button>
+   845→   845→            <div class="faq-item__answer">
+   846→   846→              <p>We offer email support for all plans, priority support for Professional, and dedicated support with a named account manager for Enterprise customers.</p>
+   847→   847→            </div>
+   848→   848→          </div>
+   849→   849→        </div>
+   850→   850→      </div>
+   851→   851→    </section>
+   852→   852→
+   853→   853→    <!-- ===================== 11. CTA SECTION ===================== -->
+   854→   854→    <section class="section cta">
+   855→   855→      <div class="cta__orb cta__orb--top-left"></div>
+   856→   856→      <div class="cta__orb cta__orb--bottom-right"></div>
+   857→   857→      <div class="container">
+   858→   858→        <div class="cta__content reveal">
+   859→   859→          <h2 class="cta__title">Ready to transform your business?</h2>
+   860→   860→          <p class="cta__subtitle">Join 5,000+ companies already using GoCRM to manage, grow, and succeed.</p>
+   861→   861→          <div class="cta__buttons">
+   862→   862→            <a href="pricing.html" class="btn btn--primary btn--white">Start Free Trial</a>
+   863→   863→            <a href="#" class="btn btn--secondary cta__btn-demo">Book a Demo</a>
+   864→   864→          </div>
+   865→   865→        </div>
+   866→   866→      </div>
+   867→   867→    </section>
+   868→   868→
+   869→   869→  </main>
+   870→   870→
+   871→   871→  <!-- ===================== FOOTER ===================== -->
+   872→   872→  <footer class="footer">
+   873→   873→    <div class="footer__top">
+   874→   874→      <div class="container">
+   875→   875→        <div class="footer__grid">
+   876→   876→          <div class="footer__brand">
+   877→   877→            <img src="assets/images/logo.png" alt="GoCRM" class="footer__logo" height="64">
+   878→   878→            <p class="footer__tagline">Manage &bull; Grow &bull; Succeed</p>
+   879→   879→            <p class="footer__desc">The all-in-one CRM + ERP platform for modern businesses.</p>
+   880→   880→            <div class="footer__social">
+   881→   881→              <a href="#" class="footer__social-btn" aria-label="Twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+   882→   882→              <a href="#" class="footer__social-btn" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+   883→   883→              <a href="#" class="footer__social-btn" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+   884→   884→              <a href="#" class="footer__social-btn" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg></a>
+   885→   885→            </div>
+   886→   886→          </div>
+   887→   887→          <div>
+   888→   888→            <h4 class="footer__col-title">Product</h4>
+   889→   889→            <ul class="footer__col-links">
+   890→   890→              <li><a href="features.html">Features</a></li>
+   891→   891→              <li><a href="pricing.html">Pricing</a></li>
+   892→   892→              <li><a href="#">Integrations</a></li>
+   893→   893→              <li><a href="#">Changelog</a></li>
+   894→   894→              <li><a href="#">API Docs</a></li>
+   895→   895→            </ul>
+   896→   896→          </div>
+   897→   897→          <div>
+   898→   898→            <h4 class="footer__col-title">Company</h4>
+   899→   899→            <ul class="footer__col-links">
+   900→   900→              <li><a href="about.html">About Us</a></li>
+   901→   901→              <li><a href="blog.html">Blog</a></li>
+   902→   902→              <li><a href="#">Careers <span class="footer__badge">Hiring</span></a></li>
+   903→   903→              <li><a href="#">Press Kit</a></li>
+   904→   904→              <li><a href="contact.html">Contact</a></li>
+   905→   905→            </ul>
+   906→   906→          </div>
+   907→   907→          <div>
+   908→   908→            <h4 class="footer__col-title">Resources</h4>
+   909→   909→            <ul class="footer__col-links">
+   910→   910→              <li><a href="#">Help Center</a></li>
+   911→   911→              <li><a href="#">Community</a></li>
+   912→   912→              <li><a href="#">Webinars</a></li>
+   913→   913→              <li><a href="#">Templates</a></li>
+   914→   914→              <li><a href="#">Status Page</a></li>
+   915→   915→            </ul>
+   916→   916→          </div>
+   917→   917→          <div>
+   918→   918→            <h4 class="footer__col-title">Legal</h4>
+   919→   919→            <ul class="footer__col-links">
+   920→   920→              <li><a href="#">Privacy Policy</a></li>
+   921→   921→              <li><a href="#">Terms of Service</a></li>
+   922→   922→              <li><a href="#">Cookie Policy</a></li>
+   923→   923→              <li><a href="#">GDPR</a></li>
+   924→   924→              <li><a href="#">Security</a></li>
+   925→   925→            </ul>
+   926→   926→          </div>
+   927→   927→        </div>
+   928→   928→      </div>
+   929→   929→    </div>
+   930→   930→    <div class="footer__bottom">
+   931→   931→      <div class="footer__bottom-inner">
+   932→   932→        <p class="footer__copy">&copy; 2025 GoCRM. All rights reserved.</p>
+   933→   933→        <p class="footer__copy">Built for modern teams</p>
+   934→   934→      </div>
+   935→   935→    </div>
+   936→   936→  </footer>
+   937→   937→
+   938→   938→</div><!-- /.page-wrapper -->
+   939→   939→
+   940→   940→<script src="js/script.js" defer></script>
+   941→   941→</body>
+   942→   942→</html>

@@ -1,0 +1,2002 @@
+   950→  line-height: 1.08;
+   951→  letter-spacing: -0.025em;
+   952→}
+   953→
+   954→@media (min-width: 640px) {
+   955→  .hero__title { font-size: 3rem; }
+   956→}
+   957→
+   958→@media (min-width: 768px) {
+   959→  .hero__title { font-size: 3.75rem; }
+   960→}
+   961→
+   962→@media (min-width: 1024px) {
+   963→  .hero__title { font-size: 4.5rem; }
+   964→}
+   965→
+   966→.hero__title-highlight {
+   967→  position: relative;
+   968→  display: inline-block;
+   969→}
+   970→
+   971→.hero__title-highlight::after {
+   972→  content: '';
+   973→  position: absolute;
+   974→  bottom: 4px;
+   975→  left: 0;
+   976→  width: 100%;
+   977→  height: 12px;
+   978→  background: rgba(253, 83, 32, 0.15);
+   979→  border-radius: 2px;
+   980→  z-index: -1;
+   981→}
+   982→
+   983→.hero__subtitle {
+   984→  margin-top: 1.5rem;
+   985→  font-size: 1.125rem;
+   986→  color: var(--gray-500);
+   987→  max-width: 32rem;
+   988→  line-height: 1.625;
+   989→}
+   990→
+   991→/* hero-subtitle (used on inner pages, not inside hero__grid) */
+   992→.hero-subtitle {
+   993→  font-size: 1.125rem;
+   994→  color: var(--gray-500);
+   995→  max-width: 42rem;
+   996→  margin: 1rem auto 0;
+   997→  text-align: center;
+   998→  line-height: 1.625;
+   999→}
+  1000→
+  1001→.hero__buttons {
+  1002→  margin-top: 2rem;
+  1003→  display: flex;
+  1004→  flex-wrap: wrap;
+  1005→  gap: 1rem;
+  1006→}
+  1007→
+  1008→.hero__note {
+  1009→  margin-top: 1rem;
+  1010→  font-size: 0.875rem;
+  1011→  color: var(--gray-400);
+  1012→}
+  1013→
+  1014→.hero__right {
+  1015→  position: relative;
+  1016→  animation: float 6s ease-in-out infinite;
+  1017→}
+  1018→
+  1019→/* ==========================================================================
+  1020→   12. DASHBOARD MOCKUP
+  1021→   ========================================================================== */
+  1022→.dashboard {
+  1023→  border-radius: 1rem;
+  1024→  background: var(--white);
+  1025→  border: 1px solid var(--gray-100);
+  1026→  box-shadow: var(--shadow-xl);
+  1027→  overflow: hidden;
+  1028→}
+  1029→
+  1030→.dashboard__topbar {
+  1031→  display: flex;
+  1032→  align-items: center;
+  1033→  justify-content: space-between;
+  1034→  padding: 0.75rem 1rem;
+  1035→  border-bottom: 1px solid var(--gray-100);
+  1036→}
+  1037→
+  1038→@media (min-width: 640px) {
+  1039→  .dashboard__topbar {
+  1040→    padding: 0.75rem 1.25rem;
+  1041→  }
+  1042→}
+  1043→
+  1044→.dashboard__logo {
+  1045→  width: 1.5rem;
+  1046→  height: 1.5rem;
+  1047→  border-radius: 0.375rem;
+  1048→  background: var(--navy);
+  1049→  display: flex;
+  1050→  align-items: center;
+  1051→  justify-content: center;
+  1052→  flex-shrink: 0;
+  1053→}
+  1054→
+  1055→.dashboard__search {
+  1056→  display: none;
+  1057→  align-items: center;
+  1058→  gap: 6px;
+  1059→  background: var(--gray-50);
+  1060→  border-radius: 0.5rem;
+  1061→  padding: 0.375rem 0.625rem;
+  1062→}
+  1063→
+  1064→@media (min-width: 640px) {
+  1065→  .dashboard__search {
+  1066→    display: flex;
+  1067→  }
+  1068→}
+  1069→
+  1070→.dashboard__kpi-grid {
+  1071→  display: grid;
+  1072→  grid-template-columns: repeat(2, 1fr);
+  1073→  gap: 12px;
+  1074→  padding: 1rem;
+  1075→}
+  1076→
+  1077→@media (min-width: 640px) {
+  1078→  .dashboard__kpi-grid {
+  1079→    padding: 1rem 1.25rem;
+  1080→  }
+  1081→}
+  1082→
+  1083→@media (min-width: 1024px) {
+  1084→  .dashboard__kpi-grid {
+  1085→    grid-template-columns: repeat(4, 1fr);
+  1086→  }
+  1087→}
+  1088→
+  1089→.dashboard__kpi {
+  1090→  background: rgba(245, 245, 245, 0.8);
+  1091→  border-radius: 0.75rem;
+  1092→  padding: 0.75rem;
+  1093→  transition: background-color var(--transition-base);
+  1094→}
+  1095→
+  1096→.dashboard__kpi-icon {
+  1097→  width: 1.75rem;
+  1098→  height: 1.75rem;
+  1099→  border-radius: 0.5rem;
+  1100→  display: flex;
+  1101→  align-items: center;
+  1102→  justify-content: center;
+  1103→}
+  1104→
+  1105→.dashboard__kpi-value {
+  1106→  color: var(--navy);
+  1107→  font-size: 0.875rem;
+  1108→  font-weight: 700;
+  1109→  margin-top: 0.5rem;
+  1110→}
+  1111→
+  1112→@media (min-width: 640px) {
+  1113→  .dashboard__kpi-value {
+  1114→    font-size: 1rem;
+  1115→  }
+  1116→}
+  1117→
+  1118→.dashboard__kpi-label {
+  1119→  color: var(--gray-400);
+  1120→  font-size: 10px;
+  1121→  margin-top: 2px;
+  1122→}
+  1123→
+  1124→.dashboard__kpi-change {
+  1125→  font-size: 10px;
+  1126→  font-weight: 600;
+  1127→  color: #16a34a;
+  1128→}
+  1129→
+  1130→.dashboard__content {
+  1131→  padding: 1rem;
+  1132→  display: flex;
+  1133→  flex-direction: column;
+  1134→  gap: 1rem;
+  1135→}
+  1136→
+  1137→@media (min-width: 640px) {
+  1138→  .dashboard__content {
+  1139→    padding: 1rem 1.25rem;
+  1140→  }
+  1141→}
+  1142→
+  1143→@media (min-width: 1024px) {
+  1144→  .dashboard__content {
+  1145→    flex-direction: row;
+  1146→  }
+  1147→}
+  1148→
+  1149→.dashboard__chart-area {
+  1150→  flex: 1;
+  1151→  background: rgba(245, 245, 245, 0.6);
+  1152→  border-radius: 0.75rem;
+  1153→  padding: 0.75rem;
+  1154→}
+  1155→
+  1156→@media (min-width: 640px) {
+  1157→  .dashboard__chart-area {
+  1158→    padding: 1rem;
+  1159→  }
+  1160→}
+  1161→
+  1162→.dashboard__side-panel {
+  1163→  width: 100%;
+  1164→  display: flex;
+  1165→  flex-direction: column;
+  1166→  gap: 12px;
+  1167→}
+  1168→
+  1169→@media (min-width: 1024px) {
+  1170→  .dashboard__side-panel {
+  1171→    width: 11rem;
+  1172→  }
+  1173→}
+  1174→
+  1175→@media (min-width: 1280px) {
+  1176→  .dashboard__side-panel {
+  1177→    width: 12rem;
+  1178→  }
+  1179→}
+  1180→
+  1181→.dashboard__activity {
+  1182→  background: rgba(245, 245, 245, 0.6);
+  1183→  border-radius: 0.75rem;
+  1184→  padding: 0.75rem;
+  1185→}
+  1186→
+  1187→.dashboard__activity-item {
+  1188→  display: flex;
+  1189→  align-items: flex-start;
+  1190→  gap: 8px;
+  1191→  padding: 0.5rem 0;
+  1192→}
+  1193→
+  1194→.dashboard__activity-avatar {
+  1195→  width: 1.25rem;
+  1196→  height: 1.25rem;
+  1197→  border-radius: 50%;
+  1198→  display: flex;
+  1199→  align-items: center;
+  1200→  justify-content: center;
+  1201→  flex-shrink: 0;
+  1202→}
+  1203→
+  1204→.dashboard__invoice-cta {
+  1205→  background: var(--navy);
+  1206→  border-radius: 0.75rem;
+  1207→  padding: 0.75rem;
+  1208→  cursor: pointer;
+  1209→  transition: background var(--transition-base);
+  1210→}
+  1211→
+  1212→.dashboard__invoice-cta:hover {
+  1213→  background: var(--navy-light);
+  1214→}
+  1215→
+  1216→/* ==========================================================================
+  1217→   13. CARD SYSTEM
+  1218→   ========================================================================== */
+  1219→.card {
+  1220→  background: var(--white);
+  1221→  border-radius: 1rem;
+  1222→  border: 1px solid var(--gray-100);
+  1223→  padding: 1.5rem;
+  1224→  transition: all var(--transition-slow);
+  1225→}
+  1226→
+  1227→.card:hover {
+  1228→  box-shadow: var(--shadow-lg);
+  1229→  transform: translateY(-4px);
+  1230→  border-color: var(--gray-200);
+  1231→}
+  1232→
+  1233→.card__icon {
+  1234→  width: 3rem;
+  1235→  height: 3rem;
+  1236→  border-radius: 0.75rem;
+  1237→  background: var(--gray-50);
+  1238→  display: flex;
+  1239→  align-items: center;
+  1240→  justify-content: center;
+  1241→  color: var(--navy);
+  1242→  transition: color var(--transition-slow);
+  1243→}
+  1244→
+  1245→.card__icon svg {
+  1246→  width: 24px;
+  1247→  height: 24px;
+  1248→  transition: all var(--transition-slow);
+  1249→}
+  1250→
+  1251→.card:hover .card__icon {
+  1252→  color: var(--orange);
+  1253→}
+  1254→
+  1255→.card:hover .card__icon svg {
+  1256→  stroke: var(--orange);
+  1257→}
+  1258→
+  1259→.card__title {
+  1260→  font-size: 1.125rem;
+  1261→  font-weight: 600;
+  1262→  color: var(--navy);
+  1263→  margin-top: 1rem;
+  1264→}
+  1265→
+  1266→.card__desc {
+  1267→  font-size: 0.875rem;
+  1268→  color: var(--gray-500);
+  1269→  margin-top: 0.5rem;
+  1270→  line-height: 1.625;
+  1271→}
+  1272→
+  1273→/* Card Variants */
+  1274→.card--flat {
+  1275→  border: none;
+  1276→  background: rgba(245, 245, 245, 0.8);
+  1277→  border-radius: 0.75rem;
+  1278→  padding: 0.75rem;
+  1279→}
+  1280→
+  1281→.card--flat:hover {
+  1282→  background: rgba(240, 240, 240, 0.8);
+  1283→  box-shadow: none;
+  1284→  transform: none;
+  1285→}
+  1286→
+  1287→.card--solution {
+  1288→  padding: 2rem;
+  1289→  border-radius: 1rem;
+  1290→}
+  1291→
+  1292→.card--solution .card__icon {
+  1293→  width: 3.5rem;
+  1294→  height: 3.5rem;
+  1295→  border-radius: 1rem;
+  1296→}
+  1297→
+  1298→.card--testimonial {
+  1299→  padding: 1.5rem;
+  1300→}
+  1301→
+  1302→@media (min-width: 768px) {
+  1303→  .card--testimonial {
+  1304→    padding: 2rem;
+  1305→  }
+  1306→}
+  1307→
+  1308→/* Blog Card */
+  1309→.card--blog {
+  1310→  overflow: hidden;
+  1311→  border: 1px solid var(--gray-100);
+  1312→  border-radius: 1rem;
+  1313→  background: var(--white);
+  1314→  transition: all var(--transition-slow);
+  1315→  padding: 0;
+  1316→}
+  1317→
+  1318→.card--blog:hover {
+  1319→  box-shadow: var(--shadow-md);
+  1320→  transform: translateY(-2px);
+  1321→}
+  1322→
+  1323→.card--blog .card__image {
+  1324→  aspect-ratio: 16 / 10;
+  1325→  background: var(--gray-100);
+  1326→  overflow: hidden;
+  1327→  display: flex;
+  1328→  align-items: center;
+  1329→  justify-content: center;
+  1330→}
+  1331→
+  1332→.card--blog .card__image svg {
+  1333→  width: 48px;
+  1334→  height: 48px;
+  1335→  color: var(--gray-300);
+  1336→}
+  1337→
+  1338→.card--blog .card__image img {
+  1339→  width: 100%;
+  1340→  height: 100%;
+  1341→  object-fit: cover;
+  1342→  transition: transform var(--transition-slow);
+  1343→}
+  1344→
+  1345→.card--blog:hover .card__image img {
+  1346→  transform: scale(1.05);
+  1347→}
+  1348→
+  1349→.card--blog .card__category {
+  1350→  display: inline-block;
+  1351→  font-size: 0.75rem;
+  1352→  font-weight: 500;
+  1353→  padding: 0.25rem 0.625rem;
+  1354→  border-radius: 9999px;
+  1355→  margin-top: 1rem;
+  1356→}
+  1357→
+  1358→.card--blog .card__category--tips {
+  1359→  background: #eff6ff;
+  1360→  color: #2563eb;
+  1361→}
+  1362→
+  1363→.card--blog .card__category--product {
+  1364→  background: var(--orange-light);
+  1365→  color: var(--orange);
+  1366→}
+  1367→
+  1368→.card--blog .card__category--industry {
+  1369→  background: #f0fdf4;
+  1370→  color: #16a34a;
+  1371→}
+  1372→
+  1373→.card--blog .card__body {
+  1374→  padding: 1rem 1.5rem 1.5rem;
+  1375→}
+  1376→
+  1377→.card--blog .card__title {
+  1378→  margin-top: 0.5rem;
+  1379→}
+  1380→
+  1381→.card--blog .card__desc {
+  1382→  margin-top: 0.5rem;
+  1383→}
+  1384→
+  1385→/* Card Author (blog) */
+  1386→.card__author {
+  1387→  display: flex;
+  1388→  align-items: center;
+  1389→  gap: 0.75rem;
+  1390→  margin-top: 1rem;
+  1391→}
+  1392→
+  1393→.card__avatar {
+  1394→  width: 2rem;
+  1395→  height: 2rem;
+  1396→  border-radius: 50%;
+  1397→  display: flex;
+  1398→  align-items: center;
+  1399→  justify-content: center;
+  1400→  font-size: 0.75rem;
+  1401→  font-weight: 600;
+  1402→  flex-shrink: 0;
+  1403→}
+  1404→
+  1405→.card__author-info {
+  1406→  display: flex;
+  1407→  flex-direction: column;
+  1408→}
+  1409→
+  1410→.card__author-name {
+  1411→  font-size: 0.8125rem;
+  1412→  font-weight: 600;
+  1413→  color: var(--navy);
+  1414→}
+  1415→
+  1416→.card__author-date {
+  1417→  font-size: 0.75rem;
+  1418→  color: var(--gray-400);
+  1419→}
+  1420→
+  1421→/* Feature Card */
+  1422→.feature-card {
+  1423→  background: var(--white);
+  1424→  border: 1px solid var(--gray-100);
+  1425→  border-radius: 1rem;
+  1426→  padding: 1.5rem;
+  1427→  transition: all var(--transition-slow);
+  1428→}
+  1429→
+  1430→.feature-card:hover {
+  1431→  box-shadow: var(--shadow-lg);
+  1432→  transform: translateY(-4px);
+  1433→  border-color: var(--gray-200);
+  1434→}
+  1435→
+  1436→.feature-card__icon {
+  1437→  width: 3rem;
+  1438→  height: 3rem;
+  1439→  border-radius: 0.75rem;
+  1440→  background: var(--gray-50);
+  1441→  display: flex;
+  1442→  align-items: center;
+  1443→  justify-content: center;
+  1444→  color: var(--navy);
+  1445→  transition: color var(--transition-slow);
+  1446→}
+  1447→
+  1448→.feature-card__icon svg {
+  1449→  width: 24px;
+  1450→  height: 24px;
+  1451→  stroke-width: 2;
+  1452→  transition: all var(--transition-slow);
+  1453→}
+  1454→
+  1455→.feature-card:hover .feature-card__icon {
+  1456→  color: var(--orange);
+  1457→}
+  1458→
+  1459→.feature-card:hover .feature-card__icon svg {
+  1460→  stroke: var(--orange);
+  1461→}
+  1462→
+  1463→.feature-card__title {
+  1464→  font-size: 1.125rem;
+  1465→  font-weight: 600;
+  1466→  color: var(--navy);
+  1467→  margin-top: 1rem;
+  1468→}
+  1469→
+  1470→.feature-card__desc {
+  1471→  font-size: 0.875rem;
+  1472→  color: var(--gray-500);
+  1473→  margin-top: 0.5rem;
+  1474→  line-height: 1.625;
+  1475→}
+  1476→
+  1477→/* Solution Card */
+  1478→.solution-card {
+  1479→  background: var(--white);
+  1480→  border: 1px solid var(--gray-100);
+  1481→  border-radius: 1rem;
+  1482→  padding: 2rem;
+  1483→  transition: all var(--transition-slow);
+  1484→}
+  1485→
+  1486→.solution-card:hover {
+  1487→  box-shadow: var(--shadow-lg);
+  1488→  transform: translateY(-4px);
+  1489→  border-color: var(--gray-200);
+  1490→}
+  1491→
+  1492→.solution-card__icon {
+  1493→  width: 3.5rem;
+  1494→  height: 3.5rem;
+  1495→  border-radius: 1rem;
+  1496→  background: var(--gray-50);
+  1497→  display: flex;
+  1498→  align-items: center;
+  1499→  justify-content: center;
+  1500→  color: var(--navy);
+  1501→  transition: color var(--transition-slow);
+  1502→}
+  1503→
+  1504→.solution-card__icon svg {
+  1505→  width: 24px;
+  1506→  height: 24px;
+  1507→  transition: all var(--transition-slow);
+  1508→}
+  1509→
+  1510→.solution-card:hover .solution-card__icon {
+  1511→  color: var(--orange);
+  1512→}
+  1513→
+  1514→.solution-card:hover .solution-card__icon svg {
+  1515→  stroke: var(--orange);
+  1516→}
+  1517→
+  1518→.solution-card__title {
+  1519→  font-size: 1.125rem;
+  1520→  font-weight: 600;
+  1521→  color: var(--navy);
+  1522→  margin-top: 1rem;
+  1523→}
+  1524→
+  1525→.solution-card__desc {
+  1526→  font-size: 0.875rem;
+  1527→  color: var(--gray-500);
+  1528→  margin-top: 0.5rem;
+  1529→  line-height: 1.625;
+  1530→}
+  1531→
+  1532→.solution-card__link {
+  1533→  display: inline-flex;
+  1534→  align-items: center;
+  1535→  margin-top: 1rem;
+  1536→  font-size: 0.875rem;
+  1537→  font-weight: 600;
+  1538→  color: var(--orange);
+  1539→  text-decoration: none;
+  1540→  transition: color var(--transition-base);
+  1541→}
+  1542→
+  1543→.solution-card__link:hover {
+  1544→  color: var(--orange-hover);
+  1545→}
+  1546→
+  1547→/* ==========================================================================
+  1548→   14. SECTION: TRUSTED BY / LOGOS
+  1549→   ========================================================================== */
+  1550→.logos {
+  1551→  display: flex;
+  1552→  align-items: center;
+  1553→  justify-content: center;
+  1554→  gap: 3rem;
+  1555→  flex-wrap: wrap;
+  1556→  opacity: 0.6;
+  1557→}
+  1558→
+  1559→.logos__item {
+  1560→  font-size: 1.5rem;
+  1561→  font-weight: 700;
+  1562→  color: var(--gray-300);
+  1563→  letter-spacing: -0.025em;
+  1564→  white-space: nowrap;
+  1565→}
+  1566→
+  1567→.logos__item img {
+  1568→  height: 2rem;
+  1569→  width: auto;
+  1570→  filter: grayscale(100%);
+  1571→  opacity: 0.6;
+  1572→  transition: all var(--transition-slow);
+  1573→}
+  1574→
+  1575→.logos__item img:hover {
+  1576→  filter: grayscale(0%);
+  1577→  opacity: 1;
+  1578→}
+  1579→
+  1580→/* ==========================================================================
+  1581→   15. SECTION: WHY GO-CRM
+  1582→   ========================================================================== */
+  1583→.why-grid {
+  1584→  display: grid;
+  1585→  gap: 1.5rem;
+  1586→}
+  1587→
+  1588→@media (min-width: 768px) {
+  1589→  .why-grid {
+  1590→    grid-template-columns: repeat(2, 1fr);
+  1591→  }
+  1592→}
+  1593→
+  1594→.why-card {
+  1595→  display: flex;
+  1596→  gap: 1rem;
+  1597→  align-items: flex-start;
+  1598→  padding: 1.5rem;
+  1599→  border-radius: 1rem;
+  1600→  background: var(--white);
+  1601→  border: 1px solid var(--gray-100);
+  1602→  transition: all var(--transition-slow);
+  1603→}
+  1604→
+  1605→.why-card:hover {
+  1606→  box-shadow: var(--shadow-md);
+  1607→  border-color: var(--gray-200);
+  1608→}
+  1609→
+  1610→.why-card__icon {
+  1611→  width: 3rem;
+  1612→  height: 3rem;
+  1613→  border-radius: 0.75rem;
+  1614→  background: var(--gray-50);
+  1615→  display: flex;
+  1616→  align-items: center;
+  1617→  justify-content: center;
+  1618→  flex-shrink: 0;
+  1619→  color: var(--navy);
+  1620→}
+  1621→
+  1622→.why-card__icon svg {
+  1623→  width: 24px;
+  1624→  height: 24px;
+  1625→}
+  1626→
+  1627→.why-card__title {
+  1628→  font-size: 1rem;
+  1629→  font-weight: 600;
+  1630→  color: var(--navy);
+  1631→}
+  1632→
+  1633→.why-card__desc {
+  1634→  font-size: 0.875rem;
+  1635→  color: var(--gray-500);
+  1636→  margin-top: 0.25rem;
+  1637→  line-height: 1.625;
+  1638→}
+  1639→
+  1640→/* ==========================================================================
+  1641→   16. SECTION: STATS / GROWTH
+  1642→   ========================================================================== */
+  1643→.stats {
+  1644→  display: grid;
+  1645→  grid-template-columns: repeat(2, 1fr);
+  1646→  gap: 2rem;
+  1647→  text-align: center;
+  1648→}
+  1649→
+  1650→@media (min-width: 768px) {
+  1651→  .stats {
+  1652→    grid-template-columns: repeat(4, 1fr);
+  1653→  }
+  1654→}
+  1655→
+  1656→.stat__number {
+  1657→  font-size: 2.25rem;
+  1658→  font-weight: 700;
+  1659→  color: var(--white);
+  1660→}
+  1661→
+  1662→@media (min-width: 768px) {
+  1663→  .stat__number {
+  1664→    font-size: 3rem;
+  1665→  }
+  1666→}
+  1667→
+  1668→.stat__label {
+  1669→  color: var(--gray-300);
+  1670→  font-size: 0.875rem;
+  1671→  margin-top: 0.5rem;
+  1672→}
+  1673→
+  1674→/* Stat Card (About page) */
+  1675→.stat-card {
+  1676→  text-align: center;
+  1677→  padding: 1.5rem;
+  1678→}
+  1679→
+  1680→.stat-card__number {
+  1681→  display: block;
+  1682→  font-size: 2rem;
+  1683→  font-weight: 700;
+  1684→  color: var(--orange);
+  1685→}
+  1686→
+  1687→@media (min-width: 768px) {
+  1688→  .stat-card__number {
+  1689→    font-size: 2.5rem;
+  1690→  }
+  1691→}
+  1692→
+  1693→.stat-card__label {
+  1694→  display: block;
+  1695→  font-size: 0.875rem;
+  1696→  color: var(--gray-500);
+  1697→  margin-top: 0.25rem;
+  1698→}
+  1699→
+  1700→/* ==========================================================================
+  1701→   17. SECTION: HOW IT WORKS / STEPS
+  1702→   ========================================================================== */
+  1703→.steps {
+  1704→  display: flex;
+  1705→  flex-direction: column;
+  1706→  gap: 2rem;
+  1707→  align-items: flex-start;
+  1708→}
+  1709→
+  1710→@media (min-width: 768px) {
+  1711→  .steps {
+  1712→    flex-direction: row;
+  1713→  }
+  1714→}
+  1715→
+  1716→.step {
+  1717→  flex: 1;
+  1718→  text-align: center;
+  1719→  position: relative;
+  1720→}
+  1721→
+  1722→.step__number {
+  1723→  font-size: 3.75rem;
+  1724→  font-weight: 700;
+  1725→  color: rgba(253, 83, 32, 0.1);
+  1726→  position: absolute;
+  1727→  top: 0;
+  1728→  left: 50%;
+  1729→  transform: translateX(-50%);
+  1730→  line-height: 1;
+  1731→  user-select: none;
+  1732→  pointer-events: none;
+  1733→}
+  1734→
+  1735→.step__icon {
+  1736→  width: 3.5rem;
+  1737→  height: 3.5rem;
+  1738→  border-radius: 1rem;
+  1739→  background: var(--gray-50);
+  1740→  display: flex;
+  1741→  align-items: center;
+  1742→  justify-content: center;
+  1743→  margin: 0 auto;
+  1744→  position: relative;
+  1745→  z-index: 1;
+  1746→}
+  1747→
+  1748→.step__icon svg {
+  1749→  width: 24px;
+  1750→  height: 24px;
+  1751→  color: var(--navy);
+  1752→}
+  1753→
+  1754→.step__title {
+  1755→  font-size: 1.25rem;
+  1756→  font-weight: 600;
+  1757→  color: var(--navy);
+  1758→  margin-top: 1.5rem;
+  1759→}
+  1760→
+  1761→.step__desc {
+  1762→  color: var(--gray-500);
+  1763→  font-size: 0.875rem;
+  1764→  margin-top: 0.5rem;
+  1765→  max-width: 20rem;
+  1766→  margin-left: auto;
+  1767→  margin-right: auto;
+  1768→  line-height: 1.625;
+  1769→}
+  1770→
+  1771→.step__connector {
+  1772→  display: none;
+  1773→}
+  1774→
+  1775→@media (min-width: 768px) {
+  1776→  .step__connector {
+  1777→    display: block;
+  1778→    position: absolute;
+  1779→    top: 1.75rem;
+  1780→    right: 0;
+  1781→    transform: translateX(50%);
+  1782→    color: var(--gray-300);
+  1783→  }
+  1784→}
+  1785→
+  1786→/* ==========================================================================
+  1787→   18. SECTION: TESTIMONIALS
+  1788→   ========================================================================== */
+  1789→.testimonials {
+  1790→  display: grid;
+  1791→  gap: 1.5rem;
+  1792→}
+  1793→
+  1794→@media (min-width: 768px) {
+  1795→  .testimonials {
+  1796→    grid-template-columns: repeat(2, 1fr);
+  1797→  }
+  1798→}
+  1799→
+  1800→.testimonial__quote {
+  1801→  color: var(--gray-600);
+  1802→  font-size: 1rem;
+  1803→  line-height: 1.625;
+  1804→  font-style: italic;
+  1805→}
+  1806→
+  1807→.testimonial__stars {
+  1808→  display: flex;
+  1809→  gap: 4px;
+  1810→  margin-top: 1rem;
+  1811→}
+  1812→
+  1813→.testimonial__star {
+  1814→  width: 1.25rem;
+  1815→  height: 1.25rem;
+  1816→  fill: #facc15;
+  1817→}
+  1818→
+  1819→.testimonial__author {
+  1820→  display: flex;
+  1821→  align-items: center;
+  1822→  gap: 0.75rem;
+  1823→  margin-top: 1.5rem;
+  1824→}
+  1825→
+  1826→.testimonial__avatar {
+  1827→  width: 2.5rem;
+  1828→  height: 2.5rem;
+  1829→  border-radius: 50%;
+  1830→  display: flex;
+  1831→  align-items: center;
+  1832→  justify-content: center;
+  1833→  color: var(--white);
+  1834→  font-size: 0.875rem;
+  1835→  font-weight: 600;
+  1836→  flex-shrink: 0;
+  1837→}
+  1838→
+  1839→.testimonial__name {
+  1840→  font-size: 0.875rem;
+  1841→  font-weight: 600;
+  1842→  color: var(--navy);
+  1843→}
+  1844→
+  1845→.testimonial__role {
+  1846→  font-size: 0.875rem;
+  1847→  color: var(--gray-500);
+  1848→}
+  1849→
+  1850→/* ==========================================================================
+  1851→   19. SECTION: PRICING
+  1852→   ========================================================================== */
+  1853→.pricing {
+  1854→  display: grid;
+  1855→  gap: 1.5rem;
+  1856→  align-items: start;
+  1857→}
+  1858→
+  1859→@media (min-width: 768px) {
+  1860→  .pricing {
+  1861→    grid-template-columns: repeat(3, 1fr);
+  1862→  }
+  1863→}
+  1864→
+  1865→.pricing-grid {
+  1866→  display: grid;
+  1867→  gap: 1.5rem;
+  1868→  align-items: start;
+  1869→}
+  1870→
+  1871→@media (min-width: 768px) {
+  1872→  .pricing-grid {
+  1873→    grid-template-columns: repeat(3, 1fr);
+  1874→  }
+  1875→}
+  1876→
+  1877→.pricing-card {
+  1878→  background: var(--white);
+  1879→  border-radius: 1rem;
+  1880→  border: 1px solid var(--gray-200);
+  1881→  padding: 2rem;
+  1882→  text-align: center;
+  1883→  transition: all var(--transition-slow);
+  1884→}
+  1885→
+  1886→.pricing-card:hover {
+  1887→  box-shadow: var(--shadow-lg);
+  1888→}
+  1889→
+  1890→.pricing-card--featured {
+  1891→  border: 2px solid var(--orange);
+  1892→  transform: scale(1.05);
+  1893→  box-shadow: var(--shadow-xl);
+  1894→  position: relative;
+  1895→  z-index: 10;
+  1896→}
+  1897→
+  1898→@media (max-width: 767px) {
+  1899→  .pricing-card--featured {
+  1900→    transform: scale(1);
+  1901→  }
+  1902→}
+  1903→
+  1904→.pricing-card__badge {
+  1905→  position: absolute;
+  1906→  top: 0;
+  1907→  left: 50%;
+  1908→  transform: translate(-50%, -50%);
+  1909→  background: var(--orange);
+  1910→  color: var(--white);
+  1911→  font-size: 0.75rem;
+  1912→  font-weight: 600;
+  1913→  padding: 0.25rem 1rem;
+  1914→  border-radius: 9999px;
+  1915→  white-space: nowrap;
+  1916→}
+  1917→
+  1918→.pricing-card__header {
+  1919→  margin-bottom: 1.5rem;
+  1920→}
+  1921→
+  1922→.pricing-card__name {
+  1923→  font-size: 1.25rem;
+  1924→  font-weight: 700;
+  1925→  color: var(--navy);
+  1926→}
+  1927→
+  1928→.pricing-card__desc {
+  1929→  color: var(--gray-500);
+  1930→  font-size: 0.875rem;
+  1931→  margin-top: 0.5rem;
+  1932→}
+  1933→
+  1934→.pricing-card__price {
+  1935→  margin-top: 1rem;
+  1936→}
+  1937→
+  1938→.pricing-card__amount {
+  1939→  font-size: 2.25rem;
+  1940→  font-weight: 700;
+  1941→  color: var(--navy);
+  1942→}
+  1943→
+  1944→.pricing-card__period {
+  1945→  color: var(--gray-400);
+  1946→  font-size: 0.875rem;
+  1947→}
+  1948→
+  1949→.pricing-card__cta {
+  1950→  display: inline-flex;
+  1951→  width: 100%;
+  1952→  justify-content: center;
+  1953→  margin-top: 1.5rem;
+  1954→}
+  1955→
+  1956→.pricing-card__features {
+  1957→  text-align: left;
+  1958→  margin-top: 2rem;
+  1959→  list-style: none;
+  1960→  padding: 0;
+  1961→}
+  1962→
+  1963→.pricing-card__features li {
+  1964→  display: flex;
+  1965→  align-items: center;
+  1966→  gap: 0.75rem;
+  1967→  padding: 0.5rem 0;
+  1968→  font-size: 0.875rem;
+  1969→  color: var(--gray-600);
+  1970→}
+  1971→
+  1972→.pricing-card__features li svg {
+  1973→  width: 1rem;
+  1974→  height: 1rem;
+  1975→  color: var(--orange);
+  1976→  flex-shrink: 0;
+  1977→}
+  1978→
+  1979→/* Pricing Toggle Switch */
+  1980→.pricing-toggle {
+  1981→  display: flex;
+  1982→  align-items: center;
+  1983→  justify-content: center;
+  1984→  gap: 0.75rem;
+  1985→  margin-bottom: 3rem;
+  1986→}
+  1987→
+  1988→.pricing-toggle__label {
+  1989→  font-size: 0.875rem;
+  1990→  font-weight: 500;
+  1991→  color: var(--gray-500);
+  1992→  transition: color var(--transition-base);
+  1993→}
+  1994→
+  1995→.pricing-toggle__label--active {
+  1996→  color: var(--navy);
+  1997→  font-weight: 600;
+  1998→}
+  1999→
+  2000→.pricing-toggle__save {
+  2001→  display: inline-block;
+  2002→  font-size: 0.75rem;
+  2003→  font-weight: 600;
+  2004→  color: var(--orange);
+  2005→  margin-left: 0.25rem;
+  2006→}
+  2007→
+  2008→.pricing-toggle__btn {
+  2009→  font-size: 0.875rem;
+  2010→  font-weight: 500;
+  2011→  color: var(--gray-500);
+  2012→  background: none;
+  2013→  border: none;
+  2014→  cursor: pointer;
+  2015→  transition: color var(--transition-base);
+  2016→}
+  2017→
+  2018→.pricing-toggle__btn--active {
+  2019→  color: var(--navy);
+  2020→  font-weight: 600;
+  2021→}
+  2022→
+  2023→.pricing-toggle__switch {
+  2024→  width: 3rem;
+  2025→  height: 1.5rem;
+  2026→  background: var(--gray-200);
+  2027→  border-radius: 9999px;
+  2028→  position: relative;
+  2029→  cursor: pointer;
+  2030→  transition: background var(--transition-slow);
+  2031→  border: none;
+  2032→  padding: 0;
+  2033→}
+  2034→
+  2035→.pricing-toggle__switch--active {
+  2036→  background: var(--orange);
+  2037→}
+  2038→
+  2039→.pricing-toggle__switch::after,
+  2040→.pricing-toggle__knob {
+  2041→  content: '';
+  2042→  position: absolute;
+  2043→  top: 4px;
+  2044→  left: 4px;
+  2045→  width: 1rem;
+  2046→  height: 1rem;
+  2047→  background: var(--white);
+  2048→  border-radius: 50%;
+  2049→  transition: transform var(--transition-slow);
+  2050→  box-shadow: var(--shadow-sm);
+  2051→}
+  2052→
+  2053→.pricing-toggle__switch--active::after {
+  2054→  transform: translateX(24px);
+  2055→}
+  2056→
+  2057→/* ==========================================================================
+  2058→   20. SECTION: FAQ / ACCORDION
+  2059→   ========================================================================== */
+  2060→.faq {
+  2061→  max-width: 48rem;
+  2062→  margin: 0 auto;
+  2063→}
+  2064→
+  2065→.faq__group {
+  2066→  margin-bottom: 2.5rem;
+  2067→}
+  2068→
+  2069→.faq__group-heading {
+  2070→  font-size: 1.125rem;
+  2071→  font-weight: 600;
+  2072→  color: var(--navy);
+  2073→  margin-bottom: 0.75rem;
+  2074→  padding-bottom: 0.75rem;
+  2075→  border-bottom: 2px solid var(--orange);
+  2076→  display: inline-block;
+  2077→}
+  2078→
+  2079→.faq-item {
+  2080→  border-bottom: 1px solid var(--gray-200);
+  2081→}
+  2082→
+  2083→.faq-item:last-child {
+  2084→  border-bottom: none;
+  2085→}
+  2086→
+  2087→.faq-item__question {
+  2088→  width: 100%;
+  2089→  display: flex;
+  2090→  align-items: center;
+  2091→  justify-content: space-between;
+  2092→  padding: 1.25rem 0;
+  2093→  text-align: left;
+  2094→  font-weight: 500;
+  2095→  color: var(--navy);
+  2096→  cursor: pointer;
+  2097→  border: none;
+  2098→  background: none;
+  2099→  font-size: 1rem;
+  2100→  font-family: var(--font-sans);
+  2101→  line-height: 1.5;
+  2102→  gap: 1rem;
+  2103→}
+  2104→
+  2105→.faq-item__icon,
+  2106→.faq-item__chevron {
+  2107→  width: 1.25rem;
+  2108→  height: 1.25rem;
+  2109→  color: var(--gray-400);
+  2110→  transition: transform var(--transition-slow);
+  2111→  flex-shrink: 0;
+  2112→}
+  2113→
+  2114→.faq-item--open .faq-item__icon,
+  2115→.faq-item--open .faq-item__chevron {
+  2116→  transform: rotate(180deg);
+  2117→}
+  2118→
+  2119→.faq-item__answer {
+  2120→  max-height: 0;
+  2121→  overflow: hidden;
+  2122→  transition: max-height var(--transition-slow), padding var(--transition-slow);
+  2123→  padding: 0;
+  2124→}
+  2125→
+  2126→.faq-item--open .faq-item__answer {
+  2127→  max-height: 200px;
+  2128→  padding-bottom: 1.25rem;
+  2129→}
+  2130→
+  2131→.faq-item__answer p {
+  2132→  color: var(--gray-500);
+  2133→  font-size: 0.875rem;
+  2134→  line-height: 1.625;
+  2135→}
+  2136→
+  2137→/* Pricing FAQ (standalone) */
+  2138→.pricing-faqs {
+  2139→  max-width: 48rem;
+  2140→  margin: 0 auto;
+  2141→}
+  2142→
+  2143→.pricing-faqs__title {
+  2144→  font-size: 1.875rem;
+  2145→  font-weight: 700;
+  2146→  color: var(--navy);
+  2147→  letter-spacing: -0.025em;
+  2148→  margin-bottom: 2rem;
+  2149→}
+  2150→
+  2151→@media (min-width: 768px) {
+  2152→  .pricing-faqs__title {
+  2153→    font-size: 2.25rem;
+  2154→  }
+  2155→}
+  2156→
+  2157→.pricing-faq {
+  2158→  border-bottom: 1px solid var(--gray-200);
+  2159→}
+  2160→
+  2161→.pricing-faq__question {
+  2162→  width: 100%;
+  2163→  display: flex;
+  2164→  align-items: center;
+  2165→  justify-content: space-between;
+  2166→  padding: 1.25rem 0;
+  2167→  text-align: left;
+  2168→  font-weight: 500;
+  2169→  color: var(--navy);
+  2170→  cursor: pointer;
+  2171→  border: none;
+  2172→  background: none;
+  2173→  font-size: 1rem;
+  2174→  font-family: var(--font-sans);
+  2175→  line-height: 1.5;
+  2176→  gap: 1rem;
+  2177→}
+  2178→
+  2179→.pricing-faq__icon {
+  2180→  width: 1.25rem;
+  2181→  height: 1.25rem;
+  2182→  color: var(--gray-400);
+  2183→  transition: transform var(--transition-slow);
+  2184→  flex-shrink: 0;
+  2185→}
+  2186→
+  2187→.pricing-faq--open .pricing-faq__icon {
+  2188→  transform: rotate(180deg);
+  2189→}
+  2190→
+  2191→.pricing-faq__answer {
+  2192→  max-height: 0;
+  2193→  overflow: hidden;
+  2194→  transition: max-height var(--transition-slow), padding var(--transition-slow);
+  2195→  padding: 0;
+  2196→}
+  2197→
+  2198→.pricing-faq--open .pricing-faq__answer {
+  2199→  max-height: 200px;
+  2200→  padding-bottom: 1.25rem;
+  2201→}
+  2202→
+  2203→.pricing-faq__answer p {
+  2204→  color: var(--gray-500);
+  2205→  font-size: 0.875rem;
+  2206→  line-height: 1.625;
+  2207→}
+  2208→
+  2209→/* ==========================================================================
+  2210→   21. SECTION: FEATURES TABS
+  2211→   ========================================================================== */
+  2212→.tabs {
+  2213→  display: flex;
+  2214→  flex-direction: column;
+  2215→  align-items: center;
+  2216→  margin-bottom: 3rem;
+  2217→}
+  2218→
+  2219→.tabs__nav {
+  2220→  display: flex;
+  2221→  gap: 0.5rem;
+  2222→  justify-content: center;
+  2223→  flex-wrap: wrap;
+  2224→}
+  2225→
+  2226→.tab {
+  2227→  padding: 0.625rem 1.25rem;
+  2228→  font-size: 0.875rem;
+  2229→  font-weight: 500;
+  2230→  border-radius: 9999px;
+  2231→  border: 1px solid var(--gray-200);
+  2232→  cursor: pointer;
+  2233→  transition: all var(--transition-base);
+  2234→  background: none;
+  2235→  color: var(--gray-600);
+  2236→  font-family: var(--font-sans);
+  2237→}
+  2238→
+  2239→.tab:hover {
+  2240→  border-color: var(--gray-300);
+  2241→  color: var(--navy);
+  2242→}
+  2243→
+  2244→.tab--active,
+  2245→.tabs__btn--active {
+  2246→  background: var(--navy);
+  2247→  color: var(--white);
+  2248→  border-color: var(--navy);
+  2249→}
+  2250→
+  2251→.tab--active:hover,
+  2252→.tabs__btn--active:hover {
+  2253→  color: var(--white);
+  2254→}
+  2255→
+  2256→.tabs__btn {
+  2257→  padding: 0.625rem 1.25rem;
+  2258→  font-size: 0.875rem;
+  2259→  font-weight: 500;
+  2260→  border-radius: 9999px;
+  2261→  border: 1px solid var(--gray-200);
+  2262→  cursor: pointer;
+  2263→  transition: all var(--transition-base);
+  2264→  background: none;
+  2265→  color: var(--gray-600);
+  2266→  font-family: var(--font-sans);
+  2267→}
+  2268→
+  2269→.tabs__btn:hover {
+  2270→  border-color: var(--gray-300);
+  2271→  color: var(--navy);
+  2272→}
+  2273→
+  2274→.tab-content {
+  2275→  display: none;
+  2276→}
+  2277→
+  2278→.tab-content--active {
+  2279→  display: block;
+  2280→}
+  2281→
+  2282→.features-grid {
+  2283→  display: grid;
+  2284→  gap: 1.5rem;
+  2285→}
+  2286→
+  2287→@media (min-width: 768px) {
+  2288→  .features-grid {
+  2289→    grid-template-columns: repeat(3, 1fr);
+  2290→  }
+  2291→}
+  2292→
+  2293→.solutions-grid {
+  2294→  display: grid;
+  2295→  gap: 1.5rem;
+  2296→}
+  2297→
+  2298→@media (min-width: 768px) {
+  2299→  .solutions-grid {
+  2300→    grid-template-columns: repeat(3, 1fr);
+  2301→  }
+  2302→}
+  2303→
+  2304→/* ==========================================================================
+  2305→   22. SECTION: CTA
+  2306→   ========================================================================== */
+  2307→.cta {
+  2308→  background: var(--navy);
+  2309→  color: var(--white);
+  2310→  padding: 6rem 0;
+  2311→  position: relative;
+  2312→  overflow: hidden;
+  2313→}
+  2314→
+  2315→.cta__title {
+  2316→  font-size: 2.25rem;
+  2317→  font-weight: 700;
+  2318→  text-align: center;
+  2319→  color: var(--white);
+  2320→}
+  2321→
+  2322→@media (min-width: 768px) {
+  2323→  .cta__title {
+  2324→    font-size: 3rem;
+  2325→  }
+  2326→}
+  2327→
+  2328→.cta__subtitle {
+  2329→  color: var(--gray-300);
+  2330→  font-size: 1.125rem;
+  2331→  text-align: center;
+  2332→  margin-top: 1.5rem;
+  2333→  max-width: 42rem;
+  2334→  margin-left: auto;
+  2335→  margin-right: auto;
+  2336→  line-height: 1.625;
+  2337→}
+  2338→
+  2339→.cta__buttons {
+  2340→  display: flex;
+  2341→  justify-content: center;
+  2342→  gap: 1rem;
+  2343→  margin-top: 2.5rem;
+  2344→  flex-wrap: wrap;
+  2345→}
+  2346→
+  2347→/* CTA Section (inner pages) */
+  2348→.cta-section {
+  2349→  background: var(--navy);
+  2350→  color: var(--white);
+  2351→  padding: 6rem 0;
+  2352→  position: relative;
+  2353→  overflow: hidden;
+  2354→}
+  2355→
+  2356→.cta-section__inner {
+  2357→  max-width: 48rem;
+  2358→  margin: 0 auto;
+  2359→}
+  2360→
+  2361→.cta-section__inner h2 {
+  2362→  color: var(--white);
+  2363→  font-size: 2.25rem;
+  2364→  font-weight: 700;
+  2365→  letter-spacing: -0.025em;
+  2366→}
+  2367→
+  2368→@media (min-width: 768px) {
+  2369→  .cta-section__inner h2 {
+  2370→    font-size: 3rem;
+  2371→  }
+  2372→}
+  2373→
+  2374→.cta-section__inner p {
+  2375→  color: var(--gray-300);
+  2376→  font-size: 1.125rem;
+  2377→  margin-top: 1rem;
+  2378→  line-height: 1.625;
+  2379→}
+  2380→
+  2381→.cta-section__buttons {
+  2382→  display: flex;
+  2383→  justify-content: center;
+  2384→  gap: 1rem;
+  2385→  margin-top: 2.5rem;
+  2386→  flex-wrap: wrap;
+  2387→}
+  2388→
+  2389→/* ==========================================================================
+  2390→   23. CONTACT FORM
+  2391→   ========================================================================== */
+  2392→.contact-grid {
+  2393→  display: grid;
+  2394→  gap: 3rem;
+  2395→}
+  2396→
+  2397→@media (min-width: 768px) {
+  2398→  .contact-grid {
+  2399→    grid-template-columns: repeat(2, 1fr);
+  2400→  }
+  2401→}
+  2402→
+  2403→.contact-form {
+  2404→  display: flex;
+  2405→  flex-direction: column;
+  2406→}
+  2407→
+  2408→.form-group {
+  2409→  margin-bottom: 1.25rem;
+  2410→}
+  2411→
+  2412→.form-label {
+  2413→  display: block;
+  2414→  font-size: 0.875rem;
+  2415→  font-weight: 500;
+  2416→  color: var(--navy);
+  2417→  margin-bottom: 0.375rem;
+  2418→}
+  2419→
+  2420→.form-input {
+  2421→  width: 100%;
+  2422→  padding: 0.625rem 1rem;
+  2423→  border: 1px solid var(--gray-200);
+  2424→  border-radius: 0.75rem;
+  2425→  font-size: 0.875rem;
+  2426→  outline: none;
+  2427→  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  2428→  background: var(--white);
+  2429→  font-family: var(--font-sans);
+  2430→  color: var(--navy);
+  2431→  line-height: 1.5;
+  2432→}
+  2433→
+  2434→.form-input:focus {
+  2435→  border-color: var(--navy);
+  2436→  box-shadow: 0 0 0 3px rgba(1, 17, 52, 0.1);
+  2437→}
+  2438→
+  2439→.form-input::placeholder {
+  2440→  color: var(--gray-400);
+  2441→}
+  2442→
+  2443→.form-select {
+  2444→  width: 100%;
+  2445→  padding: 0.625rem 1rem;
+  2446→  border: 1px solid var(--gray-200);
+  2447→  border-radius: 0.75rem;
+  2448→  font-size: 0.875rem;
+  2449→  outline: none;
+  2450→  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  2451→  background: var(--white);
+  2452→  font-family: var(--font-sans);
+  2453→  color: var(--navy);
+  2454→  appearance: none;
+  2455→  -webkit-appearance: none;
+  2456→  -moz-appearance: none;
+  2457→  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  2458→  background-repeat: no-repeat;
+  2459→  background-position: right 0.75rem center;
+  2460→  padding-right: 2.5rem;
+  2461→  cursor: pointer;
+  2462→  line-height: 1.5;
+  2463→}
+  2464→
+  2465→.form-select:focus {
+  2466→  border-color: var(--navy);
+  2467→  box-shadow: 0 0 0 3px rgba(1, 17, 52, 0.1);
+  2468→}
+  2469→
+  2470→.form-textarea {
+  2471→  width: 100%;
+  2472→  padding: 0.625rem 1rem;
+  2473→  border: 1px solid var(--gray-200);
+  2474→  border-radius: 0.75rem;
+  2475→  font-size: 0.875rem;
+  2476→  outline: none;
+  2477→  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  2478→  background: var(--white);
+  2479→  font-family: var(--font-sans);
+  2480→  color: var(--navy);
+  2481→  min-height: 120px;
+  2482→  resize: vertical;
+  2483→  line-height: 1.5;
+  2484→}
+  2485→
+  2486→.form-textarea:focus {
+  2487→  border-color: var(--navy);
+  2488→  box-shadow: 0 0 0 3px rgba(1, 17, 52, 0.1);
+  2489→}
+  2490→
+  2491→.form-textarea::placeholder {
+  2492→  color: var(--gray-400);
+  2493→}
+  2494→
+  2495→/* Contact Info (right column) */
+  2496→.contact-info {
+  2497→  padding: 2rem;
+  2498→  background: var(--gray-50);
+  2499→  border-radius: 1rem;
+  2500→  height: fit-content;
+  2501→}
+  2502→
+  2503→.contact-info__heading {
+  2504→  font-size: 1.25rem;
+  2505→  font-weight: 600;
+  2506→  color: var(--navy);
+  2507→  margin-bottom: 2rem;
+  2508→}
+  2509→
+  2510→.contact-info__item {
+  2511→  display: flex;
+  2512→  align-items: flex-start;
+  2513→  gap: 1rem;
+  2514→  margin-bottom: 1.5rem;
+  2515→}
+  2516→
+  2517→.contact-info__icon {
+  2518→  width: 2.5rem;
+  2519→  height: 2.5rem;
+  2520→  border-radius: 0.75rem;
+  2521→  background: var(--white);
+  2522→  display: flex;
+  2523→  align-items: center;
+  2524→  justify-content: center;
+  2525→  flex-shrink: 0;
+  2526→  border: 1px solid var(--gray-100);
+  2527→}
+  2528→
+  2529→.contact-info__icon svg {
+  2530→  width: 1.25rem;
+  2531→  height: 1.25rem;
+  2532→  color: var(--navy);
+  2533→}
+  2534→
+  2535→.contact-info__label {
+  2536→  display: block;
+  2537→  font-size: 0.75rem;
+  2538→  color: var(--gray-400);
+  2539→  text-transform: uppercase;
+  2540→  letter-spacing: 0.05em;
+  2541→  font-weight: 500;
+  2542→}
+  2543→
+  2544→.contact-info__value {
+  2545→  display: block;
+  2546→  font-size: 0.875rem;
+  2547→  color: var(--navy);
+  2548→  font-weight: 500;
+  2549→  margin-top: 0.125rem;
+  2550→}
+  2551→
+  2552→.contact-info__card {
+  2553→  margin-top: 2rem;
+  2554→  background: var(--navy);
+  2555→  border-radius: 0.75rem;
+  2556→  padding: 1.5rem;
+  2557→  text-align: center;
+  2558→}
+  2559→
+  2560→.contact-info__card-text {
+  2561→  color: var(--gray-300);
+  2562→  font-size: 0.875rem;
+  2563→  margin-bottom: 0.5rem;
+  2564→}
+  2565→
+  2566→.contact-info__card-link {
+  2567→  color: var(--orange);
+  2568→  font-size: 0.875rem;
+  2569→  font-weight: 600;
+  2570→  text-decoration: none;
+  2571→  transition: color var(--transition-base);
+  2572→}
+  2573→
+  2574→.contact-info__card-link:hover {
+  2575→  color: var(--orange-hover);
+  2576→}
+  2577→
+  2578→/* ==========================================================================
+  2579→   24. FOOTER
+  2580→   ========================================================================== */
+  2581→.footer {
+  2582→  background: var(--navy);
+  2583→  color: var(--white);
+  2584→}
+  2585→
+  2586→.footer__top {
+  2587→  padding-top: 4rem;
+  2588→  padding-bottom: 3rem;
+  2589→}
+  2590→
+  2591→.footer__grid {
+  2592→  display: grid;
+  2593→  gap: 3rem;
+  2594→}
+  2595→
+  2596→@media (min-width: 768px) {
+  2597→  .footer__grid {
+  2598→    grid-template-columns: repeat(5, 1fr);
+  2599→  }
+  2600→}
+  2601→
+  2602→.footer__brand {
+  2603→  grid-column: span 1;
+  2604→}
+  2605→
+  2606→@media (min-width: 768px) {
+  2607→  .footer__brand {
+  2608→    grid-column: span 2;
+  2609→  }
+  2610→}
+  2611→
+  2612→.footer__tagline {
+  2613→  color: var(--gray-400);
+  2614→  font-size: 0.875rem;
+  2615→  margin-top: 0.75rem;
+  2616→}
+  2617→
+  2618→.footer__desc {
+  2619→  color: var(--gray-500);
+  2620→  font-size: 0.875rem;
+  2621→  margin-top: 0.5rem;
+  2622→  max-width: 20rem;
+  2623→  line-height: 1.625;
+  2624→}
+  2625→
+  2626→.footer__social {
+  2627→  display: flex;
+  2628→  gap: 12px;
+  2629→  margin-top: 1.5rem;
+  2630→}
+  2631→
+  2632→.footer__social-btn,
+  2633→.footer__social-link {
+  2634→  width: 2.25rem;
+  2635→  height: 2.25rem;
+  2636→  display: flex;
+  2637→  align-items: center;
+  2638→  justify-content: center;
+  2639→  border-radius: 0.5rem;
+  2640→  background: rgba(255, 255, 255, 0.05);
+  2641→  transition: background var(--transition-base);
+  2642→  color: var(--gray-400);
+  2643→}
+  2644→
+  2645→.footer__social-btn:hover,
+  2646→.footer__social-link:hover {
+  2647→  background: rgba(255, 255, 255, 0.1);
+  2648→  color: var(--white);
+  2649→}
+  2650→
+  2651→.footer__social-btn svg,
+  2652→.footer__social-link svg {
+  2653→  width: 1rem;
+  2654→  height: 1rem;
+  2655→  fill: currentColor;
+  2656→  stroke: currentColor;
+  2657→}
+  2658→
+  2659→.footer__col-title,
+  2660→.footer__col-heading {
+  2661→  color: var(--white);
+  2662→  font-weight: 600;
+  2663→  font-size: 0.875rem;
+  2664→}
+  2665→
+  2666→.footer__col-links,
+  2667→.footer__col-list {
+  2668→  list-style: none;
+  2669→  padding: 0;
+  2670→  margin-top: 1rem;
+  2671→}
+  2672→
+  2673→.footer__col-links li,
+  2674→.footer__col-list li {
+  2675→  padding: 0.375rem 0;
+  2676→}
+  2677→
+  2678→.footer__col-links a,
+  2679→.footer__col-list a {
+  2680→  color: var(--gray-400);
+  2681→  font-size: 0.875rem;
+  2682→  text-decoration: none;
+  2683→  transition: color var(--transition-base);
+  2684→}
+  2685→
+  2686→.footer__col-links a:hover,
+  2687→.footer__col-list a:hover {
+  2688→  color: var(--white);
+  2689→}
+  2690→
+  2691→.footer__badge {
+  2692→  font-size: 0.75rem;
+  2693→  color: var(--orange);
+  2694→  font-weight: 500;
+  2695→  margin-left: 0.5rem;
+  2696→}
+  2697→
+  2698→.footer__bottom {
+  2699→  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  2700→  padding-top: 2rem;
+  2701→  padding-bottom: 2rem;
+  2702→}
+  2703→
+  2704→.footer__bottom-inner {
+  2705→  display: flex;
+  2706→  flex-direction: column;
+  2707→  align-items: center;
+  2708→  gap: 1rem;
+  2709→}
+  2710→
+  2711→@media (min-width: 640px) {
+  2712→  .footer__bottom-inner {
+  2713→    flex-direction: row;
+  2714→    justify-content: space-between;
+  2715→  }
+  2716→}
+  2717→
+  2718→.footer__bottom p,
+  2719→.footer__bottom-inner p {
+  2720→  color: var(--gray-500);
+  2721→  font-size: 0.875rem;
+  2722→}
+  2723→
+  2724→/* ==========================================================================
+  2725→   25. FLOATING WIDGETS
+  2726→   ========================================================================== */
+  2727→.float-widget {
+  2728→  position: absolute;
+  2729→  background: var(--white);
+  2730→  border-radius: 0.75rem;
+  2731→  box-shadow: var(--shadow-lg);
+  2732→  padding: 0.75rem 1rem;
+  2733→  border: 1px solid var(--gray-100);
+  2734→  animation: float 6s ease-in-out infinite;
+  2735→  white-space: nowrap;
+  2736→}
+  2737→
+  2738→.float-widget--1 {
+  2739→  top: 2.5rem;
+  2740→  left: -1rem;
+  2741→  animation: float 6s ease-in-out infinite;
+  2742→}
+  2743→
+  2744→.float-widget--2 {
+  2745→  top: 5rem;
+  2746→  right: -1rem;
+  2747→  animation: float-delayed 6s ease-in-out infinite;
+  2748→}
+  2749→
+  2750→.float-widget--3 {
+  2751→  bottom: 2.5rem;
+  2752→  left: -2rem;
+  2753→  animation: float-slow 8s ease-in-out infinite;
+  2754→}
+  2755→
+  2756→.float-widget__value {
+  2757→  font-size: 1.125rem;
+  2758→  font-weight: 700;
+  2759→  color: var(--navy);
+  2760→}
+  2761→
+  2762→.float-widget__label {
+  2763→  font-size: 0.75rem;
+  2764→  color: var(--gray-500);
+  2765→}
+  2766→
+  2767→/* ==========================================================================
+  2768→   26. LAPTOP MOCKUP
+  2769→   ========================================================================== */
+  2770→.laptop {
+  2771→  max-width: 64rem;
+  2772→  margin: 0 auto;
+  2773→  border-radius: 1.5rem;
+  2774→  background: var(--navy);
+  2775→  padding: 0.5rem;
+  2776→  box-shadow: var(--shadow-2xl);
+  2777→}
+  2778→
+  2779→.laptop__screen {
+  2780→  border-radius: 1rem;
+  2781→  background: var(--white);
+  2782→  overflow: hidden;
+  2783→  min-height: 400px;
+  2784→}
+  2785→
+  2786→.laptop__topbar {
+  2787→  height: 2rem;
+  2788→  background: var(--gray-50);
+  2789→  border-bottom: 1px solid var(--gray-100);
+  2790→  display: flex;
+  2791→  align-items: center;
+  2792→  padding: 0 1rem;
+  2793→  gap: 0.5rem;
+  2794→}
+  2795→
+  2796→.laptop__dot {
+  2797→  width: 10px;
+  2798→  height: 10px;
+  2799→  border-radius: 50%;
+  2800→}
+  2801→
+  2802→/* ==========================================================================
+  2803→   27. ABOUT PAGE
+  2804→   ========================================================================== */
+  2805→.about-mission {
+  2806→  max-width: 48rem;
+  2807→  margin: 0 auto;
+  2808→}
+  2809→
+  2810→.about-mission p {
+  2811→  color: var(--gray-500);
+  2812→  font-size: 1.125rem;
+  2813→  line-height: 1.625;
+  2814→}
+  2815→
+  2816→.about-story {
+  2817→  display: grid;
+  2818→  gap: 3rem;
+  2819→}
+  2820→
+  2821→@media (min-width: 768px) {
+  2822→  .about-story {
+  2823→    grid-template-columns: 2fr 1fr;
+  2824→    align-items: center;
+  2825→  }
+  2826→}
+  2827→
+  2828→.about-story__text p {
+  2829→  color: var(--gray-600);
+  2830→  font-size: 1rem;
+  2831→  line-height: 1.625;
+  2832→  margin-bottom: 1rem;
+  2833→}
+  2834→
+  2835→.about-story__text p:last-child {
+  2836→  margin-bottom: 0;
+  2837→}
+  2838→
+  2839→.about-story__stats {
+  2840→  display: grid;
+  2841→  grid-template-columns: repeat(2, 1fr);
+  2842→  gap: 1rem;
+  2843→}
+  2844→
+  2845→.about-values {
+  2846→  text-align: center;
+  2847→}
+  2848→
+  2849→.about-values__title {
+  2850→  font-size: 1.5rem;
+  2851→  font-weight: 600;
+  2852→  color: var(--navy);
+  2853→  margin-bottom: 2rem;
+  2854→}
+  2855→
+  2856→@media (min-width: 768px) {
+  2857→  .about-values__title {
+  2858→    font-size: 1.875rem;
+  2859→  }
+  2860→}
+  2861→
+  2862→.values-grid {
+  2863→  display: grid;
+  2864→  gap: 1.5rem;
+  2865→}
+  2866→
+  2867→@media (min-width: 768px) {
+  2868→  .values-grid {
+  2869→    grid-template-columns: repeat(4, 1fr);
+  2870→  }
+  2871→}
+  2872→
+  2873→.value-card {
+  2874→  text-align: center;
+  2875→  padding: 1.5rem;
+  2876→  border-radius: 1rem;
+  2877→  border: 1px solid var(--gray-100);
+  2878→  transition: all var(--transition-slow);
+  2879→}
+  2880→
+  2881→.value-card:hover {
+  2882→  box-shadow: var(--shadow-md);
+  2883→  border-color: var(--gray-200);
+  2884→}
+  2885→
+  2886→.value-card__icon {
+  2887→  width: 3rem;
+  2888→  height: 3rem;
+  2889→  border-radius: 0.75rem;
+  2890→  background: var(--gray-50);
+  2891→  display: flex;
+  2892→  align-items: center;
+  2893→  justify-content: center;
+  2894→  margin: 0 auto;
+  2895→  color: var(--navy);
+  2896→}
+  2897→
+  2898→.value-card__icon svg {
+  2899→  width: 24px;
+  2900→  height: 24px;
+  2901→}
+  2902→
+  2903→.value-card__title {
+  2904→  font-size: 1rem;
+  2905→  font-weight: 600;
+  2906→  color: var(--navy);
+  2907→  margin-top: 1rem;
+  2908→}
+  2909→
+  2910→.value-card__desc {
+  2911→  font-size: 0.875rem;
+  2912→  color: var(--gray-500);
+  2913→  margin-top: 0.5rem;
+  2914→  line-height: 1.625;
+  2915→}
+  2916→
+  2917→.about-team {
+  2918→  text-align: center;
+  2919→}
+  2920→
+  2921→.about-team__title {
+  2922→  font-size: 1.5rem;
+  2923→  font-weight: 600;
+  2924→  color: var(--navy);
+  2925→  margin-bottom: 2rem;
+  2926→}
+  2927→
+  2928→@media (min-width: 768px) {
+  2929→  .about-team__title {
+  2930→    font-size: 1.875rem;
+  2931→  }
+  2932→}
+  2933→
+  2934→.team-grid {
+  2935→  display: grid;
+  2936→  grid-template-columns: repeat(2, 1fr);
+  2937→  gap: 1.5rem;
+  2938→}
+  2939→
+  2940→@media (min-width: 768px) {
+  2941→  .team-grid {
+  2942→    grid-template-columns: repeat(3, 1fr);
+  2943→  }
+  2944→}
+  2945→
+  2946→.team-card {
+  2947→  text-align: center;
+  2948→  padding: 1.5rem;
+  2949→  border-radius: 1rem;
+
+[showing lines 950-2949 of 3575; use offset=2950 with limit to continue reading]
