@@ -1,8 +1,0 @@
-<svg width="140" height="36" viewBox="0 0 140 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <text x="0" y="29" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="700" fill="#011134" letter-spacing="-0.5">
-    <tspan>G</tspan><tspan fill="#011134">o</tspan><tspan fill="#011134">CRM</tspan>
-  </text>
-  <circle cx="27" cy="19" r="8" fill="none" stroke="#FD5320" stroke-width="2.2"/>
-  <path d="M23 21L27 15L31 21" stroke="#FD5320" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M27 15L27 23" stroke="#FD5320" stroke-width="2.2" stroke-linecap="round"/>
-</svg>
