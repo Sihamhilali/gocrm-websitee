@@ -1,0 +1,2002 @@
+     1→     1→/* ==========================================================================
+     2→     2→   GoCRM — Premium SaaS Website Stylesheet
+     3→     3→   Pure HTML/CSS/JS — No Frameworks
+     4→     4→   ========================================================================== */
+     5→     5→
+     6→     6→/* ==========================================================================
+     7→     7→   1. FONT IMPORT
+     8→     8→   ========================================================================== */
+     9→     9→@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    10→    10→
+    11→    11→/* ==========================================================================
+    12→    12→   2. CSS CUSTOM PROPERTIES
+    13→    13→   ========================================================================== */
+    14→    14→:root {
+    15→    15→  /* Brand Colors */
+    16→    16→  --navy: #011134;
+    17→    17→  --navy-light: #0a1e4a;
+    18→    18→  --orange: #FD5320;
+    19→    19→  --orange-hover: #e04a1c;
+    20→    20→  --orange-light: #fff4f0;
+    21→    21→
+    22→    22→  /* Neutrals */
+    23→    23→  --black: #020202;
+    24→    24→  --white: #ffffff;
+    25→    25→  --gray-50: #F5F5F5;
+    26→    26→  --gray-100: #f0f0f0;
+    27→    27→  --gray-200: #e4e4e7;
+    28→    28→  --gray-300: #d4d4d8;
+    29→    29→  --gray-400: #a1a1aa;
+    30→    30→  --gray-500: #71717a;
+    31→    31→  --gray-600: #52525b;
+    32→    32→  --gray-700: #3f3f46;
+    33→    33→  --gray-800: #27272a;
+    34→    34→  --gray-900: #18181b;
+    35→    35→
+    36→    36→  /* Shadows */
+    37→    37→  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    38→    38→  --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+    39→    39→  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    40→    40→  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+    41→    41→  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+    42→    42→
+    43→    43→  /* Borders */
+    44→    44→  --radius: 0.75rem;
+    45→    45→
+    46→    46→  /* Typography */
+    47→    47→  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    48→    48→}
+    49→    49→
+    50→    50→/* ==========================================================================
+    51→    51→   3. MODERN CSS RESET
+    52→    52→   ========================================================================== */
+    53→    53→*,
+    54→    54→*::before,
+    55→    55→*::after {
+    56→    56→  box-sizing: border-box;
+    57→    57→  margin: 0;
+    58→    58→  padding: 0;
+    59→    59→}
+    60→    60→
+    61→    61→html {
+    62→    62→  scroll-behavior: smooth;
+    63→    63→  -webkit-text-size-adjust: 100%;
+    64→    64→  -moz-text-size-adjust: 100%;
+    65→    65→  text-size-adjust: 100%;
+    66→    66→}
+    67→    67→
+    68→    68→body {
+    69→    69→  font-family: var(--font-sans);
+    70→    70→  color: var(--navy);
+    71→    71→  background: var(--white);
+    72→    72→  line-height: 1.6;
+    73→    73→  -webkit-font-smoothing: antialiased;
+    74→    74→  -moz-osx-font-smoothing: grayscale;
+    75→    75→  text-rendering: optimizeLegibility;
+    76→    76→}
+    77→    77→
+    78→    78→/* Selection */
+    79→    79→::selection {
+    80→    80→  background: var(--orange);
+    81→    81→  color: var(--white);
+    82→    82→}
+    83→    83→
+    84→    84→::-moz-selection {
+    85→    85→  background: var(--orange);
+    86→    86→  color: var(--white);
+    87→    87→}
+    88→    88→
+    89→    89→/* Custom Scrollbar */
+    90→    90→::-webkit-scrollbar {
+    91→    91→  width: 6px;
+    92→    92→}
+    93→    93→
+    94→    94→::-webkit-scrollbar-track {
+    95→    95→  background: var(--gray-100);
+    96→    96→}
+    97→    97→
+    98→    98→::-webkit-scrollbar-thumb {
+    99→    99→  background: var(--gray-300);
+   100→   100→  border-radius: 3px;
+   101→   101→}
+   102→   102→
+   103→   103→::-webkit-scrollbar-thumb:hover {
+   104→   104→  background: var(--gray-400);
+   105→   105→}
+   106→   106→
+   107→   107→/* Images */
+   108→   108→img {
+   109→   109→  max-width: 100%;
+   110→   110→  display: block;
+   111→   111→}
+   112→   112→
+   113→   113→/* Links */
+   114→   114→a {
+   115→   115→  color: inherit;
+   116→   116→  text-decoration: none;
+   117→   117→}
+   118→   118→
+   119→   119→/* Lists */
+   120→   120→ul, ol {
+   121→   121→  list-style: none;
+   122→   122→}
+   123→   123→
+   124→   124→/* Forms */
+   125→   125→button, input, select, textarea {
+   126→   126→  font: inherit;
+   127→   127→  color: inherit;
+   128→   128→}
+   129→   129→
+   130→   130→button {
+   131→   131→  cursor: pointer;
+   132→   132→  background: none;
+   133→   133→  border: none;
+   134→   134→}
+   135→   135→
+   136→   136→/* Table */
+   137→   137→table {
+   138→   138→  border-collapse: collapse;
+   139→   139→  border-spacing: 0;
+   140→   140→}
+   141→   141→
+   142→   142→/* ==========================================================================
+   143→   143→   4. LAYOUT
+   144→   144→   ========================================================================== */
+   145→   145→.container {
+   146→   146→  max-width: 1280px;
+   147→   147→  margin: 0 auto;
+   148→   148→  padding: 0 1rem;
+   149→   149→}
+   150→   150→
+   151→   151→@media (min-width: 640px) {
+   152→   152→  .container {
+   153→   153→    padding: 0 1.5rem;
+   154→   154→  }
+   155→   155→}
+   156→   156→
+   157→   157→@media (min-width: 1024px) {
+   158→   158→  .container {
+   159→   159→    padding: 0 2rem;
+   160→   160→  }
+   161→   161→}
+   162→   162→
+   163→   163→.section {
+   164→   164→  padding: 6rem 0;
+   165→   165→}
+   166→   166→
+   167→   167→.section--gray {
+   168→   168→  background: var(--gray-50);
+   169→   169→}
+   170→   170→
+   171→   171→.section--navy {
+   172→   172→  background: var(--navy);
+   173→   173→  color: var(--white);
+   174→   174→}
+   175→   175→
+   176→   176→/* ==========================================================================
+   177→   177→   5. TYPOGRAPHY CLASSES
+   178→   178→   ========================================================================== */
+   179→   179→.section-label {
+   180→   180→  font-size: 14px;
+   181→   181→  font-weight: 500;
+   182→   182→  color: var(--gray-400);
+   183→   183→  letter-spacing: 0.05em;
+   184→   184→  text-transform: uppercase;
+   185→   185→  text-align: center;
+   186→   186→}
+   187→   187→
+   188→   188→.section-title {
+   189→   189→  font-size: 2.25rem;
+   190→   190→  font-weight: 700;
+   191→   191→  color: var(--navy);
+   192→   192→  letter-spacing: -0.025em;
+   193→   193→  text-align: center;
+   194→   194→  line-height: 1.1;
+   195→   195→}
+   196→   196→
+   197→   197→@media (min-width: 768px) {
+   198→   198→  .section-title {
+   199→   199→    font-size: 3rem;
+   200→   200→  }
+   201→   201→}
+   202→   202→
+   203→   203→@media (min-width: 1024px) {
+   204→   204→  .section-title {
+   205→   205→    font-size: 3.75rem;
+   206→   206→  }
+   207→   207→}
+   208→   208→
+   209→   209→.section-title--white {
+   210→   210→  color: var(--white);
+   211→   211→}
+   212→   212→
+   213→   213→.section-subtitle {
+   214→   214→  font-size: 18px;
+   215→   215→  color: var(--gray-500);
+   216→   216→  max-width: 42rem;
+   217→   217→  margin-left: auto;
+   218→   218→  margin-right: auto;
+   219→   219→  text-align: center;
+   220→   220→  margin-top: 1.5rem;
+   221→   221→  line-height: 1.6;
+   222→   222→}
+   223→   223→
+   224→   224→/* ==========================================================================
+   225→   225→   6. NAVIGATION
+   226→   226→   ========================================================================== */
+   227→   227→.nav {
+   228→   228→  position: fixed;
+   229→   229→  top: 0;
+   230→   230→  left: 0;
+   231→   231→  right: 0;
+   232→   232→  z-index: 50;
+   233→   233→  height: 72px;
+   234→   234→  display: flex;
+   235→   235→  align-items: center;
+   236→   236→  justify-content: space-between;
+   237→   237→  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+   238→   238→}
+   239→   239→
+   240→   240→.nav--scrolled {
+   241→   241→  background: rgba(255, 255, 255, 0.95);
+   242→   242→  backdrop-filter: blur(12px);
+   243→   243→  -webkit-backdrop-filter: blur(12px);
+   244→   244→  box-shadow: var(--shadow);
+   245→   245→}
+   246→   246→
+   247→   247→.nav__logo {
+   248→   248→  height: 64px;
+   249→   249→  width: auto;
+   250→   250→  cursor: pointer;
+   251→   251→}
+   252→   252→
+   253→   253→.nav__logo--footer {
+   254→   254→  height: 64px;
+   255→   255→  width: auto;
+   256→   256→  filter: brightness(0) invert(1);
+   257→   257→}
+   258→   258→
+   259→   259→.nav__links {
+   260→   260→  display: none;
+   261→   261→}
+   262→   262→
+   263→   263→@media (min-width: 1024px) {
+   264→   264→  .nav__links {
+   265→   265→    display: flex;
+   266→   266→    align-items: center;
+   267→   267→    gap: 4px;
+   268→   268→  }
+   269→   269→}
+   270→   270→
+   271→   271→.nav__link {
+   272→   272→  padding: 0.5rem 0.75rem;
+   273→   273→  font-size: 0.875rem;
+   274→   274→  font-weight: 500;
+   275→   275→  color: var(--gray-600);
+   276→   276→  border-radius: 0.5rem;
+   277→   277→  position: relative;
+   278→   278→  text-decoration: none;
+   279→   279→  background: none;
+   280→   280→  border: none;
+   281→   281→  cursor: pointer;
+   282→   282→  transition: color 0.2s ease;
+   283→   283→  line-height: 1.5;
+   284→   284→}
+   285→   285→
+   286→   286→.nav__link:hover {
+   287→   287→  color: var(--navy);
+   288→   288→}
+   289→   289→
+   290→   290→.nav__link--active {
+   291→   291→  color: var(--navy);
+   292→   292→  font-weight: 600;
+   293→   293→}
+   294→   294→
+   295→   295→.nav__link--active::after {
+   296→   296→  content: '';
+   297→   297→  position: absolute;
+   298→   298→  bottom: 4px;
+   299→   299→  left: 50%;
+   300→   300→  transform: translateX(-50%);
+   301→   301→  width: 1.25rem;
+   302→   302→  height: 2px;
+   303→   303→  background: var(--orange);
+   304→   304→  border-radius: 9999px;
+   305→   305→}
+   306→   306→
+   307→   307→.nav__cta {
+   308→   308→  display: none;
+   309→   309→}
+   310→   310→
+   311→   311→@media (min-width: 1024px) {
+   312→   312→  .nav__cta {
+   313→   313→    display: flex;
+   314→   314→    align-items: center;
+   315→   315→    gap: 12px;
+   316→   316→  }
+   317→   317→}
+   318→   318→
+   319→   319→.nav__login {
+   320→   320→  font-size: 0.875rem;
+   321→   321→  font-weight: 500;
+   322→   322→  color: var(--gray-600);
+   323→   323→  cursor: pointer;
+   324→   324→  background: none;
+   325→   325→  border: none;
+   326→   326→  text-decoration: none;
+   327→   327→  transition: color 0.2s ease;
+   328→   328→}
+   329→   329→
+   330→   330→.nav__login:hover {
+   331→   331→  color: var(--navy);
+   332→   332→}
+   333→   333→
+   334→   334→.nav__hamburger {
+   335→   335→  display: flex;
+   336→   336→  align-items: center;
+   337→   337→  justify-content: center;
+   338→   338→  width: 2.5rem;
+   339→   339→  height: 2.5rem;
+   340→   340→  border-radius: 0.5rem;
+   341→   341→  border: none;
+   342→   342→  cursor: pointer;
+   343→   343→  background: none;
+   344→   344→}
+   345→   345→
+   346→   346→@media (min-width: 1024px) {
+   347→   347→  .nav__hamburger {
+   348→   348→    display: none;
+   349→   349→  }
+   350→   350→}
+   351→   351→
+   352→   352→/* ==========================================================================
+   353→   353→   7. MOBILE MENU
+   354→   354→   ========================================================================== */
+   355→   355→.mobile-menu {
+   356→   356→  position: fixed;
+   357→   357→  inset: 0;
+   358→   358→  z-index: 50;
+   359→   359→  pointer-events: none;
+   360→   360→  opacity: 0;
+   361→   361→  transition: all 0.3s ease;
+   362→   362→}
+   363→   363→
+   364→   364→.mobile-menu--open {
+   365→   365→  pointer-events: auto;
+   366→   366→  opacity: 1;
+   367→   367→}
+   368→   368→
+   369→   369→.mobile-menu__overlay {
+   370→   370→  position: absolute;
+   371→   371→  inset: 0;
+   372→   372→  background: rgba(0, 0, 0, 0.5);
+   373→   373→}
+   374→   374→
+   375→   375→.mobile-menu__panel {
+   376→   376→  position: absolute;
+   377→   377→  top: 0;
+   378→   378→  right: 0;
+   379→   379→  width: 300px;
+   380→   380→  max-width: 85vw;
+   381→   381→  height: 100%;
+   382→   382→  background: var(--white);
+   383→   383→  transform: translateX(100%);
+   384→   384→  transition: transform 0.3s ease;
+   385→   385→  overflow-y: auto;
+   386→   386→}
+   387→   387→
+   388→   388→.mobile-menu--open .mobile-menu__panel {
+   389→   389→  transform: translateX(0);
+   390→   390→}
+   391→   391→
+   392→   392→.mobile-menu__header {
+   393→   393→  display: flex;
+   394→   394→  align-items: center;
+   395→   395→  justify-content: space-between;
+   396→   396→  padding: 1.25rem 1.5rem;
+   397→   397→  border-bottom: 1px solid var(--gray-200);
+   398→   398→}
+   399→   399→
+   400→   400→.mobile-menu__close {
+   401→   401→  display: flex;
+   402→   402→  align-items: center;
+   403→   403→  justify-content: center;
+   404→   404→  width: 2.5rem;
+   405→   405→  height: 2.5rem;
+   406→   406→  border-radius: 0.5rem;
+   407→   407→  border: none;
+   408→   408→  cursor: pointer;
+   409→   409→  background: none;
+   410→   410→  transition: background 0.2s ease;
+   411→   411→}
+   412→   412→
+   413→   413→.mobile-menu__close:hover {
+   414→   414→  background: var(--gray-50);
+   415→   415→}
+   416→   416→
+   417→   417→.mobile-menu__link {
+   418→   418→  display: block;
+   419→   419→  width: 100%;
+   420→   420→  text-align: left;
+   421→   421→  padding: 0.75rem 1rem;
+   422→   422→  font-size: 15px;
+   423→   423→  font-weight: 500;
+   424→   424→  color: var(--gray-700);
+   425→   425→  border-radius: 0.5rem;
+   426→   426→  text-decoration: none;
+   427→   427→  border: none;
+   428→   428→  cursor: pointer;
+   429→   429→  background: none;
+   430→   430→  transition: background 0.2s ease, color 0.2s ease;
+   431→   431→}
+   432→   432→
+   433→   433→.mobile-menu__link:hover {
+   434→   434→  background: var(--gray-50);
+   435→   435→}
+   436→   436→
+   437→   437→.mobile-menu__link--active {
+   438→   438→  background: var(--orange-light);
+   439→   439→  color: var(--orange);
+   440→   440→  font-weight: 600;
+   441→   441→}
+   442→   442→
+   443→   443→/* ==========================================================================
+   444→   444→   8. HERO
+   445→   445→   ========================================================================== */
+   446→   446→.hero {
+   447→   447→  position: relative;
+   448→   448→  padding-top: 8rem;
+   449→   449→  padding-bottom: 5rem;
+   450→   450→  overflow: hidden;
+   451→   451→}
+   452→   452→
+   453→   453→@media (min-width: 1024px) {
+   454→   454→  .hero {
+   455→   455→    padding-top: 10rem;
+   456→   456→    padding-bottom: 7rem;
+   457→   457→  }
+   458→   458→}
+   459→   459→
+   460→   460→.hero__glow {
+   461→   461→  position: absolute;
+   462→   462→  top: 0;
+   463→   463→  left: 25%;
+   464→   464→  width: 600px;
+   465→   465→  height: 600px;
+   466→   466→  background: rgba(253, 83, 32, 0.03);
+   467→   467→  border-radius: 50%;
+   468→   468→  filter: blur(64px);
+   469→   469→  pointer-events: none;
+   470→   470→}
+   471→   471→
+   472→   472→.hero__grid {
+   473→   473→  display: grid;
+   474→   474→  gap: 3rem;
+   475→   475→  align-items: center;
+   476→   476→}
+   477→   477→
+   478→   478→@media (min-width: 1024px) {
+   479→   479→  .hero__grid {
+   480→   480→    grid-template-columns: 1fr 1fr;
+   481→   481→    gap: 4rem;
+   482→   482→  }
+   483→   483→}
+   484→   484→
+   485→   485→.hero__badge {
+   486→   486→  display: inline-flex;
+   487→   487→  align-items: center;
+   488→   488→  gap: 8px;
+   489→   489→  background: var(--orange-light);
+   490→   490→  color: var(--navy);
+   491→   491→  border-radius: 9999px;
+   492→   492→  padding: 0.375rem 1rem;
+   493→   493→  margin-bottom: 1.5rem;
+   494→   494→  font-size: 0.75rem;
+   495→   495→  font-weight: 600;
+   496→   496→}
+   497→   497→
+   498→   498→.hero__badge-dot {
+   499→   499→  position: relative;
+   500→   500→  width: 8px;
+   501→   501→  height: 8px;
+   502→   502→  display: inline-block;
+   503→   503→}
+   504→   504→
+   505→   505→.hero__badge-dot::before {
+   506→   506→  content: '';
+   507→   507→  position: absolute;
+   508→   508→  inset: 0;
+   509→   509→  background: var(--orange);
+   510→   510→  border-radius: 50%;
+   511→   511→}
+   512→   512→
+   513→   513→.hero__badge-dot::after {
+   514→   514→  content: '';
+   515→   515→  position: absolute;
+   516→   516→  inset: 0;
+   517→   517→  background: var(--orange);
+   518→   518→  border-radius: 50%;
+   519→   519→  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+   520→   520→}
+   521→   521→
+   522→   522→.hero__title {
+   523→   523→  font-size: 2.25rem;
+   524→   524→  font-weight: 700;
+   525→   525→  color: var(--navy);
+   526→   526→  line-height: 1.08;
+   527→   527→  letter-spacing: -0.025em;
+   528→   528→}
+   529→   529→
+   530→   530→@media (min-width: 640px) {
+   531→   531→  .hero__title {
+   532→   532→    font-size: 3rem;
+   533→   533→  }
+   534→   534→}
+   535→   535→
+   536→   536→@media (min-width: 768px) {
+   537→   537→  .hero__title {
+   538→   538→    font-size: 3.75rem;
+   539→   539→  }
+   540→   540→}
+   541→   541→
+   542→   542→@media (min-width: 1024px) {
+   543→   543→  .hero__title {
+   544→   544→    font-size: 4.5rem;
+   545→   545→  }
+   546→   546→}
+   547→   547→
+   548→   548→.hero__title-highlight {
+   549→   549→  position: relative;
+   550→   550→  display: inline-block;
+   551→   551→}
+   552→   552→
+   553→   553→.hero__title-highlight::after {
+   554→   554→  content: '';
+   555→   555→  position: absolute;
+   556→   556→  bottom: 4px;
+   557→   557→  left: 0;
+   558→   558→  width: 100%;
+   559→   559→  height: 12px;
+   560→   560→  background: rgba(253, 83, 32, 0.15);
+   561→   561→  border-radius: 2px;
+   562→   562→  z-index: -1;
+   563→   563→}
+   564→   564→
+   565→   565→.hero__subtitle {
+   566→   566→  margin-top: 1.5rem;
+   567→   567→  font-size: 1.125rem;
+   568→   568→  color: var(--gray-500);
+   569→   569→  max-width: 32rem;
+   570→   570→  line-height: 1.625;
+   571→   571→}
+   572→   572→
+   573→   573→.hero__buttons {
+   574→   574→  margin-top: 2rem;
+   575→   575→  display: flex;
+   576→   576→  flex-wrap: wrap;
+   577→   577→  gap: 1rem;
+   578→   578→}
+   579→   579→
+   580→   580→.hero__note {
+   581→   581→  margin-top: 1rem;
+   582→   582→  font-size: 0.875rem;
+   583→   583→  color: var(--gray-400);
+   584→   584→}
+   585→   585→
+   586→   586→.hero__right {
+   587→   587→  position: relative;
+   588→   588→  animation: float 6s ease-in-out infinite;
+   589→   589→}
+   590→   590→
+   591→   591→/* ==========================================================================
+   592→   592→   9. BUTTONS
+   593→   593→   ========================================================================== */
+   594→   594→.btn {
+   595→   595→  display: inline-flex;
+   596→   596→  align-items: center;
+   597→   597→  justify-content: center;
+   598→   598→  font-weight: 600;
+   599→   599→  border-radius: 9999px;
+   600→   600→  cursor: pointer;
+   601→   601→  border: none;
+   602→   602→  transition: all 0.2s ease;
+   603→   603→  text-decoration: none;
+   604→   604→  line-height: 1.5;
+   605→   605→}
+   606→   606→
+   607→   607→.btn--primary {
+   608→   608→  background: var(--orange);
+   609→   609→  color: var(--white);
+   610→   610→  padding: 1rem 2rem;
+   611→   611→  font-size: 1rem;
+   612→   612→  box-shadow: 0 10px 15px -3px rgba(253, 83, 32, 0.2);
+   613→   613→}
+   614→   614→
+   615→   615→.btn--primary:hover {
+   616→   616→  background: var(--orange-hover);
+   617→   617→  box-shadow: 0 20px 25px -5px rgba(253, 83, 32, 0.25);
+   618→   618→}
+   619→   619→
+   620→   620→.btn--primary:active {
+   621→   621→  transform: scale(0.98);
+   622→   622→}
+   623→   623→
+   624→   624→.btn--secondary {
+   625→   625→  border: 1px solid var(--gray-300);
+   626→   626→  color: var(--navy);
+   627→   627→  padding: 1rem 2rem;
+   628→   628→  font-size: 1rem;
+   629→   629→  background: var(--white);
+   630→   630→}
+   631→   631→
+   632→   632→.btn--secondary:hover {
+   633→   633→  border-color: var(--navy);
+   634→   634→  background: var(--navy);
+   635→   635→  color: var(--white);
+   636→   636→}
+   637→   637→
+   638→   638→.btn--secondary:active {
+   639→   639→  transform: scale(0.98);
+   640→   640→}
+   641→   641→
+   642→   642→.btn--sm {
+   643→   643→  padding: 0.625rem 1.5rem;
+   644→   644→  font-size: 0.875rem;
+   645→   645→}
+   646→   646→
+   647→   647→.btn--white {
+   648→   648→  background: var(--white);
+   649→   649→  color: var(--navy);
+   650→   650→}
+   651→   651→
+   652→   652→.btn--white:hover {
+   653→   653→  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+   654→   654→}
+   655→   655→
+   656→   656→/* ==========================================================================
+   657→   657→   10. CARDS
+   658→   658→   ========================================================================== */
+   659→   659→.card {
+   660→   660→  background: var(--white);
+   661→   661→  border-radius: 1rem;
+   662→   662→  border: 1px solid var(--gray-100);
+   663→   663→  padding: 1.5rem;
+   664→   664→  transition: all 0.3s ease;
+   665→   665→}
+   666→   666→
+   667→   667→.card:hover {
+   668→   668→  box-shadow: var(--shadow-lg);
+   669→   669→  transform: translateY(-4px);
+   670→   670→  border-color: var(--gray-200);
+   671→   671→}
+   672→   672→
+   673→   673→.card__icon {
+   674→   674→  width: 3rem;
+   675→   675→  height: 3rem;
+   676→   676→  border-radius: 0.75rem;
+   677→   677→  background: var(--gray-50);
+   678→   678→  display: flex;
+   679→   679→  align-items: center;
+   680→   680→  justify-content: center;
+   681→   681→  color: var(--navy);
+   682→   682→  transition: color 0.3s ease;
+   683→   683→}
+   684→   684→
+   685→   685→.card__icon svg {
+   686→   686→  width: 24px;
+   687→   687→  height: 24px;
+   688→   688→  transition: all 0.3s ease;
+   689→   689→}
+   690→   690→
+   691→   691→.card:hover .card__icon {
+   692→   692→  color: var(--orange);
+   693→   693→}
+   694→   694→
+   695→   695→.card:hover .card__icon svg {
+   696→   696→  stroke: var(--orange);
+   697→   697→}
+   698→   698→
+   699→   699→.card__title {
+   700→   700→  font-size: 1.125rem;
+   701→   701→  font-weight: 600;
+   702→   702→  color: var(--navy);
+   703→   703→  margin-top: 1rem;
+   704→   704→}
+   705→   705→
+   706→   706→.card__desc {
+   707→   707→  font-size: 0.875rem;
+   708→   708→  color: var(--gray-500);
+   709→   709→  margin-top: 0.5rem;
+   710→   710→  line-height: 1.625;
+   711→   711→}
+   712→   712→
+   713→   713→/* Card Variants */
+   714→   714→.card--flat {
+   715→   715→  border: none;
+   716→   716→  background: rgba(245, 245, 245, 0.8);
+   717→   717→  border-radius: 0.75rem;
+   718→   718→  padding: 0.75rem;
+   719→   719→}
+   720→   720→
+   721→   721→.card--flat:hover {
+   722→   722→  background: rgba(240, 240, 240, 0.8);
+   723→   723→  box-shadow: none;
+   724→   724→  transform: none;
+   725→   725→}
+   726→   726→
+   727→   727→.card--solution {
+   728→   728→  padding: 2rem;
+   729→   729→  border-radius: 1rem;
+   730→   730→}
+   731→   731→
+   732→   732→.card--solution .card__icon {
+   733→   733→  width: 3.5rem;
+   734→   734→  height: 3.5rem;
+   735→   735→  border-radius: 1rem;
+   736→   736→}
+   737→   737→
+   738→   738→.card--testimonial {
+   739→   739→  padding: 1.5rem;
+   740→   740→}
+   741→   741→
+   742→   742→@media (min-width: 768px) {
+   743→   743→  .card--testimonial {
+   744→   744→    padding: 2rem;
+   745→   745→  }
+   746→   746→}
+   747→   747→
+   748→   748→.card--blog {
+   749→   749→  overflow: hidden;
+   750→   750→  border: 1px solid var(--gray-100);
+   751→   751→  border-radius: 1rem;
+   752→   752→  background: var(--white);
+   753→   753→  transition: all 0.3s ease;
+   754→   754→}
+   755→   755→
+   756→   756→.card--blog:hover {
+   757→   757→  box-shadow: var(--shadow-md);
+   758→   758→  transform: translateY(-2px);
+   759→   759→}
+   760→   760→
+   761→   761→.card--blog .card__image {
+   762→   762→  aspect-ratio: 16 / 10;
+   763→   763→  background: var(--gray-100);
+   764→   764→  overflow: hidden;
+   765→   765→}
+   766→   766→
+   767→   767→.card--blog .card__image img {
+   768→   768→  width: 100%;
+   769→   769→  height: 100%;
+   770→   770→  object-fit: cover;
+   771→   771→  transition: transform 0.3s ease;
+   772→   772→}
+   773→   773→
+   774→   774→.card--blog:hover .card__image img {
+   775→   775→  transform: scale(1.05);
+   776→   776→}
+   777→   777→
+   778→   778→.card--blog .card__category {
+   779→   779→  display: inline-block;
+   780→   780→  font-size: 0.75rem;
+   781→   781→  font-weight: 500;
+   782→   782→  padding: 0.25rem 0.625rem;
+   783→   783→  border-radius: 9999px;
+   784→   784→  margin-top: 1rem;
+   785→   785→}
+   786→   786→
+   787→   787→.card--blog .card__category--tips {
+   788→   788→  background: #eff6ff;
+   789→   789→  color: #2563eb;
+   790→   790→}
+   791→   791→
+   792→   792→.card--blog .card__category--product {
+   793→   793→  background: var(--orange-light);
+   794→   794→  color: var(--orange);
+   795→   795→}
+   796→   796→
+   797→   797→.card--blog .card__category--industry {
+   798→   798→  background: #f0fdf4;
+   799→   799→  color: #16a34a;
+   800→   800→}
+   801→   801→
+   802→   802→/* ==========================================================================
+   803→   803→   11. PRICING
+   804→   804→   ========================================================================== */
+   805→   805→.pricing {
+   806→   806→  display: grid;
+   807→   807→  gap: 1.5rem;
+   808→   808→  align-items: start;
+   809→   809→}
+   810→   810→
+   811→   811→@media (min-width: 768px) {
+   812→   812→  .pricing {
+   813→   813→    grid-template-columns: repeat(3, 1fr);
+   814→   814→  }
+   815→   815→}
+   816→   816→
+   817→   817→.pricing-card {
+   818→   818→  background: var(--white);
+   819→   819→  border-radius: 1rem;
+   820→   820→  border: 1px solid var(--gray-200);
+   821→   821→  padding: 2rem;
+   822→   822→  text-align: center;
+   823→   823→  transition: all 0.3s ease;
+   824→   824→}
+   825→   825→
+   826→   826→.pricing-card:hover {
+   827→   827→  box-shadow: var(--shadow-lg);
+   828→   828→}
+   829→   829→
+   830→   830→.pricing-card--featured {
+   831→   831→  border: 2px solid var(--orange);
+   832→   832→  transform: scale(1.05);
+   833→   833→  box-shadow: var(--shadow-xl);
+   834→   834→  position: relative;
+   835→   835→  z-index: 10;
+   836→   836→}
+   837→   837→
+   838→   838→@media (max-width: 767px) {
+   839→   839→  .pricing-card--featured {
+   840→   840→    transform: scale(1);
+   841→   841→  }
+   842→   842→}
+   843→   843→
+   844→   844→.pricing-card__badge {
+   845→   845→  position: absolute;
+   846→   846→  top: 0;
+   847→   847→  left: 50%;
+   848→   848→  transform: translate(-50%, -50%);
+   849→   849→  background: var(--orange);
+   850→   850→  color: var(--white);
+   851→   851→  font-size: 0.75rem;
+   852→   852→  font-weight: 600;
+   853→   853→  padding: 0.25rem 1rem;
+   854→   854→  border-radius: 9999px;
+   855→   855→  white-space: nowrap;
+   856→   856→}
+   857→   857→
+   858→   858→.pricing-card__name {
+   859→   859→  font-size: 1.25rem;
+   860→   860→  font-weight: 700;
+   861→   861→  color: var(--navy);
+   862→   862→  margin-top: 1.5rem;
+   863→   863→}
+   864→   864→
+   865→   865→.pricing-card__price {
+   866→   866→  font-size: 2.25rem;
+   867→   867→  font-weight: 700;
+   868→   868→  color: var(--navy);
+   869→   869→  margin-top: 1rem;
+   870→   870→}
+   871→   871→
+   872→   872→.pricing-card__period {
+   873→   873→  color: var(--gray-400);
+   874→   874→  font-size: 0.875rem;
+   875→   875→}
+   876→   876→
+   877→   877→.pricing-card__desc {
+   878→   878→  color: var(--gray-500);
+   879→   879→  font-size: 0.875rem;
+   880→   880→  margin-top: 0.5rem;
+   881→   881→}
+   882→   882→
+   883→   883→.pricing-card__features {
+   884→   884→  text-align: left;
+   885→   885→  margin-top: 2rem;
+   886→   886→  list-style: none;
+   887→   887→  padding: 0;
+   888→   888→}
+   889→   889→
+   890→   890→.pricing-card__features li {
+   891→   891→  display: flex;
+   892→   892→  align-items: center;
+   893→   893→  gap: 0.75rem;
+   894→   894→  padding: 0.5rem 0;
+   895→   895→  font-size: 0.875rem;
+   896→   896→  color: var(--gray-600);
+   897→   897→}
+   898→   898→
+   899→   899→.pricing-card__features li svg {
+   900→   900→  width: 1rem;
+   901→   901→  height: 1rem;
+   902→   902→  color: var(--orange);
+   903→   903→  flex-shrink: 0;
+   904→   904→}
+   905→   905→
+   906→   906→/* Pricing Toggle */
+   907→   907→.pricing-toggle {
+   908→   908→  display: flex;
+   909→   909→  align-items: center;
+   910→   910→  justify-content: center;
+   911→   911→  gap: 0.75rem;
+   912→   912→  margin-top: 2rem;
+   913→   913→  margin-bottom: 2rem;
+   914→   914→}
+   915→   915→
+   916→   916→.pricing-toggle__btn {
+   917→   917→  font-size: 0.875rem;
+   918→   918→  font-weight: 500;
+   919→   919→  color: var(--gray-500);
+   920→   920→  background: none;
+   921→   921→  border: none;
+   922→   922→  cursor: pointer;
+   923→   923→  transition: color 0.2s ease;
+   924→   924→}
+   925→   925→
+   926→   926→.pricing-toggle__btn--active {
+   927→   927→  color: var(--navy);
+   928→   928→  font-weight: 600;
+   929→   929→}
+   930→   930→
+   931→   931→.pricing-toggle__switch {
+   932→   932→  width: 3rem;
+   933→   933→  height: 1.5rem;
+   934→   934→  background: var(--gray-200);
+   935→   935→  border-radius: 9999px;
+   936→   936→  position: relative;
+   937→   937→  cursor: pointer;
+   938→   938→  transition: background 0.3s ease;
+   939→   939→  border: none;
+   940→   940→  padding: 0;
+   941→   941→}
+   942→   942→
+   943→   943→.pricing-toggle__switch--active {
+   944→   944→  background: var(--orange);
+   945→   945→}
+   946→   946→
+   947→   947→.pricing-toggle__switch::after {
+   948→   948→  content: '';
+   949→   949→  position: absolute;
+   950→   950→  top: 4px;
+   951→   951→  left: 4px;
+   952→   952→  width: 1rem;
+   953→   953→  height: 1rem;
+   954→   954→  background: var(--white);
+   955→   955→  border-radius: 50%;
+   956→   956→  transition: transform 0.3s ease;
+   957→   957→  box-shadow: var(--shadow-sm);
+   958→   958→}
+   959→   959→
+   960→   960→.pricing-toggle__switch--active::after {
+   961→   961→  transform: translateX(24px);
+   962→   962→}
+   963→   963→
+   964→   964→/* ==========================================================================
+   965→   965→   12. TESTIMONIALS
+   966→   966→   ========================================================================== */
+   967→   967→.testimonials {
+   968→   968→  display: grid;
+   969→   969→  gap: 1.5rem;
+   970→   970→}
+   971→   971→
+   972→   972→@media (min-width: 768px) {
+   973→   973→  .testimonials {
+   974→   974→    grid-template-columns: repeat(2, 1fr);
+   975→   975→  }
+   976→   976→}
+   977→   977→
+   978→   978→.testimonial__quote {
+   979→   979→  color: var(--gray-600);
+   980→   980→  font-size: 1rem;
+   981→   981→  line-height: 1.625;
+   982→   982→  font-style: italic;
+   983→   983→}
+   984→   984→
+   985→   985→.testimonial__stars {
+   986→   986→  display: flex;
+   987→   987→  gap: 4px;
+   988→   988→  margin-top: 1rem;
+   989→   989→}
+   990→   990→
+   991→   991→.testimonial__star {
+   992→   992→  width: 1.25rem;
+   993→   993→  height: 1.25rem;
+   994→   994→  fill: #facc15;
+   995→   995→}
+   996→   996→
+   997→   997→.testimonial__author {
+   998→   998→  display: flex;
+   999→   999→  align-items: center;
+  1000→  1000→  gap: 0.75rem;
+  1001→  1001→  margin-top: 1.5rem;
+  1002→  1002→}
+  1003→  1003→
+  1004→  1004→.testimonial__avatar {
+  1005→  1005→  width: 2.5rem;
+  1006→  1006→  height: 2.5rem;
+  1007→  1007→  border-radius: 50%;
+  1008→  1008→  display: flex;
+  1009→  1009→  align-items: center;
+  1010→  1010→  justify-content: center;
+  1011→  1011→  color: var(--white);
+  1012→  1012→  font-size: 0.875rem;
+  1013→  1013→  font-weight: 600;
+  1014→  1014→  flex-shrink: 0;
+  1015→  1015→}
+  1016→  1016→
+  1017→  1017→.testimonial__name {
+  1018→  1018→  font-size: 0.875rem;
+  1019→  1019→  font-weight: 600;
+  1020→  1020→  color: var(--navy);
+  1021→  1021→}
+  1022→  1022→
+  1023→  1023→.testimonial__role {
+  1024→  1024→  font-size: 0.875rem;
+  1025→  1025→  color: var(--gray-500);
+  1026→  1026→}
+  1027→  1027→
+  1028→  1028→/* ==========================================================================
+  1029→  1029→   13. STATS / GROWTH
+  1030→  1030→   ========================================================================== */
+  1031→  1031→.stats {
+  1032→  1032→  display: grid;
+  1033→  1033→  grid-template-columns: repeat(2, 1fr);
+  1034→  1034→  gap: 2rem;
+  1035→  1035→  text-align: center;
+  1036→  1036→}
+  1037→  1037→
+  1038→  1038→@media (min-width: 768px) {
+  1039→  1039→  .stats {
+  1040→  1040→    grid-template-columns: repeat(4, 1fr);
+  1041→  1041→  }
+  1042→  1042→}
+  1043→  1043→
+  1044→  1044→.stat__number {
+  1045→  1045→  font-size: 2.25rem;
+  1046→  1046→  font-weight: 700;
+  1047→  1047→  color: var(--white);
+  1048→  1048→}
+  1049→  1049→
+  1050→  1050→@media (min-width: 768px) {
+  1051→  1051→  .stat__number {
+  1052→  1052→    font-size: 3rem;
+  1053→  1053→  }
+  1054→  1054→}
+  1055→  1055→
+  1056→  1056→.stat__label {
+  1057→  1057→  color: var(--gray-300);
+  1058→  1058→  font-size: 0.875rem;
+  1059→  1059→  margin-top: 0.5rem;
+  1060→  1060→}
+  1061→  1061→
+  1062→  1062→/* ==========================================================================
+  1063→  1063→   14. HOW IT WORKS / STEPS
+  1064→  1064→   ========================================================================== */
+  1065→  1065→.steps {
+  1066→  1066→  display: flex;
+  1067→  1067→  flex-direction: column;
+  1068→  1068→  gap: 2rem;
+  1069→  1069→  align-items: flex-start;
+  1070→  1070→}
+  1071→  1071→
+  1072→  1072→@media (min-width: 768px) {
+  1073→  1073→  .steps {
+  1074→  1074→    flex-direction: row;
+  1075→  1075→  }
+  1076→  1076→}
+  1077→  1077→
+  1078→  1078→.step {
+  1079→  1079→  flex: 1;
+  1080→  1080→  text-align: center;
+  1081→  1081→  position: relative;
+  1082→  1082→}
+  1083→  1083→
+  1084→  1084→.step__number {
+  1085→  1085→  font-size: 3.75rem;
+  1086→  1086→  font-weight: 700;
+  1087→  1087→  color: rgba(253, 83, 32, 0.1);
+  1088→  1088→  position: absolute;
+  1089→  1089→  top: 0;
+  1090→  1090→  left: 50%;
+  1091→  1091→  transform: translateX(-50%);
+  1092→  1092→  line-height: 1;
+  1093→  1093→  user-select: none;
+  1094→  1094→  pointer-events: none;
+  1095→  1095→}
+  1096→  1096→
+  1097→  1097→.step__icon {
+  1098→  1098→  width: 3.5rem;
+  1099→  1099→  height: 3.5rem;
+  1100→  1100→  border-radius: 1rem;
+  1101→  1101→  background: var(--gray-50);
+  1102→  1102→  display: flex;
+  1103→  1103→  align-items: center;
+  1104→  1104→  justify-content: center;
+  1105→  1105→  margin: 0 auto;
+  1106→  1106→  position: relative;
+  1107→  1107→  z-index: 1;
+  1108→  1108→}
+  1109→  1109→
+  1110→  1110→.step__title {
+  1111→  1111→  font-size: 1.25rem;
+  1112→  1112→  font-weight: 600;
+  1113→  1113→  color: var(--navy);
+  1114→  1114→  margin-top: 1.5rem;
+  1115→  1115→}
+  1116→  1116→
+  1117→  1117→.step__desc {
+  1118→  1118→  color: var(--gray-500);
+  1119→  1119→  font-size: 0.875rem;
+  1120→  1120→  margin-top: 0.5rem;
+  1121→  1121→  max-width: 20rem;
+  1122→  1122→  margin-left: auto;
+  1123→  1123→  margin-right: auto;
+  1124→  1124→  line-height: 1.625;
+  1125→  1125→}
+  1126→  1126→
+  1127→  1127→.step__connector {
+  1128→  1128→  display: none;
+  1129→  1129→}
+  1130→  1130→
+  1131→  1131→@media (min-width: 768px) {
+  1132→  1132→  .step__connector {
+  1133→  1133→    display: block;
+  1134→  1134→    position: absolute;
+  1135→  1135→    top: 1.75rem;
+  1136→  1136→    right: 0;
+  1137→  1137→    transform: translateX(50%);
+  1138→  1138→    color: var(--gray-300);
+  1139→  1139→  }
+  1140→  1140→}
+  1141→  1141→
+  1142→  1142→/* ==========================================================================
+  1143→  1143→   15. FAQ ACCORDION
+  1144→  1144→   ========================================================================== */
+  1145→  1145→.faq-item {
+  1146→  1146→  border-bottom: 1px solid var(--gray-200);
+  1147→  1147→}
+  1148→  1148→
+  1149→  1149→.faq-item__question {
+  1150→  1150→  width: 100%;
+  1151→  1151→  display: flex;
+  1152→  1152→  align-items: center;
+  1153→  1153→  justify-content: space-between;
+  1154→  1154→  padding: 1.25rem 0;
+  1155→  1155→  text-align: left;
+  1156→  1156→  font-weight: 500;
+  1157→  1157→  color: var(--navy);
+  1158→  1158→  cursor: pointer;
+  1159→  1159→  border: none;
+  1160→  1160→  background: none;
+  1161→  1161→  font-size: 1rem;
+  1162→  1162→  font-family: var(--font-sans);
+  1163→  1163→  line-height: 1.5;
+  1164→  1164→}
+  1165→  1165→
+  1166→  1166→.faq-item__icon {
+  1167→  1167→  width: 1.25rem;
+  1168→  1168→  height: 1.25rem;
+  1169→  1169→  color: var(--gray-400);
+  1170→  1170→  transition: transform 0.3s ease;
+  1171→  1171→  flex-shrink: 0;
+  1172→  1172→  margin-left: 1rem;
+  1173→  1173→}
+  1174→  1174→
+  1175→  1175→.faq-item--open .faq-item__icon {
+  1176→  1176→  transform: rotate(180deg);
+  1177→  1177→}
+  1178→  1178→
+  1179→  1179→.faq-item__answer {
+  1180→  1180→  max-height: 0;
+  1181→  1181→  overflow: hidden;
+  1182→  1182→  transition: max-height 0.3s ease, padding 0.3s ease;
+  1183→  1183→  padding: 0;
+  1184→  1184→}
+  1185→  1185→
+  1186→  1186→.faq-item--open .faq-item__answer {
+  1187→  1187→  max-height: 200px;
+  1188→  1188→  padding-bottom: 1.25rem;
+  1189→  1189→}
+  1190→  1190→
+  1191→  1191→.faq-item__answer p {
+  1192→  1192→  color: var(--gray-500);
+  1193→  1193→  font-size: 0.875rem;
+  1194→  1194→  line-height: 1.625;
+  1195→  1195→}
+  1196→  1196→
+  1197→  1197→/* ==========================================================================
+  1198→  1198→   16. FEATURES TABS
+  1199→  1199→   ========================================================================== */
+  1200→  1200→.tabs {
+  1201→  1201→  display: flex;
+  1202→  1202→  gap: 0.5rem;
+  1203→  1203→  justify-content: center;
+  1204→  1204→  margin-bottom: 3rem;
+  1205→  1205→  flex-wrap: wrap;
+  1206→  1206→}
+  1207→  1207→
+  1208→  1208→.tab {
+  1209→  1209→  padding: 0.625rem 1.25rem;
+  1210→  1210→  font-size: 0.875rem;
+  1211→  1211→  font-weight: 500;
+  1212→  1212→  border-radius: 9999px;
+  1213→  1213→  border: 1px solid var(--gray-200);
+  1214→  1214→  cursor: pointer;
+  1215→  1215→  transition: all 0.2s ease;
+  1216→  1216→  background: none;
+  1217→  1217→  color: var(--gray-600);
+  1218→  1218→  font-family: var(--font-sans);
+  1219→  1219→}
+  1220→  1220→
+  1221→  1221→.tab:hover {
+  1222→  1222→  border-color: var(--gray-300);
+  1223→  1223→  color: var(--navy);
+  1224→  1224→}
+  1225→  1225→
+  1226→  1226→.tab--active {
+  1227→  1227→  background: var(--navy);
+  1228→  1228→  color: var(--white);
+  1229→  1229→  border-color: var(--navy);
+  1230→  1230→}
+  1231→  1231→
+  1232→  1232→.tab--active:hover {
+  1233→  1233→  color: var(--white);
+  1234→  1234→}
+  1235→  1235→
+  1236→  1236→.tab-content {
+  1237→  1237→  display: none;
+  1238→  1238→}
+  1239→  1239→
+  1240→  1240→.tab-content--active {
+  1241→  1241→  display: block;
+  1242→  1242→}
+  1243→  1243→
+  1244→  1244→.features-grid {
+  1245→  1245→  display: grid;
+  1246→  1246→  gap: 1.5rem;
+  1247→  1247→}
+  1248→  1248→
+  1249→  1249→@media (min-width: 768px) {
+  1250→  1250→  .features-grid {
+  1251→  1251→    grid-template-columns: repeat(3, 1fr);
+  1252→  1252→  }
+  1253→  1253→}
+  1254→  1254→
+  1255→  1255→/* ==========================================================================
+  1256→  1256→   17. DASHBOARD MOCKUP
+  1257→  1257→   ========================================================================== */
+  1258→  1258→.dashboard {
+  1259→  1259→  border-radius: 1rem;
+  1260→  1260→  background: var(--white);
+  1261→  1261→  border: 1px solid var(--gray-100);
+  1262→  1262→  box-shadow: var(--shadow-xl);
+  1263→  1263→  overflow: hidden;
+  1264→  1264→}
+  1265→  1265→
+  1266→  1266→.dashboard__topbar {
+  1267→  1267→  display: flex;
+  1268→  1268→  align-items: center;
+  1269→  1269→  justify-content: space-between;
+  1270→  1270→  padding: 0.75rem 1rem;
+  1271→  1271→  border-bottom: 1px solid var(--gray-100);
+  1272→  1272→}
+  1273→  1273→
+  1274→  1274→@media (min-width: 640px) {
+  1275→  1275→  .dashboard__topbar {
+  1276→  1276→    padding: 0.75rem 1.25rem;
+  1277→  1277→  }
+  1278→  1278→}
+  1279→  1279→
+  1280→  1280→.dashboard__logo {
+  1281→  1281→  width: 1.5rem;
+  1282→  1282→  height: 1.5rem;
+  1283→  1283→  border-radius: 0.375rem;
+  1284→  1284→  background: var(--navy);
+  1285→  1285→  display: flex;
+  1286→  1286→  align-items: center;
+  1287→  1287→  justify-content: center;
+  1288→  1288→  flex-shrink: 0;
+  1289→  1289→}
+  1290→  1290→
+  1291→  1291→.dashboard__search {
+  1292→  1292→  display: none;
+  1293→  1293→  align-items: center;
+  1294→  1294→  gap: 6px;
+  1295→  1295→  background: var(--gray-50);
+  1296→  1296→  border-radius: 0.5rem;
+  1297→  1297→  padding: 0.375rem 0.625rem;
+  1298→  1298→}
+  1299→  1299→
+  1300→  1300→@media (min-width: 640px) {
+  1301→  1301→  .dashboard__search {
+  1302→  1302→    display: flex;
+  1303→  1303→  }
+  1304→  1304→}
+  1305→  1305→
+  1306→  1306→.dashboard__kpi-grid {
+  1307→  1307→  display: grid;
+  1308→  1308→  grid-template-columns: repeat(2, 1fr);
+  1309→  1309→  gap: 12px;
+  1310→  1310→  padding: 1rem;
+  1311→  1311→}
+  1312→  1312→
+  1313→  1313→@media (min-width: 640px) {
+  1314→  1314→  .dashboard__kpi-grid {
+  1315→  1315→    padding: 1rem 1.25rem;
+  1316→  1316→  }
+  1317→  1317→}
+  1318→  1318→
+  1319→  1319→@media (min-width: 1024px) {
+  1320→  1320→  .dashboard__kpi-grid {
+  1321→  1321→    grid-template-columns: repeat(4, 1fr);
+  1322→  1322→  }
+  1323→  1323→}
+  1324→  1324→
+  1325→  1325→.dashboard__kpi {
+  1326→  1326→  background: rgba(245, 245, 245, 0.8);
+  1327→  1327→  border-radius: 0.75rem;
+  1328→  1328→  padding: 0.75rem;
+  1329→  1329→  transition: background-color 0.2s ease;
+  1330→  1330→}
+  1331→  1331→
+  1332→  1332→.dashboard__kpi-icon {
+  1333→  1333→  width: 1.75rem;
+  1334→  1334→  height: 1.75rem;
+  1335→  1335→  border-radius: 0.5rem;
+  1336→  1336→  display: flex;
+  1337→  1337→  align-items: center;
+  1338→  1338→  justify-content: center;
+  1339→  1339→}
+  1340→  1340→
+  1341→  1341→.dashboard__kpi-value {
+  1342→  1342→  color: var(--navy);
+  1343→  1343→  font-size: 0.875rem;
+  1344→  1344→  font-weight: 700;
+  1345→  1345→  margin-top: 0.5rem;
+  1346→  1346→}
+  1347→  1347→
+  1348→  1348→@media (min-width: 640px) {
+  1349→  1349→  .dashboard__kpi-value {
+  1350→  1350→    font-size: 1rem;
+  1351→  1351→  }
+  1352→  1352→}
+  1353→  1353→
+  1354→  1354→.dashboard__kpi-label {
+  1355→  1355→  color: var(--gray-400);
+  1356→  1356→  font-size: 10px;
+  1357→  1357→  margin-top: 2px;
+  1358→  1358→}
+  1359→  1359→
+  1360→  1360→.dashboard__kpi-change {
+  1361→  1361→  font-size: 10px;
+  1362→  1362→  font-weight: 600;
+  1363→  1363→  color: #16a34a;
+  1364→  1364→}
+  1365→  1365→
+  1366→  1366→.dashboard__content {
+  1367→  1367→  padding: 1rem;
+  1368→  1368→  display: flex;
+  1369→  1369→  flex-direction: column;
+  1370→  1370→  gap: 1rem;
+  1371→  1371→}
+  1372→  1372→
+  1373→  1373→@media (min-width: 640px) {
+  1374→  1374→  .dashboard__content {
+  1375→  1375→    padding: 1rem 1.25rem;
+  1376→  1376→  }
+  1377→  1377→}
+  1378→  1378→
+  1379→  1379→@media (min-width: 1024px) {
+  1380→  1380→  .dashboard__content {
+  1381→  1381→    flex-direction: row;
+  1382→  1382→  }
+  1383→  1383→}
+  1384→  1384→
+  1385→  1385→.dashboard__chart-area {
+  1386→  1386→  flex: 1;
+  1387→  1387→  background: rgba(245, 245, 245, 0.6);
+  1388→  1388→  border-radius: 0.75rem;
+  1389→  1389→  padding: 0.75rem;
+  1390→  1390→}
+  1391→  1391→
+  1392→  1392→@media (min-width: 640px) {
+  1393→  1393→  .dashboard__chart-area {
+  1394→  1394→    padding: 1rem;
+  1395→  1395→  }
+  1396→  1396→}
+  1397→  1397→
+  1398→  1398→.dashboard__side-panel {
+  1399→  1399→  width: 100%;
+  1400→  1400→  display: flex;
+  1401→  1401→  flex-direction: column;
+  1402→  1402→  gap: 12px;
+  1403→  1403→}
+  1404→  1404→
+  1405→  1405→@media (min-width: 1024px) {
+  1406→  1406→  .dashboard__side-panel {
+  1407→  1407→    width: 11rem;
+  1408→  1408→  }
+  1409→  1409→}
+  1410→  1410→
+  1411→  1411→@media (min-width: 1280px) {
+  1412→  1412→  .dashboard__side-panel {
+  1413→  1413→    width: 12rem;
+  1414→  1414→  }
+  1415→  1415→}
+  1416→  1416→
+  1417→  1417→.dashboard__activity {
+  1418→  1418→  background: rgba(245, 245, 245, 0.6);
+  1419→  1419→  border-radius: 0.75rem;
+  1420→  1420→  padding: 0.75rem;
+  1421→  1421→}
+  1422→  1422→
+  1423→  1423→.dashboard__activity-item {
+  1424→  1424→  display: flex;
+  1425→  1425→  align-items: flex-start;
+  1426→  1426→  gap: 8px;
+  1427→  1427→  padding: 0.5rem 0;
+  1428→  1428→}
+  1429→  1429→
+  1430→  1430→.dashboard__activity-avatar {
+  1431→  1431→  width: 1.25rem;
+  1432→  1432→  height: 1.25rem;
+  1433→  1433→  border-radius: 50%;
+  1434→  1434→  display: flex;
+  1435→  1435→  align-items: center;
+  1436→  1436→  justify-content: center;
+  1437→  1437→  flex-shrink: 0;
+  1438→  1438→}
+  1439→  1439→
+  1440→  1440→.dashboard__invoice-cta {
+  1441→  1441→  background: var(--navy);
+  1442→  1442→  border-radius: 0.75rem;
+  1443→  1443→  padding: 0.75rem;
+  1444→  1444→  cursor: pointer;
+  1445→  1445→  transition: background 0.2s ease;
+  1446→  1446→}
+  1447→  1447→
+  1448→  1448→.dashboard__invoice-cta:hover {
+  1449→  1449→  background: var(--navy-light);
+  1450→  1450→}
+  1451→  1451→
+  1452→  1452→/* ==========================================================================
+  1453→  1453→   18. FLOATING WIDGETS
+  1454→  1454→   ========================================================================== */
+  1455→  1455→.float-widget {
+  1456→  1456→  position: absolute;
+  1457→  1457→  background: var(--white);
+  1458→  1458→  border-radius: 0.75rem;
+  1459→  1459→  box-shadow: var(--shadow-lg);
+  1460→  1460→  padding: 0.75rem 1rem;
+  1461→  1461→  border: 1px solid var(--gray-100);
+  1462→  1462→  animation: float 6s ease-in-out infinite;
+  1463→  1463→  white-space: nowrap;
+  1464→  1464→}
+  1465→  1465→
+  1466→  1466→.float-widget--1 {
+  1467→  1467→  top: 2.5rem;
+  1468→  1468→  left: -1rem;
+  1469→  1469→  animation: float 6s ease-in-out infinite;
+  1470→  1470→}
+  1471→  1471→
+  1472→  1472→.float-widget--2 {
+  1473→  1473→  top: 5rem;
+  1474→  1474→  right: -1rem;
+  1475→  1475→  animation: float-delayed 6s ease-in-out infinite;
+  1476→  1476→}
+  1477→  1477→
+  1478→  1478→.float-widget--3 {
+  1479→  1479→  bottom: 2.5rem;
+  1480→  1480→  left: -2rem;
+  1481→  1481→  animation: float-slow 8s ease-in-out infinite;
+  1482→  1482→}
+  1483→  1483→
+  1484→  1484→.float-widget__value {
+  1485→  1485→  font-size: 1.125rem;
+  1486→  1486→  font-weight: 700;
+  1487→  1487→  color: var(--navy);
+  1488→  1488→}
+  1489→  1489→
+  1490→  1490→.float-widget__label {
+  1491→  1491→  font-size: 0.75rem;
+  1492→  1492→  color: var(--gray-500);
+  1493→  1493→}
+  1494→  1494→
+  1495→  1495→/* ==========================================================================
+  1496→  1496→   19. LAPTOP MOCKUP
+  1497→  1497→   ========================================================================== */
+  1498→  1498→.laptop {
+  1499→  1499→  max-width: 64rem;
+  1500→  1500→  margin: 0 auto;
+  1501→  1501→  border-radius: 1.5rem;
+  1502→  1502→  background: var(--navy);
+  1503→  1503→  padding: 0.5rem;
+  1504→  1504→  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  1505→  1505→}
+  1506→  1506→
+  1507→  1507→.laptop__screen {
+  1508→  1508→  border-radius: 1rem;
+  1509→  1509→  background: var(--white);
+  1510→  1510→  overflow: hidden;
+  1511→  1511→  min-height: 400px;
+  1512→  1512→}
+  1513→  1513→
+  1514→  1514→.laptop__topbar {
+  1515→  1515→  height: 2rem;
+  1516→  1516→  background: var(--gray-50);
+  1517→  1517→  border-bottom: 1px solid var(--gray-100);
+  1518→  1518→  display: flex;
+  1519→  1519→  align-items: center;
+  1520→  1520→  padding: 0 1rem;
+  1521→  1521→  gap: 0.5rem;
+  1522→  1522→}
+  1523→  1523→
+  1524→  1524→.laptop__dot {
+  1525→  1525→  width: 10px;
+  1526→  1526→  height: 10px;
+  1527→  1527→  border-radius: 50%;
+  1528→  1528→}
+  1529→  1529→
+  1530→  1530→/* ==========================================================================
+  1531→  1531→   20. TRUSTED BY / LOGOS
+  1532→  1532→   ========================================================================== */
+  1533→  1533→.logos {
+  1534→  1534→  display: flex;
+  1535→  1535→  align-items: center;
+  1536→  1536→  justify-content: center;
+  1537→  1537→  gap: 3rem;
+  1538→  1538→  flex-wrap: wrap;
+  1539→  1539→  opacity: 0.6;
+  1540→  1540→}
+  1541→  1541→
+  1542→  1542→.logos__item {
+  1543→  1543→  font-size: 1.5rem;
+  1544→  1544→  font-weight: 700;
+  1545→  1545→  color: var(--gray-300);
+  1546→  1546→  letter-spacing: -0.025em;
+  1547→  1547→  white-space: nowrap;
+  1548→  1548→}
+  1549→  1549→
+  1550→  1550→/* ==========================================================================
+  1551→  1551→   21. CTA SECTION
+  1552→  1552→   ========================================================================== */
+  1553→  1553→.cta {
+  1554→  1554→  background: var(--navy);
+  1555→  1555→  color: var(--white);
+  1556→  1556→  padding: 6rem 0;
+  1557→  1557→  position: relative;
+  1558→  1558→  overflow: hidden;
+  1559→  1559→}
+  1560→  1560→
+  1561→  1561→.cta__title {
+  1562→  1562→  font-size: 2.25rem;
+  1563→  1563→  font-weight: 700;
+  1564→  1564→  text-align: center;
+  1565→  1565→  color: var(--white);
+  1566→  1566→}
+  1567→  1567→
+  1568→  1568→@media (min-width: 768px) {
+  1569→  1569→  .cta__title {
+  1570→  1570→    font-size: 3rem;
+  1571→  1571→  }
+  1572→  1572→}
+  1573→  1573→
+  1574→  1574→.cta__subtitle {
+  1575→  1575→  color: var(--gray-300);
+  1576→  1576→  font-size: 1.125rem;
+  1577→  1577→  text-align: center;
+  1578→  1578→  margin-top: 1.5rem;
+  1579→  1579→  max-width: 42rem;
+  1580→  1580→  margin-left: auto;
+  1581→  1581→  margin-right: auto;
+  1582→  1582→  line-height: 1.625;
+  1583→  1583→}
+  1584→  1584→
+  1585→  1585→.cta__buttons {
+  1586→  1586→  display: flex;
+  1587→  1587→  justify-content: center;
+  1588→  1588→  gap: 1rem;
+  1589→  1589→  margin-top: 2.5rem;
+  1590→  1590→  flex-wrap: wrap;
+  1591→  1591→}
+  1592→  1592→
+  1593→  1593→/* ==========================================================================
+  1594→  1594→   22. FOOTER
+  1595→  1595→   ========================================================================== */
+  1596→  1596→.footer {
+  1597→  1597→  background: var(--navy);
+  1598→  1598→  margin-top: auto;
+  1599→  1599→  color: var(--white);
+  1600→  1600→}
+  1601→  1601→
+  1602→  1602→.footer__top {
+  1603→  1603→  padding-top: 4rem;
+  1604→  1604→  padding-bottom: 3rem;
+  1605→  1605→}
+  1606→  1606→
+  1607→  1607→.footer__grid {
+  1608→  1608→  display: grid;
+  1609→  1609→  gap: 3rem;
+  1610→  1610→}
+  1611→  1611→
+  1612→  1612→@media (min-width: 768px) {
+  1613→  1613→  .footer__grid {
+  1614→  1614→    grid-template-columns: repeat(5, 1fr);
+  1615→  1615→  }
+  1616→  1616→}
+  1617→  1617→
+  1618→  1618→.footer__brand {
+  1619→  1619→  grid-column: span 1;
+  1620→  1620→}
+  1621→  1621→
+  1622→  1622→@media (min-width: 768px) {
+  1623→  1623→  .footer__brand {
+  1624→  1624→    grid-column: span 2;
+  1625→  1625→  }
+  1626→  1626→}
+  1627→  1627→
+  1628→  1628→.footer__logo {
+  1629→  1629→  height: 4rem;
+  1630→  1630→  width: auto;
+  1631→  1631→  filter: brightness(0) invert(1);
+  1632→  1632→}
+  1633→  1633→
+  1634→  1634→.footer__tagline {
+  1635→  1635→  color: var(--gray-400);
+  1636→  1636→  font-size: 0.875rem;
+  1637→  1637→  margin-top: 0.75rem;
+  1638→  1638→}
+  1639→  1639→
+  1640→  1640→.footer__desc {
+  1641→  1641→  color: var(--gray-500);
+  1642→  1642→  font-size: 0.875rem;
+  1643→  1643→  margin-top: 0.5rem;
+  1644→  1644→  max-width: 20rem;
+  1645→  1645→  line-height: 1.625;
+  1646→  1646→}
+  1647→  1647→
+  1648→  1648→.footer__social {
+  1649→  1649→  display: flex;
+  1650→  1650→  gap: 12px;
+  1651→  1651→  margin-top: 1.5rem;
+  1652→  1652→}
+  1653→  1653→
+  1654→  1654→.footer__social-btn {
+  1655→  1655→  width: 2.25rem;
+  1656→  1656→  height: 2.25rem;
+  1657→  1657→  display: flex;
+  1658→  1658→  align-items: center;
+  1659→  1659→  justify-content: center;
+  1660→  1660→  border-radius: 0.5rem;
+  1661→  1661→  background: rgba(255, 255, 255, 0.05);
+  1662→  1662→  border: none;
+  1663→  1663→  cursor: pointer;
+  1664→  1664→  transition: background 0.2s ease;
+  1665→  1665→}
+  1666→  1666→
+  1667→  1667→.footer__social-btn:hover {
+  1668→  1668→  background: rgba(255, 255, 255, 0.1);
+  1669→  1669→}
+  1670→  1670→
+  1671→  1671→.footer__social-btn svg {
+  1672→  1672→  width: 1rem;
+  1673→  1673→  height: 1rem;
+  1674→  1674→  fill: var(--gray-400);
+  1675→  1675→  stroke: var(--gray-400);
+  1676→  1676→}
+  1677→  1677→
+  1678→  1678→.footer__col-title {
+  1679→  1679→  color: var(--white);
+  1680→  1680→  font-weight: 600;
+  1681→  1681→  font-size: 0.875rem;
+  1682→  1682→}
+  1683→  1683→
+  1684→  1684→.footer__col-links {
+  1685→  1685→  list-style: none;
+  1686→  1686→  padding: 0;
+  1687→  1687→  margin-top: 1rem;
+  1688→  1688→}
+  1689→  1689→
+  1690→  1690→.footer__col-links li {
+  1691→  1691→  padding: 0.375rem 0;
+  1692→  1692→}
+  1693→  1693→
+  1694→  1694→.footer__col-links a {
+  1695→  1695→  color: var(--gray-400);
+  1696→  1696→  font-size: 0.875rem;
+  1697→  1697→  text-decoration: none;
+  1698→  1698→  transition: color 0.2s ease;
+  1699→  1699→}
+  1700→  1700→
+  1701→  1701→.footer__col-links a:hover {
+  1702→  1702→  color: var(--white);
+  1703→  1703→}
+  1704→  1704→
+  1705→  1705→.footer__badge {
+  1706→  1706→  font-size: 0.75rem;
+  1707→  1707→  color: var(--orange);
+  1708→  1708→  font-weight: 500;
+  1709→  1709→  margin-left: 0.5rem;
+  1710→  1710→}
+  1711→  1711→
+  1712→  1712→.footer__bottom {
+  1713→  1713→  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  1714→  1714→  padding-top: 2rem;
+  1715→  1715→  padding-bottom: 2rem;
+  1716→  1716→}
+  1717→  1717→
+  1718→  1718→.footer__bottom-inner {
+  1719→  1719→  max-width: 80rem;
+  1720→  1720→  margin: 0 auto;
+  1721→  1721→  padding: 0 1rem;
+  1722→  1722→  display: flex;
+  1723→  1723→  flex-direction: column;
+  1724→  1724→  align-items: center;
+  1725→  1725→  gap: 1rem;
+  1726→  1726→}
+  1727→  1727→
+  1728→  1728→@media (min-width: 640px) {
+  1729→  1729→  .footer__bottom-inner {
+  1730→  1730→    padding: 0 1.5rem;
+  1731→  1731→  }
+  1732→  1732→}
+  1733→  1733→
+  1734→  1734→@media (min-width: 1024px) {
+  1735→  1735→  .footer__bottom-inner {
+  1736→  1736→    padding: 0 2rem;
+  1737→  1737→    flex-direction: row;
+  1738→  1738→    justify-content: space-between;
+  1739→  1739→  }
+  1740→  1740→}
+  1741→  1741→
+  1742→  1742→.footer__copy {
+  1743→  1743→  color: var(--gray-500);
+  1744→  1744→  font-size: 0.875rem;
+  1745→  1745→}
+  1746→  1746→
+  1747→  1747→/* ==========================================================================
+  1748→  1748→   23. CONTACT FORM
+  1749→  1749→   ========================================================================== */
+  1750→  1750→.contact-grid {
+  1751→  1751→  display: grid;
+  1752→  1752→  gap: 3rem;
+  1753→  1753→}
+  1754→  1754→
+  1755→  1755→@media (min-width: 768px) {
+  1756→  1756→  .contact-grid {
+  1757→  1757→    grid-template-columns: repeat(2, 1fr);
+  1758→  1758→  }
+  1759→  1759→}
+  1760→  1760→
+  1761→  1761→.form-group {
+  1762→  1762→  margin-bottom: 1.25rem;
+  1763→  1763→}
+  1764→  1764→
+  1765→  1765→.form-label {
+  1766→  1766→  display: block;
+  1767→  1767→  font-size: 0.875rem;
+  1768→  1768→  font-weight: 500;
+  1769→  1769→  color: var(--navy);
+  1770→  1770→  margin-bottom: 0.375rem;
+  1771→  1771→}
+  1772→  1772→
+  1773→  1773→.form-input {
+  1774→  1774→  width: 100%;
+  1775→  1775→  padding: 0.625rem 1rem;
+  1776→  1776→  border: 1px solid var(--gray-200);
+  1777→  1777→  border-radius: 0.75rem;
+  1778→  1778→  font-size: 0.875rem;
+  1779→  1779→  outline: none;
+  1780→  1780→  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  1781→  1781→  background: var(--white);
+  1782→  1782→  font-family: var(--font-sans);
+  1783→  1783→  color: var(--navy);
+  1784→  1784→  line-height: 1.5;
+  1785→  1785→}
+  1786→  1786→
+  1787→  1787→.form-input:focus {
+  1788→  1788→  border-color: var(--navy);
+  1789→  1789→  box-shadow: 0 0 0 3px rgba(1, 17, 52, 0.1);
+  1790→  1790→}
+  1791→  1791→
+  1792→  1792→.form-input::placeholder {
+  1793→  1793→  color: var(--gray-400);
+  1794→  1794→}
+  1795→  1795→
+  1796→  1796→.form-select {
+  1797→  1797→  width: 100%;
+  1798→  1798→  padding: 0.625rem 1rem;
+  1799→  1799→  border: 1px solid var(--gray-200);
+  1800→  1800→  border-radius: 0.75rem;
+  1801→  1801→  font-size: 0.875rem;
+  1802→  1802→  outline: none;
+  1803→  1803→  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  1804→  1804→  background: var(--white);
+  1805→  1805→  font-family: var(--font-sans);
+  1806→  1806→  color: var(--navy);
+  1807→  1807→  appearance: none;
+  1808→  1808→  -webkit-appearance: none;
+  1809→  1809→  -moz-appearance: none;
+  1810→  1810→  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  1811→  1811→  background-repeat: no-repeat;
+  1812→  1812→  background-position: right 0.75rem center;
+  1813→  1813→  padding-right: 2.5rem;
+  1814→  1814→  cursor: pointer;
+  1815→  1815→  line-height: 1.5;
+  1816→  1816→}
+  1817→  1817→
+  1818→  1818→.form-select:focus {
+  1819→  1819→  border-color: var(--navy);
+  1820→  1820→  box-shadow: 0 0 0 3px rgba(1, 17, 52, 0.1);
+  1821→  1821→}
+  1822→  1822→
+  1823→  1823→.form-textarea {
+  1824→  1824→  width: 100%;
+  1825→  1825→  padding: 0.625rem 1rem;
+  1826→  1826→  border: 1px solid var(--gray-200);
+  1827→  1827→  border-radius: 0.75rem;
+  1828→  1828→  font-size: 0.875rem;
+  1829→  1829→  outline: none;
+  1830→  1830→  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  1831→  1831→  background: var(--white);
+  1832→  1832→  font-family: var(--font-sans);
+  1833→  1833→  color: var(--navy);
+  1834→  1834→  min-height: 120px;
+  1835→  1835→  resize: vertical;
+  1836→  1836→  line-height: 1.5;
+  1837→  1837→}
+  1838→  1838→
+  1839→  1839→.form-textarea:focus {
+  1840→  1840→  border-color: var(--navy);
+  1841→  1841→  box-shadow: 0 0 0 3px rgba(1, 17, 52, 0.1);
+  1842→  1842→}
+  1843→  1843→
+  1844→  1844→.form-textarea::placeholder {
+  1845→  1845→  color: var(--gray-400);
+  1846→  1846→}
+  1847→  1847→
+  1848→  1848→/* ==========================================================================
+  1849→  1849→   24. BLOG PAGE
+  1850→  1850→   ========================================================================== */
+  1851→  1851→.blog-grid {
+  1852→  1852→  display: grid;
+  1853→  1853→  gap: 2rem;
+  1854→  1854→}
+  1855→  1855→
+  1856→  1856→@media (min-width: 768px) {
+  1857→  1857→  .blog-grid {
+  1858→  1858→    grid-template-columns: repeat(3, 1fr);
+  1859→  1859→  }
+  1860→  1860→}
+  1861→  1861→
+  1862→  1862→.blog-card__image {
+  1863→  1863→  aspect-ratio: 16 / 10;
+  1864→  1864→  background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+  1865→  1865→  overflow: hidden;
+  1866→  1866→}
+  1867→  1867→
+  1868→  1868→.blog-card__image img {
+  1869→  1869→  width: 100%;
+  1870→  1870→  height: 100%;
+  1871→  1871→  object-fit: cover;
+  1872→  1872→}
+  1873→  1873→
+  1874→  1874→/* ==========================================================================
+  1875→  1875→   25. TEAM (ABOUT PAGE)
+  1876→  1876→   ========================================================================== */
+  1877→  1877→.team-grid {
+  1878→  1878→  display: grid;
+  1879→  1879→  grid-template-columns: repeat(2, 1fr);
+  1880→  1880→  gap: 1.5rem;
+  1881→  1881→}
+  1882→  1882→
+  1883→  1883→@media (min-width: 768px) {
+  1884→  1884→  .team-grid {
+  1885→  1885→    grid-template-columns: repeat(3, 1fr);
+  1886→  1886→  }
+  1887→  1887→}
+  1888→  1888→
+  1889→  1889→.team-card {
+  1890→  1890→  text-align: center;
+  1891→  1891→  padding: 1.5rem;
+  1892→  1892→}
+  1893→  1893→
+  1894→  1894→.team-card__avatar {
+  1895→  1895→  width: 4rem;
+  1896→  1896→  height: 4rem;
+  1897→  1897→  border-radius: 50%;
+  1898→  1898→  margin: 0 auto;
+  1899→  1899→  display: flex;
+  1900→  1900→  align-items: center;
+  1901→  1901→  justify-content: center;
+  1902→  1902→  color: var(--white);
+  1903→  1903→  font-size: 1.125rem;
+  1904→  1904→  font-weight: 600;
+  1905→  1905→}
+  1906→  1906→
+  1907→  1907→.team-card__name {
+  1908→  1908→  font-size: 1rem;
+  1909→  1909→  font-weight: 600;
+  1910→  1910→  color: var(--navy);
+  1911→  1911→  margin-top: 1rem;
+  1912→  1912→}
+  1913→  1913→
+  1914→  1914→.team-card__role {
+  1915→  1915→  font-size: 0.875rem;
+  1916→  1916→  color: var(--gray-500);
+  1917→  1917→}
+  1918→  1918→
+  1919→  1919→/* ==========================================================================
+  1920→  1920→   26. VALUES (ABOUT PAGE)
+  1921→  1921→   ========================================================================== */
+  1922→  1922→.values-grid {
+  1923→  1923→  display: grid;
+  1924→  1924→  gap: 1.5rem;
+  1925→  1925→}
+  1926→  1926→
+  1927→  1927→@media (min-width: 768px) {
+  1928→  1928→  .values-grid {
+  1929→  1929→    grid-template-columns: repeat(4, 1fr);
+  1930→  1930→  }
+  1931→  1931→}
+  1932→  1932→
+  1933→  1933→/* ==========================================================================
+  1934→  1934→   27. ANIMATIONS
+  1935→  1935→   ========================================================================== */
+  1936→  1936→@keyframes float {
+  1937→  1937→  0%, 100% { transform: translateY(0); }
+  1938→  1938→  50% { transform: translateY(-10px); }
+  1939→  1939→}
+  1940→  1940→
+  1941→  1941→@keyframes float-delayed {
+  1942→  1942→  0%, 100% { transform: translateY(0); }
+  1943→  1943→  50% { transform: translateY(-10px); }
+  1944→  1944→}
+  1945→  1945→
+  1946→  1946→@keyframes float-slow {
+  1947→  1947→  0%, 100% { transform: translateY(0); }
+  1948→  1948→  50% { transform: translateY(-10px); }
+  1949→  1949→}
+  1950→  1950→
+  1951→  1951→@keyframes ping {
+  1952→  1952→  75%, 100% {
+  1953→  1953→    transform: scale(2);
+  1954→  1954→    opacity: 0;
+  1955→  1955→  }
+  1956→  1956→}
+  1957→  1957→
+  1958→  1958→@keyframes fadeInUp {
+  1959→  1959→  from {
+  1960→  1960→    opacity: 0;
+  1961→  1961→    transform: translateY(30px);
+  1962→  1962→  }
+  1963→  1963→  to {
+  1964→  1964→    opacity: 1;
+  1965→  1965→    transform: translateY(0);
+  1966→  1966→  }
+  1967→  1967→}
+  1968→  1968→
+  1969→  1969→@keyframes fadeIn {
+  1970→  1970→  from {
+  1971→  1971→    opacity: 0;
+  1972→  1972→  }
+  1973→  1973→  to {
+  1974→  1974→    opacity: 1;
+  1975→  1975→  }
+  1976→  1976→}
+  1977→  1977→
+  1978→  1978→@keyframes marquee {
+  1979→  1979→  0% { transform: translateX(0); }
+  1980→  1980→  100% { transform: translateX(-50%); }
+  1981→  1981→}
+  1982→  1982→
+  1983→  1983→.animate-float {
+  1984→  1984→  animation: float 6s ease-in-out infinite;
+  1985→  1985→}
+  1986→  1986→
+  1987→  1987→.animate-float-delayed {
+  1988→  1988→  animation: float 6s ease-in-out 2s infinite;
+  1989→  1989→}
+  1990→  1990→
+  1991→  1991→.animate-float-slow {
+  1992→  1992→  animation: float-slow 8s ease-in-out 1s infinite;
+  1993→  1993→}
+  1994→  1994→
+  1995→  1995→.animate-ping {
+  1996→  1996→  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  1997→  1997→}
+  1998→  1998→
+  1999→  1999→.animate-marquee {
+  2000→  2000→  animation: marquee 30s linear infinite;
+
+[showing lines 1-2000 of 2002; use offset=2001 with limit to continue reading]

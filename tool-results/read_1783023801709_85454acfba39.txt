@@ -1,0 +1,1086 @@
+     1→'use client';
+     2→
+     3→import { motion } from 'framer-motion';
+     4→import { fadeInUp, staggerContainer, useInView } from '@/components/gocrm/animations';
+     5→import { Input } from '@/components/ui/input';
+     6→import { Textarea } from '@/components/ui/textarea';
+     7→import { Button } from '@/components/ui/button';
+     8→import { Label } from '@/components/ui/label';
+     9→import {
+    10→  Select,
+    11→  SelectContent,
+    12→  SelectItem,
+    13→  SelectTrigger,
+    14→  SelectValue,
+    15→} from '@/components/ui/select';
+    16→import {
+    17→  Accordion,
+    18→  AccordionContent,
+    19→  AccordionItem,
+    20→  AccordionTrigger,
+    21→} from '@/components/ui/accordion';
+    22→import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+    23→import {
+    24→  Users,
+    25→  GitBranch,
+    26→  Clock,
+    27→  Mail,
+    28→  Star,
+    29→  FileText,
+    30→  Receipt,
+    31→  CreditCard,
+    32→  TrendingUp,
+    33→  DollarSign,
+    34→  Kanban,
+    35→  Workflow,
+    36→  Package,
+    37→  ShoppingCart,
+    38→  Truck,
+    39→  BarChart3,
+    40→  PieChart,
+    41→  LineChart,
+    42→  UserCheck,
+    43→  Wallet,
+    44→  Building2,
+    45→  Target,
+    46→  Briefcase,
+    47→  Store,
+    48→  Wrench,
+    49→  User,
+    50→  Phone,
+    51→  MapPin,
+    52→  Clock3,
+    53→  Heart,
+    54→  Lightbulb,
+    55→  Sparkles,
+    56→  Eye,
+    57→  BookOpen,
+    58→  ArrowRight,
+    59→  Calendar,
+    60→} from 'lucide-react';
+    61→
+    62→/* ─────────────────────────────────────────────
+    63→   1. FEATURES PAGE
+    64→   ───────────────────────────────────────────── */
+    65→
+    66→const featureCategories = [
+    67→  {
+    68→    id: 'customer',
+    69→    label: 'Customer Management',
+    70→    icon: Users,
+    71→    features: [
+    72→      {
+    73→        icon: Users,
+    74→        title: 'Contact Database',
+    75→        desc: '360° customer profiles with complete interaction history, notes, and custom fields.',
+    76→      },
+    77→      {
+    78→        icon: GitBranch,
+    79→        title: 'Deal Pipeline',
+    80→        desc: 'Visual drag-and-drop pipeline with customizable stages and automated routing.',
+    81→      },
+    82→      {
+    83→        icon: Clock,
+    84→        title: 'Activity Tracking & Timeline',
+    85→        desc: 'Automated logging of calls, emails, meetings, and notes in a unified timeline.',
+    86→      },
+    87→      {
+    88→        icon: Mail,
+    89→        title: 'Email Integration',
+    90→        desc: 'Seamless sync with Gmail and Outlook. Track opens, clicks, and replies.',
+    91→      },
+    92→      {
+    93→        icon: Star,
+    94→        title: 'Lead Scoring & Qualification',
+    95→        desc: 'AI-powered scoring to prioritize leads based on engagement and fit.',
+    96→      },
+    97→    ],
+    98→  },
+    99→  {
+   100→    id: 'sales',
+   101→    label: 'Sales & Revenue',
+   102→    icon: DollarSign,
+   103→    features: [
+   104→      {
+   105→        icon: FileText,
+   106→        title: 'Quote & Proposal Builder',
+   107→        desc: 'Create professional quotes and proposals with templates and e-signatures.',
+   108→      },
+   109→      {
+   110→        icon: Receipt,
+   111→        title: 'Invoice Management',
+   112→        desc: 'Generate, send, and track invoices. Automated reminders for overdue payments.',
+   113→      },
+   114→      {
+   115→        icon: CreditCard,
+   116→        title: 'Payment Processing',
+   117→        desc: 'Accept payments online with Stripe, PayPal, and other popular gateways.',
+   118→      },
+   119→      {
+   120→        icon: TrendingUp,
+   121→        title: 'Revenue Forecasting',
+   122→        desc: 'Predict future revenue with AI-driven forecasts based on pipeline data.',
+   123→      },
+   124→      {
+   125→        icon: DollarSign,
+   126→        title: 'Commission Tracking',
+   127→        desc: 'Configure commission structures and automatically calculate payouts.',
+   128→      },
+   129→    ],
+   130→  },
+   131→  {
+   132→    id: 'operations',
+   133→    label: 'Operations',
+   134→    icon: Kanban,
+   135→    features: [
+   136→      {
+   137→        icon: Kanban,
+   138→        title: 'Project Management',
+   139→        desc: 'Kanban boards, Gantt charts, and task dependencies for project planning.',
+   140→      },
+   141→      {
+   142→        icon: Workflow,
+   143→        title: 'Task Automation',
+   144→        desc: 'Build custom workflows to automate repetitive tasks and approvals.',
+   145→      },
+   146→      {
+   147→        icon: Package,
+   148→        title: 'Inventory Management',
+   149→        desc: 'Real-time stock tracking, low-stock alerts, and multi-warehouse support.',
+   150→      },
+   151→      {
+   152→        icon: ShoppingCart,
+   153→        title: 'Purchase Orders',
+   154→        desc: 'Create and manage purchase orders with approval workflows.',
+   155→      },
+   156→      {
+   157→        icon: Truck,
+   158→        title: 'Supplier Management',
+   159→        desc: 'Maintain a supplier database with ratings, lead times, and order history.',
+   160→      },
+   161→    ],
+   162→  },
+   163→  {
+   164→    id: 'analytics',
+   165→    label: 'Analytics & Insights',
+   166→    icon: BarChart3,
+   167→    features: [
+   168→      {
+   169→        icon: BarChart3,
+   170→        title: 'Real-time Dashboards',
+   171→        desc: 'Live KPI dashboards with customizable widgets and team visibility.',
+   172→      },
+   173→      {
+   174→        icon: PieChart,
+   175→        title: 'Custom Report Builder',
+   176→        desc: 'Drag-and-drop report builder with filters, grouping, and scheduled delivery.',
+   177→      },
+   178→      {
+   179→        icon: LineChart,
+   180→        title: 'Sales Analytics',
+   181→        desc: 'Analyze win rates, cycle lengths, and rep performance in detail.',
+   182→      },
+   183→      {
+   184→        icon: UserCheck,
+   185→        title: 'Customer Analytics',
+   186→        desc: 'Segment customers, track LTV, churn risk, and engagement scores.',
+   187→      },
+   188→      {
+   189→        icon: Wallet,
+   190→        title: 'Financial Reports',
+   191→        desc: 'P&L, cash flow, and balance sheet reports with export capabilities.',
+   192→      },
+   193→    ],
+   194→  },
+   195→];
+   196→
+   197→function FeatureGrid({ features }: { features: typeof featureCategories[0]['features'] }) {
+   198→  const { ref, isInView } = useInView(0.05);
+   199→  return (
+   200→    <motion.div
+   201→      ref={ref}
+   202→      variants={staggerContainer}
+   203→      initial="hidden"
+   204→      animate={isInView ? 'visible' : 'hidden'}
+   205→      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+   206→    >
+   207→      {features.map((f) => (
+   208→        <motion.div
+   209→          key={f.title}
+   210→          variants={fadeInUp}
+   211→          className="group rounded-2xl border border-gray-200 bg-white p-6 hover:shadow-lg transition-all duration-300"
+   212→        >
+   213→          <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-orange/10 text-orange mb-4 group-hover:bg-orange group-hover:text-white transition-colors duration-300">
+   214→            <f.icon className="w-6 h-6" />
+   215→          </div>
+   216→          <h4 className="text-navy font-semibold text-lg mb-2">{f.title}</h4>
+   217→          <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
+   218→        </motion.div>
+   219→      ))}
+   220→    </motion.div>
+   221→  );
+   222→}
+   223→
+   224→export function FeaturesPage() {
+   225→  const { ref: heroRef, isInView: heroInView } = useInView(0.1);
+   226→  const { ref: tabsRef, isInView: tabsInView } = useInView(0.05);
+   227→
+   228→  return (
+   229→    <section className="py-20 bg-white">
+   230→      {/* Hero */}
+   231→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   232→        <motion.div
+   233→          ref={heroRef}
+   234→          variants={fadeInUp}
+   235→          initial="hidden"
+   236→          animate={heroInView ? 'visible' : 'hidden'}
+   237→          className="text-center max-w-3xl mx-auto mb-16"
+   238→        >
+   239→          <span className="inline-block px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-medium mb-6">
+   240→            Features
+   241→          </span>
+   242→          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
+   243→            Powerful Features for Modern Business
+   244→          </h2>
+   245→          <p className="text-lg text-gray-500 leading-relaxed">
+   246→            Comprehensive tools designed to streamline every aspect of your business — from customer
+   247→            relationships to revenue management and operational efficiency.
+   248→          </p>
+   249→        </motion.div>
+   250→
+   251→        {/* Category Tabs */}
+   252→        <motion.div
+   253→          ref={tabsRef}
+   254→          variants={fadeInUp}
+   255→          initial="hidden"
+   256→          animate={tabsInView ? 'visible' : 'hidden'}
+   257→        >
+   258→          <Tabs defaultValue="customer" className="w-full">
+   259→            <TabsList className="flex flex-wrap justify-center gap-2 bg-gray-50 p-1.5 rounded-xl h-auto mb-12">
+   260→              {featureCategories.map((cat) => (
+   261→                <TabsTrigger
+   262→                  key={cat.id}
+   263→                  value={cat.id}
+   264→                  className="flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium data-[state=active]:bg-white data-[state=active]:shadow-sm data-[state=active]:text-navy text-gray-500"
+   265→                >
+   266→                  <cat.icon className="w-4 h-4" />
+   267→                  {cat.label}
+   268→                </TabsTrigger>
+   269→              ))}
+   270→            </TabsList>
+   271→            {featureCategories.map((cat) => (
+   272→              <TabsContent key={cat.id} value={cat.id}>
+   273→                <FeatureGrid features={cat.features} />
+   274→              </TabsContent>
+   275→            ))}
+   276→          </Tabs>
+   277→        </motion.div>
+   278→      </div>
+   279→    </section>
+   280→  );
+   281→}
+   282→
+   283→/* ─────────────────────────────────────────────
+   284→   2. SOLUTIONS PAGE
+   285→   ───────────────────────────────────────────── */
+   286→
+   287→const solutions = [
+   288→  {
+   289→    icon: Building2,
+   290→    title: 'Small Businesses',
+   291→    desc: 'From customer management to invoicing, everything you need to run and grow your small business.',
+   292→  },
+   293→  {
+   294→    icon: Target,
+   295→    title: 'Sales Teams',
+   296→    desc: 'Close more deals with pipeline management, forecasting, and team collaboration tools.',
+   297→  },
+   298→  {
+   299→    icon: Briefcase,
+   300→    title: 'Agencies',
+   301→    desc: 'Manage clients, projects, and billing in one place. Track profitability per account.',
+   302→  },
+   303→  {
+   304→    icon: Store,
+   305→    title: 'Retail Stores',
+   306→    desc: 'Integrated POS, inventory management, and omnichannel sales capabilities.',
+   307→  },
+   308→  {
+   309→    icon: Wrench,
+   310→    title: 'Service Companies',
+   311→    desc: 'Schedule jobs, track time, manage invoices, and delight your customers.',
+   312→  },
+   313→  {
+   314→    icon: User,
+   315→    title: 'Freelancers',
+   316→    desc: 'Simple yet powerful tools to manage clients, projects, and get paid faster.',
+   317→  },
+   318→];
+   319→
+   320→export function SolutionsPage() {
+   321→  const { ref: heroRef, isInView: heroInView } = useInView(0.1);
+   322→  const { ref: gridRef, isInView: gridInView } = useInView(0.05);
+   323→  const { ref: ctaRef, isInView: ctaInView } = useInView(0.1);
+   324→
+   325→  return (
+   326→    <section className="py-20 bg-gray-50">
+   327→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   328→        {/* Hero */}
+   329→        <motion.div
+   330→          ref={heroRef}
+   331→          variants={fadeInUp}
+   332→          initial="hidden"
+   333→          animate={heroInView ? 'visible' : 'hidden'}
+   334→          className="text-center max-w-3xl mx-auto mb-16"
+   335→        >
+   336→          <span className="inline-block px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-medium mb-6">
+   337→            Solutions
+   338→          </span>
+   339→          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
+   340→            Solutions for Every Industry
+   341→          </h2>
+   342→          <p className="text-lg text-gray-500 leading-relaxed">
+   343→            GoCRM adapts to your unique business needs. Discover how thousands of companies across
+   344→            industries use our platform to grow.
+   345→          </p>
+   346→        </motion.div>
+   347→
+   348→        {/* Solution Cards Grid */}
+   349→        <motion.div
+   350→          ref={gridRef}
+   351→          variants={staggerContainer}
+   352→          initial="hidden"
+   353→          animate={gridInView ? 'visible' : 'hidden'}
+   354→          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
+   355→        >
+   356→          {solutions.map((s) => (
+   357→            <motion.div
+   358→              key={s.title}
+   359→              variants={fadeInUp}
+   360→              className="group rounded-2xl border border-gray-200 bg-white p-8 hover:shadow-lg transition-all duration-300"
+   361→            >
+   362→              <div className="flex items-center justify-center w-14 h-14 rounded-full bg-orange/10 text-orange mb-6 group-hover:bg-orange group-hover:text-white transition-colors duration-300">
+   363→                <s.icon className="w-7 h-7" />
+   364→              </div>
+   365→              <h3 className="text-xl font-bold text-navy mb-3">{s.title}</h3>
+   366→              <p className="text-gray-500 leading-relaxed mb-6">{s.desc}</p>
+   367→              <button className="inline-flex items-center gap-1.5 text-orange font-medium text-sm hover:gap-2.5 transition-all duration-200">
+   368→                Learn More <ArrowRight className="w-4 h-4" />
+   369→              </button>
+   370→            </motion.div>
+   371→          ))}
+   372→        </motion.div>
+   373→
+   374→        {/* CTA Section */}
+   375→        <motion.div
+   376→          ref={ctaRef}
+   377→          variants={fadeInUp}
+   378→          initial="hidden"
+   379→          animate={ctaInView ? 'visible' : 'hidden'}
+   380→          className="rounded-2xl bg-navy p-10 md:p-16 text-center"
+   381→        >
+   382→          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+   383→            Not sure which plan fits?
+   384→          </h3>
+   385→          <p className="text-gray-400 max-w-xl mx-auto mb-8">
+   386→            Our team can help you find the perfect solution tailored to your business size and
+   387→            industry requirements.
+   388→          </p>
+   389→          <button className="inline-flex items-center gap-2 bg-orange hover:bg-orange-hover text-white font-semibold px-8 py-3.5 rounded-full transition-colors duration-200">
+   390→            Talk to Our Team <ArrowRight className="w-4 h-4" />
+   391→          </button>
+   392→        </motion.div>
+   393→      </div>
+   394→    </section>
+   395→  );
+   396→}
+   397→
+   398→/* ─────────────────────────────────────────────
+   399→   3. ABOUT PAGE
+   400→   ───────────────────────────────────────────── */
+   401→
+   402→const values = [
+   403→  {
+   404→    icon: Heart,
+   405→    title: 'Customer First',
+   406→    desc: 'Every decision starts with our customers',
+   407→  },
+   408→  {
+   409→    icon: Lightbulb,
+   410→    title: 'Innovation',
+   411→    desc: 'We push boundaries to build better tools',
+   412→  },
+   413→  {
+   414→    icon: Sparkles,
+   415→    title: 'Simplicity',
+   416→    desc: "Powerful doesn't mean complicated",
+   417→  },
+   418→  {
+   419→    icon: Eye,
+   420→    title: 'Transparency',
+   421→    desc: 'Honest pricing, open communication',
+   422→  },
+   423→];
+   424→
+   425→const teamMembers = [
+   426→  { name: 'Alex Morgan', role: 'CEO & Co-Founder', initials: 'AM', color: 'bg-orange' },
+   427→  { name: 'Priya Sharma', role: 'CTO', initials: 'PS', color: 'bg-navy' },
+   428→  { name: 'James Liu', role: 'Head of Product', initials: 'JL', color: 'bg-orange' },
+   429→  { name: 'Sarah Williams', role: 'VP of Sales', initials: 'SW', color: 'bg-navy' },
+   430→  { name: 'Omar Hassan', role: 'Head of Engineering', initials: 'OH', color: 'bg-orange' },
+   431→  { name: 'Maria Costa', role: 'Head of Design', initials: 'MC', color: 'bg-navy' },
+   432→];
+   433→
+   434→export function AboutPage() {
+   435→  const { ref: heroRef, isInView: heroInView } = useInView(0.1);
+   436→  const { ref: missionRef, isInView: missionInView } = useInView(0.1);
+   437→  const { ref: storyRef, isInView: storyInView } = useInView(0.1);
+   438→  const { ref: valuesRef, isInView: valuesInView } = useInView(0.05);
+   439→  const { ref: teamRef, isInView: teamInView } = useInView(0.05);
+   440→
+   441→  return (
+   442→    <section className="py-20 bg-white">
+   443→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   444→        {/* Hero */}
+   445→        <motion.div
+   446→          ref={heroRef}
+   447→          variants={fadeInUp}
+   448→          initial="hidden"
+   449→          animate={heroInView ? 'visible' : 'hidden'}
+   450→          className="text-center max-w-3xl mx-auto mb-20"
+   451→        >
+   452→          <span className="inline-block px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-medium mb-6">
+   453→            About Us
+   454→          </span>
+   455→          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">About GoCRM</h2>
+   456→          <p className="text-lg text-gray-500 leading-relaxed">
+   457→            We&apos;re on a mission to make powerful business software accessible to every company,
+   458→            everywhere. Here&apos;s the story behind GoCRM.
+   459→          </p>
+   460→        </motion.div>
+   461→
+   462→        {/* Mission Section */}
+   463→        <motion.div
+   464→          ref={missionRef}
+   465→          variants={fadeInUp}
+   466→          initial="hidden"
+   467→          animate={missionInView ? 'visible' : 'hidden'}
+   468→          className="rounded-2xl bg-gray-50 p-8 md:p-12 mb-20"
+   469→        >
+   470→          <div className="flex items-center gap-3 mb-4">
+   471→            <div className="w-10 h-10 rounded-xl bg-orange/10 flex items-center justify-center">
+   472→              <Heart className="w-5 h-5 text-orange" />
+   473→            </div>
+   474→            <h3 className="text-2xl font-bold text-navy">Our Mission</h3>
+   475→          </div>
+   476→          <p className="text-gray-600 text-lg leading-relaxed max-w-3xl">
+   477→            Our mission is to democratize business software. We believe every business, regardless
+   478→            of size, deserves access to powerful tools that help them compete and thrive in the
+   479→            digital age.
+   480→          </p>
+   481→        </motion.div>
+   482→
+   483→        {/* Story Section — Two Columns */}
+   484→        <motion.div
+   485→          ref={storyRef}
+   486→          variants={staggerContainer}
+   487→          initial="hidden"
+   488→          animate={storyInView ? 'visible' : 'hidden'}
+   489→          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-20"
+   490→        >
+   491→          {/* Left — Text */}
+   492→          <motion.div variants={fadeInUp}>
+   493→            <h3 className="text-3xl font-bold text-navy mb-6">Our Story</h3>
+   494→            <p className="text-gray-500 leading-relaxed mb-4">
+   495→              GoCRM was born from a simple observation: small and medium businesses were paying
+   496→              enterprise prices for basic CRM and ERP tools — or worse, struggling with
+   497→              spreadsheets and disconnected apps.
+   498→            </p>
+   499→            <p className="text-gray-500 leading-relaxed mb-4">
+   500→              Our founders, veterans of the SaaS industry, set out to build an all-in-one platform
+   501→              that combines CRM, ERP, project management, and analytics at a fraction of the cost.
+   502→            </p>
+   503→            <p className="text-gray-500 leading-relaxed">
+   504→              Today, GoCRM serves thousands of businesses across 30+ countries, and we&apos;re just
+   505→              getting started. Every day, we work to make our platform more powerful, more
+   506→              intuitive, and more affordable.
+   507→            </p>
+   508→          </motion.div>
+   509→
+   510→          {/* Right — Stats */}
+   511→          <motion.div variants={fadeInUp} className="grid grid-cols-2 gap-6">
+   512→            {[
+   513→              { label: 'Founded', value: '2021' },
+   514→              { label: 'Team Members', value: '50+' },
+   515→              { label: 'Customers', value: '5,000+' },
+   516→              { label: 'Countries', value: '30+' },
+   517→            ].map((stat) => (
+   518→              <div
+   519→                key={stat.label}
+   520→                className="rounded-2xl border border-gray-200 p-6 text-center"
+   521→              >
+   522→                <div className="text-3xl font-bold text-orange mb-1">{stat.value}</div>
+   523→                <div className="text-gray-500 text-sm">{stat.label}</div>
+   524→              </div>
+   525→            ))}
+   526→          </motion.div>
+   527→        </motion.div>
+   528→
+   529→        {/* Values Grid */}
+   530→        <motion.div
+   531→          ref={valuesRef}
+   532→          variants={staggerContainer}
+   533→          initial="hidden"
+   534→          animate={valuesInView ? 'visible' : 'hidden'}
+   535→          className="mb-20"
+   536→        >
+   537→          <h3 className="text-3xl font-bold text-navy text-center mb-12">Our Values</h3>
+   538→          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+   539→            {values.map((v) => (
+   540→              <motion.div
+   541→                key={v.title}
+   542→                variants={fadeInUp}
+   543→                className="rounded-2xl border border-gray-200 p-6 text-center hover:shadow-lg transition-all duration-300"
+   544→              >
+   545→                <div className="flex items-center justify-center w-14 h-14 rounded-full bg-orange/10 text-orange mx-auto mb-4">
+   546→                  <v.icon className="w-7 h-7" />
+   547→                </div>
+   548→                <h4 className="text-lg font-bold text-navy mb-2">{v.title}</h4>
+   549→                <p className="text-gray-500 text-sm">{v.desc}</p>
+   550→              </motion.div>
+   551→            ))}
+   552→          </div>
+   553→        </motion.div>
+   554→
+   555→        {/* Team Section */}
+   556→        <motion.div
+   557→          ref={teamRef}
+   558→          variants={staggerContainer}
+   559→          initial="hidden"
+   560→          animate={teamInView ? 'visible' : 'hidden'}
+   561→        >
+   562→          <h3 className="text-3xl font-bold text-navy text-center mb-4">Meet Our Team</h3>
+   563→          <p className="text-gray-500 text-center max-w-xl mx-auto mb-12">
+   564→            The passionate people behind GoCRM who work every day to build the best business
+   565→            platform for you.
+   566→          </p>
+   567→          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+   568→            {teamMembers.map((m) => (
+   569→              <motion.div
+   570→                key={m.name}
+   571→                variants={fadeInUp}
+   572→                className="text-center group"
+   573→              >
+   574→                <div
+   575→                  className={`w-20 h-20 rounded-full ${m.color} text-white flex items-center justify-center text-xl font-bold mx-auto mb-3 group-hover:scale-105 transition-transform duration-300`}
+   576→                >
+   577→                  {m.initials}
+   578→                </div>
+   579→                <h4 className="text-sm font-semibold text-navy">{m.name}</h4>
+   580→                <p className="text-xs text-gray-400">{m.role}</p>
+   581→              </motion.div>
+   582→            ))}
+   583→          </div>
+   584→        </motion.div>
+   585→      </div>
+   586→    </section>
+   587→  );
+   588→}
+   589→
+   590→/* ─────────────────────────────────────────────
+   591→   4. CONTACT PAGE
+   592→   ───────────────────────────────────────────── */
+   593→
+   594→const contactInfo = [
+   595→  {
+   596→    icon: Mail,
+   597→    label: 'Email',
+   598→    value: 'hello@gocrm.com',
+   599→  },
+   600→  {
+   601→    icon: Phone,
+   602→    label: 'Phone',
+   603→    value: '+1 (555) 123-4567',
+   604→  },
+   605→  {
+   606→    icon: MapPin,
+   607→    label: 'Address',
+   608→    value: '123 Innovation Drive, San Francisco, CA 94107',
+   609→  },
+   610→  {
+   611→    icon: Clock3,
+   612→    label: 'Business Hours',
+   613→    value: 'Mon-Fri, 9AM-6PM PST',
+   614→  },
+   615→];
+   616→
+   617→export function ContactPage() {
+   618→  const { ref: heroRef, isInView: heroInView } = useInView(0.1);
+   619→  const { ref: formRef, isInView: formInView } = useInView(0.05);
+   620→
+   621→  return (
+   622→    <section className="py-20 bg-gray-50">
+   623→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   624→        {/* Hero */}
+   625→        <motion.div
+   626→          ref={heroRef}
+   627→          variants={fadeInUp}
+   628→          initial="hidden"
+   629→          animate={heroInView ? 'visible' : 'hidden'}
+   630→          className="text-center max-w-3xl mx-auto mb-16"
+   631→        >
+   632→          <span className="inline-block px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-medium mb-6">
+   633→            Contact
+   634→          </span>
+   635→          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">Get in Touch</h2>
+   636→          <p className="text-lg text-gray-500 leading-relaxed">
+   637→            Have a question or want to learn more? We&apos;d love to hear from you. Send us a
+   638→            message and we&apos;ll respond as soon as possible.
+   639→          </p>
+   640→        </motion.div>
+   641→
+   642→        {/* Two Columns */}
+   643→        <motion.div
+   644→          ref={formRef}
+   645→          variants={staggerContainer}
+   646→          initial="hidden"
+   647→          animate={formInView ? 'visible' : 'hidden'}
+   648→          className="grid grid-cols-1 lg:grid-cols-5 gap-12"
+   649→        >
+   650→          {/* Left — Form */}
+   651→          <motion.div
+   652→            variants={fadeInUp}
+   653→            className="lg:col-span-3 rounded-2xl border border-gray-200 bg-white p-6 md:p-8"
+   654→          >
+   655→            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+   656→              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+   657→                <div className="space-y-2">
+   658→                  <Label htmlFor="name" className="text-navy font-medium">
+   659→                    Full Name
+   660→                  </Label>
+   661→                  <Input
+   662→                    id="name"
+   663→                    placeholder="John Doe"
+   664→                    className="h-11 rounded-lg border-gray-200 focus-visible:border-orange focus-visible:ring-orange/20"
+   665→                  />
+   666→                </div>
+   667→                <div className="space-y-2">
+   668→                  <Label htmlFor="email" className="text-navy font-medium">
+   669→                    Email
+   670→                  </Label>
+   671→                  <Input
+   672→                    id="email"
+   673→                    type="email"
+   674→                    placeholder="john@company.com"
+   675→                    className="h-11 rounded-lg border-gray-200 focus-visible:border-orange focus-visible:ring-orange/20"
+   676→                  />
+   677→                </div>
+   678→              </div>
+   679→              <div className="space-y-2">
+   680→                <Label htmlFor="company" className="text-navy font-medium">
+   681→                  Company
+   682→                </Label>
+   683→                <Input
+   684→                  id="company"
+   685→                  placeholder="Your company name"
+   686→                  className="h-11 rounded-lg border-gray-200 focus-visible:border-orange focus-visible:ring-orange/20"
+   687→                />
+   688→              </div>
+   689→              <div className="space-y-2">
+   690→                <Label className="text-navy font-medium">Subject</Label>
+   691→                <Select>
+   692→                  <SelectTrigger className="w-full h-11 rounded-lg border-gray-200">
+   693→                    <SelectValue placeholder="Select a subject" />
+   694→                  </SelectTrigger>
+   695→                  <SelectContent>
+   696→                    <SelectItem value="general">General</SelectItem>
+   697→                    <SelectItem value="sales">Sales</SelectItem>
+   698→                    <SelectItem value="support">Support</SelectItem>
+   699→                    <SelectItem value="partnership">Partnership</SelectItem>
+   700→                  </SelectContent>
+   701→                </Select>
+   702→              </div>
+   703→              <div className="space-y-2">
+   704→                <Label htmlFor="message" className="text-navy font-medium">
+   705→                  Message
+   706→                </Label>
+   707→                <Textarea
+   708→                  id="message"
+   709→                  placeholder="Tell us how we can help..."
+   710→                  rows={5}
+   711→                  className="rounded-lg border-gray-200 focus-visible:border-orange focus-visible:ring-orange/20 resize-none"
+   712→                />
+   713→              </div>
+   714→              <Button className="w-full sm:w-auto bg-orange hover:bg-orange-hover text-white font-semibold h-12 px-10 rounded-full text-base">
+   715→                Send Message
+   716→              </Button>
+   717→            </form>
+   718→          </motion.div>
+   719→
+   720→          {/* Right — Contact Info */}
+   721→          <motion.div variants={fadeInUp} className="lg:col-span-2 space-y-6">
+   722→            <div className="rounded-2xl border border-gray-200 bg-white p-6 md:p-8">
+   723→              <h3 className="text-xl font-bold text-navy mb-6">Contact Information</h3>
+   724→              <div className="space-y-5">
+   725→                {contactInfo.map((item) => (
+   726→                  <div key={item.label} className="flex items-start gap-4">
+   727→                    <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-orange/10 text-orange shrink-0">
+   728→                      <item.icon className="w-5 h-5" />
+   729→                    </div>
+   730→                    <div>
+   731→                      <div className="text-sm font-medium text-navy">{item.label}</div>
+   732→                      <div className="text-gray-500 text-sm">{item.value}</div>
+   733→                    </div>
+   734→                  </div>
+   735→                ))}
+   736→              </div>
+   737→            </div>
+   738→            <div className="rounded-2xl bg-navy p-6 md:p-8 text-center">
+   739→              <BookOpen className="w-8 h-8 text-orange mx-auto mb-3" />
+   740→              <h4 className="text-lg font-bold text-white mb-2">Need Help?</h4>
+   741→              <p className="text-gray-400 text-sm mb-4">
+   742→                Check out our Help Center for quick answers to common questions.
+   743→              </p>
+   744→              <button className="inline-flex items-center gap-1.5 text-orange font-medium text-sm hover:gap-2.5 transition-all duration-200">
+   745→                Visit Help Center <ArrowRight className="w-4 h-4" />
+   746→              </button>
+   747→            </div>
+   748→          </motion.div>
+   749→        </motion.div>
+   750→      </div>
+   751→    </section>
+   752→  );
+   753→}
+   754→
+   755→/* ─────────────────────────────────────────────
+   756→   5. BLOG PAGE
+   757→   ───────────────────────────────────────────── */
+   758→
+   759→const blogPosts = [
+   760→  {
+   761→    title: '10 CRM Best Practices for Growing Businesses',
+   762→    category: 'Tips',
+   763→    excerpt:
+   764→      'Learn the essential CRM strategies that successful businesses use to nurture relationships and drive growth.',
+   765→    author: 'Alex Morgan',
+   766→    date: 'Dec 15, 2024',
+   767→    initials: 'AM',
+   768→    gradient: 'from-orange/20 to-orange/5',
+   769→  },
+   770→  {
+   771→    title: 'How to Build a Sales Pipeline That Converts',
+   772→    category: 'Product',
+   773→    excerpt:
+   774→      'Step-by-step guide to creating a sales pipeline that turns leads into customers consistently.',
+   775→    author: 'Sarah Williams',
+   776→    date: 'Dec 10, 2024',
+   777→    initials: 'SW',
+   778→    gradient: 'from-navy/20 to-navy/5',
+   779→  },
+   780→  {
+   781→    title: 'The Future of ERP: Trends to Watch in 2025',
+   782→    category: 'Industry',
+   783→    excerpt:
+   784→      'Explore the emerging trends in ERP technology and how they will shape business operations.',
+   785→    author: 'Priya Sharma',
+   786→    date: 'Dec 5, 2024',
+   787→    initials: 'PS',
+   788→    gradient: 'from-orange/20 to-orange/5',
+   789→  },
+   790→  {
+   791→    title: 'Inventory Management 101: A Complete Guide',
+   792→    category: 'Tips',
+   793→    excerpt:
+   794→      'Everything you need to know about managing inventory effectively, from basics to advanced strategies.',
+   795→    author: 'James Liu',
+   796→    date: 'Nov 28, 2024',
+   797→    initials: 'JL',
+   798→    gradient: 'from-navy/20 to-navy/5',
+   799→  },
+   800→  {
+   801→    title: 'Why SMEs Need All-in-One Business Software',
+   802→    category: 'Industry',
+   803→    excerpt:
+   804→      'Discover why small and medium enterprises are switching to unified platforms over disjointed tools.',
+   805→    author: 'Omar Hassan',
+   806→    date: 'Nov 20, 2024',
+   807→    initials: 'OH',
+   808→    gradient: 'from-orange/20 to-orange/5',
+   809→  },
+   810→  {
+   811→    title: 'GoCRM 3.0: What\'s New and Improved',
+   812→    category: 'Product',
+   813→    excerpt:
+   814→      'A deep dive into the latest GoCRM release — new features, performance improvements, and more.',
+   815→    author: 'Maria Costa',
+   816→    date: 'Nov 15, 2024',
+   817→    initials: 'MC',
+   818→    gradient: 'from-navy/20 to-navy/5',
+   819→  },
+   820→];
+   821→
+   822→const categoryColors: Record<string, string> = {
+   823→  Tips: 'bg-orange/10 text-orange',
+   824→  Product: 'bg-navy/10 text-navy',
+   825→  Industry: 'bg-gray-200 text-gray-600',
+   826→};
+   827→
+   828→export function BlogPage() {
+   829→  const { ref: heroRef, isInView: heroInView } = useInView(0.1);
+   830→  const { ref: gridRef, isInView: gridInView } = useInView(0.05);
+   831→  const { ref: btnRef, isInView: btnInView } = useInView(0.1);
+   832→
+   833→  return (
+   834→    <section className="py-20 bg-white">
+   835→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+   836→        {/* Hero */}
+   837→        <motion.div
+   838→          ref={heroRef}
+   839→          variants={fadeInUp}
+   840→          initial="hidden"
+   841→          animate={heroInView ? 'visible' : 'hidden'}
+   842→          className="text-center max-w-3xl mx-auto mb-16"
+   843→        >
+   844→          <span className="inline-block px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-medium mb-6">
+   845→            Blog
+   846→          </span>
+   847→          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
+   848→            Blog &amp; Resources
+   849→          </h2>
+   850→          <p className="text-lg text-gray-500 leading-relaxed">
+   851→            Insights, tutorials, and industry news to help you get the most out of GoCRM and grow
+   852→            your business smarter.
+   853→          </p>
+   854→        </motion.div>
+   855→
+   856→        {/* Blog Grid */}
+   857→        <motion.div
+   858→          ref={gridRef}
+   859→          variants={staggerContainer}
+   860→          initial="hidden"
+   861→          animate={gridInView ? 'visible' : 'hidden'}
+   862→          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+   863→        >
+   864→          {blogPosts.map((post) => (
+   865→            <motion.article
+   866→              key={post.title}
+   867→              variants={fadeInUp}
+   868→              className="group rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition-all duration-300 bg-white"
+   869→            >
+   870→              {/* Image Placeholder */}
+   871→              <div
+   872→                className={`relative aspect-[16/10] bg-gradient-to-br ${post.gradient} flex items-center justify-center`}
+   873→              >
+   874→                <BookOpen className="w-10 h-10 text-orange/40" />
+   875→              </div>
+   876→              <div className="p-6">
+   877→                <span
+   878→                  className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-3 ${categoryColors[post.category] || 'bg-gray-200 text-gray-600'}`}
+   879→                >
+   880→                  {post.category}
+   881→                </span>
+   882→                <h3 className="text-lg font-semibold text-navy mb-2 group-hover:text-orange transition-colors duration-200 leading-snug">
+   883→                  {post.title}
+   884→                </h3>
+   885→                <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">
+   886→                  {post.excerpt}
+   887→                </p>
+   888→                <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+   889→                  <div className="w-8 h-8 rounded-full bg-navy text-white flex items-center justify-center text-xs font-bold">
+   890→                    {post.initials}
+   891→                  </div>
+   892→                  <div>
+   893→                    <div className="text-sm font-medium text-navy">{post.author}</div>
+   894→                    <div className="text-xs text-gray-400">{post.date}</div>
+   895→                  </div>
+   896→                </div>
+   897→              </div>
+   898→            </motion.article>
+   899→          ))}
+   900→        </motion.div>
+   901→
+   902→        {/* Load More Button */}
+   903→        <motion.div
+   904→          ref={btnRef}
+   905→          variants={fadeInUp}
+   906→          initial="hidden"
+   907→          animate={btnInView ? 'visible' : 'hidden'}
+   908→          className="text-center"
+   909→        >
+   910→          <button className="inline-flex items-center gap-2 border-2 border-gray-200 text-navy font-semibold px-8 py-3 rounded-full hover:border-orange hover:text-orange transition-colors duration-200">
+   911→            <Calendar className="w-4 h-4" />
+   912→            Load More Articles
+   913→          </button>
+   914→        </motion.div>
+   915→      </div>
+   916→    </section>
+   917→  );
+   918→}
+   919→
+   920→/* ─────────────────────────────────────────────
+   921→   6. FAQ PAGE (Detailed)
+   922→   ───────────────────────────────────────────── */
+   923→
+   924→const faqSections = [
+   925→  {
+   926→    title: 'Getting Started',
+   927→    questions: [
+   928→      {
+   929→        q: 'How do I set up my GoCRM account?',
+   930→        a: 'After signing up, you\'ll be guided through a quick onboarding wizard that helps you configure your company profile, import existing data, and invite team members. Most businesses are up and running within 15 minutes.',
+   931→      },
+   932→      {
+   933→        q: 'Can I import data from my current CRM or spreadsheet?',
+   934→        a: 'Absolutely! GoCRM supports CSV imports for contacts, deals, and products. We also offer direct migration tools for popular platforms like Salesforce, HubSpot, and Zoho. Our support team can assist with complex migrations at no extra cost.',
+   935→      },
+   936→      {
+   937→        q: 'Is there a guided onboarding process?',
+   938→        a: 'Yes! Every new account gets access to our interactive onboarding tour, video tutorials, and a dedicated onboarding specialist for Professional and Enterprise plans. We also host weekly live webinars for new users.',
+   939→      },
+   940→      {
+   941→        q: 'How long does it take to get started?',
+   942→        a: 'Most users have their account fully configured in under 30 minutes. For larger organizations with complex requirements, our team typically completes a full rollout in 1-2 weeks, including data migration and team training.',
+   943→      },
+   944→    ],
+   945→  },
+   946→  {
+   947→    title: 'Pricing & Billing',
+   948→    questions: [
+   949→      {
+   950→        q: 'What payment methods do you accept?',
+   951→        a: 'We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for annual plans. Enterprise customers can also pay via invoice with NET-30 terms.',
+   952→      },
+   953→      {
+   954→        q: 'Can I switch plans at any time?',
+   955→        a: 'Yes, you can upgrade or downgrade your plan at any time. When upgrading, you\'ll be prorated for the remainder of your billing cycle. Downgrades take effect at the start of your next billing period.',
+   956→      },
+   957→      {
+   958→        q: 'Is there a free trial available?',
+   959→        a: 'Yes! We offer a 14-day free trial with full access to all Professional plan features. No credit card required to start. You can upgrade to a paid plan at any time during or after the trial.',
+   960→      },
+   961→      {
+   962→        q: 'What is your refund policy?',
+   963→        a: 'We offer a 30-day money-back guarantee on all annual plans. If you\'re not satisfied within the first 30 days, contact our support team for a full refund. Monthly plans can be cancelled at any time.',
+   964→      },
+   965→    ],
+   966→  },
+   967→  {
+   968→    title: 'Features & Integrations',
+   969→    questions: [
+   970→      {
+   971→        q: 'Does GoCRM offer an API for custom integrations?',
+   972→        a: 'Yes, GoCRM provides a comprehensive REST API with full documentation. You can build custom integrations, automate workflows, and connect GoCRM with your existing tech stack. API access is available on all paid plans.',
+   973→      },
+   974→      {
+   975→        q: 'What third-party integrations are supported?',
+   976→        a: 'We integrate with 100+ popular tools including Gmail, Outlook, Slack, QuickBooks, Xero, Stripe, Zapier, and many more. New integrations are added regularly based on customer feedback.',
+   977→      },
+   978→      {
+   979→        q: 'Can I customize the dashboard and reports?',
+   980→        a: 'Absolutely! GoCRM features a drag-and-drop dashboard builder and a powerful report builder. Create custom widgets, filter data, set up scheduled reports, and share dashboards with your team.',
+   981→      },
+   982→      {
+   983→        q: 'Does GoCRM support mobile devices?',
+   984→        a: 'Yes, GoCRM is fully responsive and works great on any device. We also offer native iOS and Android apps with offline support, push notifications, and mobile-specific features like barcode scanning for inventory.',
+   985→      },
+   986→    ],
+   987→  },
+   988→  {
+   989→    title: 'Security & Privacy',
+   990→    questions: [
+   991→      {
+   992→        q: 'How is my data protected?',
+   993→        a: 'Your data is protected with AES-256 encryption at rest and TLS 1.3 in transit. We use AWS infrastructure with SOC 2 Type II compliance, regular security audits, and automated backups with 99.99% uptime SLA.',
+   994→      },
+   995→      {
+   996→        q: 'Is GoCRM GDPR compliant?',
+   997→        a: 'Yes, GoCRM is fully GDPR compliant. We provide data processing agreements (DPAs), support data portability and right-to-erasure requests, and our EU customer data is stored in EU-based data centers.',
+   998→      },
+   999→      {
+  1000→        q: 'Do you sell or share my data with third parties?',
+  1001→        a: 'Never. Your data belongs to you. We do not sell, share, or use your customer data for any purpose other than providing the GoCRM service. We are committed to complete data privacy and transparency.',
+  1002→      },
+  1003→    ],
+  1004→  },
+  1005→];
+  1006→
+  1007→export function FAQPage() {
+  1008→  const { ref: heroRef, isInView: heroInView } = useInView(0.1);
+  1009→  const { ref: faqRef, isInView: faqInView } = useInView(0.05);
+  1010→  const { ref: ctaRef, isInView: ctaInView } = useInView(0.1);
+  1011→
+  1012→  return (
+  1013→    <section className="py-20 bg-gray-50">
+  1014→      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  1015→        {/* Hero */}
+  1016→        <motion.div
+  1017→          ref={heroRef}
+  1018→          variants={fadeInUp}
+  1019→          initial="hidden"
+  1020→          animate={heroInView ? 'visible' : 'hidden'}
+  1021→          className="text-center max-w-3xl mx-auto mb-16"
+  1022→        >
+  1023→          <span className="inline-block px-4 py-1.5 rounded-full bg-orange/10 text-orange text-sm font-medium mb-6">
+  1024→            FAQ
+  1025→          </span>
+  1026→          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
+  1027→            Frequently Asked Questions
+  1028→          </h2>
+  1029→          <p className="text-lg text-gray-500 leading-relaxed">
+  1030→            Find answers to common questions about GoCRM. Can&apos;t find what you&apos;re looking
+  1031→            for? Our support team is here to help.
+  1032→          </p>
+  1033→        </motion.div>
+  1034→
+  1035→        {/* FAQ Sections */}
+  1036→        <motion.div
+  1037→          ref={faqRef}
+  1038→          variants={staggerContainer}
+  1039→          initial="hidden"
+  1040→          animate={faqInView ? 'visible' : 'hidden'}
+  1041→          className="space-y-12 mb-20"
+  1042→        >
+  1043→          {faqSections.map((section) => (
+  1044→            <motion.div key={section.title} variants={fadeInUp}>
+  1045→              <h3 className="text-2xl font-bold text-navy mb-6">{section.title}</h3>
+  1046→              <div className="rounded-2xl border border-gray-200 bg-white p-6">
+  1047→                <Accordion type="single" collapsible className="w-full">
+  1048→                  {section.questions.map((item, idx) => (
+  1049→                    <AccordionItem key={idx} value={`${section.title}-${idx}`}>
+  1050→                      <AccordionTrigger className="text-navy font-medium text-left hover:no-underline">
+  1051→                        {item.q}
+  1052→                      </AccordionTrigger>
+  1053→                      <AccordionContent className="text-gray-500 leading-relaxed">
+  1054→                        {item.a}
+  1055→                      </AccordionContent>
+  1056→                    </AccordionItem>
+  1057→                  ))}
+  1058→                </Accordion>
+  1059→              </div>
+  1060→            </motion.div>
+  1061→          ))}
+  1062→        </motion.div>
+  1063→
+  1064→        {/* CTA */}
+  1065→        <motion.div
+  1066→          ref={ctaRef}
+  1067→          variants={fadeInUp}
+  1068→          initial="hidden"
+  1069→          animate={ctaInView ? 'visible' : 'hidden'}
+  1070→          className="rounded-2xl bg-navy p-10 md:p-16 text-center"
+  1071→        >
+  1072→          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+  1073→            Still have questions?
+  1074→          </h3>
+  1075→          <p className="text-gray-400 max-w-xl mx-auto mb-8">
+  1076→            Our support team is available Monday through Friday, 9AM to 6PM PST. We typically
+  1077→            respond within a few hours.
+  1078→          </p>
+  1079→          <button className="inline-flex items-center gap-2 bg-orange hover:bg-orange-hover text-white font-semibold px-8 py-3.5 rounded-full transition-colors duration-200">
+  1080→            Contact Support <ArrowRight className="w-4 h-4" />
+  1081→          </button>
+  1082→        </motion.div>
+  1083→      </div>
+  1084→    </section>
+  1085→  );
+  1086→}
